@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+const { titleTag } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex" />
+    <title>{titleTag}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

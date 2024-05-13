@@ -1,0 +1,104 @@
+:root {
+  /* ----------------- primitives ----------------- */
+
+  /* primitive colors */
+  --Primitives-Color-Brown-300: #cfb59e;
+  --Primitives-Color-Brown-400: #866752;
+  --Primitives-Color-Brown-500-25t: rgba(108, 77, 56, 0.25);
+  --Primitives-Color-Brown-500-50t: rgba(108, 77, 56, 0.5);
+  --Primitives-Color-Brown-500: #6c4d38;
+  --Primitives-Color-Brown-800-65t: rgba(61, 45, 33, 0.65);
+  --Primitives-Color-Brown-800: #3d2d21;
+
+  --Primitives-Color-Sand-100-60t: rgba(253, 252, 251, 0.6);
+  --Primitives-Color-Sand-50: #fffffe;
+  --Primitives-Color-Sand-100: #fdfcfb;
+  --Primitives-Color-Sand-200: #f7f2ef;
+  --Primitives-Color-Sand-400: #d5d0c8;
+
+  --Primitives-Color-WarmBlue-200: #dee5ed;
+  --Primitives-Color-WarmBlue-400: #bad6eb;
+  --Primitives-Color-WarmBlue-900: #051e30;
+
+  --Primitives-Color-gray-100: #fafafa;
+  --Primitives-Color-gray-400: #d0d0d0;
+
+  /* sizes */
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-3: 3px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-56: 56px;
+  --size-64: 64px;
+
+  /* ----------------- Tokens ----------------- */
+  /* Background colors */
+  --Color-Background-Accent: var(--Primitives-Color-WarmBlue-400);
+  --Color-Background-Primary: var(--Primitives-Color-Sand-100);
+  --Color-Background-Seconday: var(--Primitives-Color-Sand-200);
+
+  /* Effect colors */
+  --Color-Effect-Dropshadow-Button-Default: var(--Primitives-Color-Brown-500-25t);
+  --Color-Effect-Dropshadow-Button-Hover: var(--Primitives-Color-Brown-500-25t);
+  --Color-Effect-Dropshadow-Button-Pressed: var(--Primitives-Color-Brown-500-50t);
+  --Color-Effect-Innershadow-Button-Pressed: var(--Primitives-Color-Brown-500-25t);
+
+  /* Button colors */
+  --Color-Fill-Button-Disabled: var(--Primitives-Color-gray-100);
+  --Color-Fill-Button-Primary: var(--Primitives-Color-Sand-200);
+  --Color-Fill-Button-Seconday: var(--Primitives-Color-Sand-50);
+  --Color-Fill-Button-Teritary: var(--Primitives-Color-Brown-500);
+
+  /* Icon colors */
+  --Color-Fill-Icon-Disabled: var(--Primitives-Color-gray-400);
+  --Color-Fill-Icon-Icon: var(--Primitives-Color-Brown-800);
+  --Color-Fill-Icon-transparent: var(--Primitives-Color-Brown-800-65t);
+
+  /* Other fill colors */
+  --Color-Fill-Input: var(--Primitives-Color-Sand-100-60t);
+  --Color-Fill-Quotation: var(--Primitives-Color-Brown-500);
+  --Color-Fill-Star: var(--Primitives-Color-Brown-800);
+  --Color-Fill-step: var(--Primitives-Color-WarmBlue-400);
+
+  /* Stroke colors */
+  --Color-Stroke-Disabled: var(--Primitives-Color-gray-400);
+  --Color-Stroke-Primary: var(--Primitives-Color-Sand-400);
+  --Color-Stroke-Secondary: var(--Primitives-Color-Brown-800);
+  --Color-Stroke-Blue: var(--Primitives-Color-WarmBlue-400);
+
+  /* Text colors */
+  --Color-Text-Announcment: var(--Primitives-Color-WarmBlue-900);
+  --Color-Text-Body-Transparent: var(--Primitives-Color-Brown-800-65t);
+  --Color-Text-Body: var(--Primitives-Color-Brown-800);
+  --Color-Text-Button: var(--Primitives-Color-Brown-800);
+  --Color-Text-Disabled: var(--Primitives-Color-gray-400);
+  --Color-Text-Headline: var(--Primitives-Color-Brown-800);
+  --Color-Text-Navigation: var(--Primitives-Color-Brown-800);
+  --Color-Text-White: var(--Primitives-Color-Sand-50);
+}
+
+body {
+  background-color: var(--Tokens-Color-Background-Primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--Color-Text-Headline);
+}
+
+p,
+label {
+  color: var(--Color-Text-Body);
+}

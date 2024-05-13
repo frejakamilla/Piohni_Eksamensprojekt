@@ -1,0 +1,46 @@
+---
+import "../../styles/global.css";
+import InputField from "./InputField.astro";
+import RadioButton from "./RadioButton.astro";
+---
+
+<form action="">
+  <div id="contactInfo">
+    <div class="inputFieldOrganizer">
+      <InputField inputId="ContactName" type="text" autocomplete="name" placeholder="Name" />
+      <InputField inputId="ContactMail" type="email" autocomplete="email" placeholder="E-mail" />
+    </div>
+  </div>
+  <div id="inquiry">
+    <label for="radioButtonContainer" class="formHeadline">Inquiry type*</label>
+    <div id="radioButtonContainer">
+      <RadioButton label="General" radioGroup="InquiryType" />
+      <RadioButton label="B2B" radioGroup="InquiryType" />
+      <RadioButton label="Event" radioGroup="InquiryType" />
+    </div>
+  </div>
+</form>
+<style>
+  /* ---------- Text ---------- */
+  .formHeadline,
+  label {
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .formHeadline {
+    line-height: 18px;
+    letter-spacing: 0.77px;
+  }
+  label {
+    font-weight: 400;
+    line-height: 20px;
+  }
+  /* ---------- ---------- */
+  #radioButtonContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+</style>

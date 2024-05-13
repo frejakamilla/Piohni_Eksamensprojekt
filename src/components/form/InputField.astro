@@ -1,0 +1,46 @@
+---
+const { placeholder, type, autocomplete, inputId } = Astro.props;
+---
+
+<div class="inputFieldContainer">
+  <div class="Field"><input type={type} autocomplete={autocomplete} id={inputId} class="inputField" placeholder={placeholder} name="userInfo" /></div>
+</div>
+<style>
+  .inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .Field {
+    border: 1px solid var(--Color-Stroke-Primary);
+    background: var(--color-surface-white, #fff);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inputField,
+  .inputField::placeholder {
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .inputField {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    color: var(--Color-Text-Body);
+  }
+  .inputField::placeholder {
+    color: var(--Color-Text-Body-Transparent);
+  }
+  #unit {
+    color: var(--color-text-gray500);
+    padding: 10px 20px;
+  }
+</style>

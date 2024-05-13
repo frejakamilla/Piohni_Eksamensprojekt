@@ -4,14 +4,15 @@ import InputField from "./InputField.astro";
 import RadioButton from "./RadioButton.astro";
 ---
 
-<form action="">
-  <div id="contactInfo">
-    <div class="inputFieldOrganizer">
+<form action="" id="ContactForm">
+  <div id="contactInfo" class="formElement">
+    <label for="radioButtonContainer" class="formHeadline">Contact information*</label>
+    <div id="inputFieldOrganizer">
       <InputField inputId="ContactName" type="text" autocomplete="name" placeholder="Name" />
       <InputField inputId="ContactMail" type="email" autocomplete="email" placeholder="E-mail" />
     </div>
   </div>
-  <div id="inquiry">
+  <div id="inquiry" class="formElement">
     <label for="radioButtonContainer" class="formHeadline">Inquiry type*</label>
     <div id="radioButtonContainer">
       <RadioButton label="General" radioGroup="InquiryType" />
@@ -19,17 +20,23 @@ import RadioButton from "./RadioButton.astro";
       <RadioButton label="Event" radioGroup="InquiryType" />
     </div>
   </div>
+  <div id="messageContainer" class="formElement">
+    <label for="radioButtonContainer" class="formHeadline">Inquiry message*</label>
+    <textarea rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
+  </div>
 </form>
+
 <style>
   /* ---------- Text ---------- */
   .formHeadline,
-  label {
+  label,
+  textarea {
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
   }
   .formHeadline {
+    font-weight: 600;
     line-height: 18px;
     letter-spacing: 0.77px;
   }
@@ -38,9 +45,42 @@ import RadioButton from "./RadioButton.astro";
     line-height: 20px;
   }
   /* ---------- ---------- */
+  .formElement {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  #ContactForm {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 660px;
+  }
+  /* ---------- ---------- */
+
+  #inputFieldOrganizer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+  /* ---------- ---------- */
   #radioButtonContainer {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+  }
+
+  /* ---------- ---------- */
+  textarea {
+    border: 1px solid var(--Color-Stroke-Primary);
+    color: var(--Color-Text-Body);
+    padding: 10px;
+    min-width: 576px;
+  }
+  textarea:focus {
+    outline-color: var(--Color-Stroke-Blue);
   }
 </style>

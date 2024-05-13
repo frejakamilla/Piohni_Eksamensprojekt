@@ -99,6 +99,7 @@ h6 {
 }
 
 p,
-label {
+label,
+textarea {
   color: var(--Color-Text-Body);
 }

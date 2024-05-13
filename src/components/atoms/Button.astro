@@ -1,0 +1,77 @@
+---
+const { style, label, href, size } = Astro.props;
+---
+
+<div class="button" style-variant={style} size-variant={size}>
+  <a href={href} class="button_label" label-variant={style}>{label}</a>
+</div>
+
+<style>
+  .button {
+    display: inline-flex;
+    padding: 12px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 99px;
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
+  }
+  .button_label {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-decoration: none;
+    text-align: center;
+    color: var(--Color-Text-Button);
+  }
+  .button:hover {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Hover);
+  }
+  .button:focus {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Hover);
+    border: 1.5px solid var(--Color-Stroke-Primary, #d5d0c8);
+  }
+  .button:active {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Pressed), 0px 4px 4px 0px var(--Color-Effect-Dropshadow-Button-Default) inset;
+  }
+  .button:disabled {
+    background-color: var(--Color-Fill-Button-Diabled);
+  }
+  /* ----------- Variants ----------- */
+
+  /* Primary */
+  [style-variant="primary"] {
+    background-color: var(--Color-Fill-Button-Primary);
+  }
+
+  /* Secondary */
+  [style-variant="secondary"] {
+    background-color: var(--Color-Fill-Button-Secondary);
+  }
+
+  /* Teritary */
+  [style-variant="teritary"] {
+    background-color: var(--Color-Fill-Button-Teritary);
+  }
+  [style-variant="teritary"]:hover {
+    box-shadow: 0px 1px 4px 0px var(--Color-Fill-Icon-transparent);
+  }
+  [style-variant="teritary"]:focus {
+    border: 1.5px solid var(--Color-Stroke-Secondary);
+    box-shadow: 0px 1px 4px 0px var(--Color-Fill-Icon-transparent);
+  }
+  [style-variant="teritary"]:active {
+    box-shadow: 0px 1px 4px 0px var(--Color-Fill-Icon-transparent), 0px 4px 4px 0px var(--Color-Fill-Icon-transparent) inset;
+  }
+  [style-variant="teritary"] .button_label {
+    color: var(--Color-Text-White);
+  }
+
+  /* Fill container width variant */
+  [size-variant="fillContainer"] {
+    width: 100%;
+  }
+</style>

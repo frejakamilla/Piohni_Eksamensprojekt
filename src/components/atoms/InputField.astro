@@ -3,7 +3,9 @@ const { placeholder, type, autocomplete, inputId } = Astro.props;
 ---
 
 <div class="inputFieldContainer">
-  <div class="Field"><input type={type} autocomplete={autocomplete} id={inputId} class="inputField" placeholder={placeholder} name="userInfo" required /></div>
+  <div class="Field">
+    <input type={type} autocomplete={autocomplete} id={inputId} class="inputField" placeholder={placeholder} name="userInfo" required />
+  </div>
 </div>
 <style>
   .inputFieldContainer {
@@ -33,6 +35,7 @@ const { placeholder, type, autocomplete, inputId } = Astro.props;
     border: none;
     min-width: 280px;
     width: 100%;
+    max-width: 322px;
     color: var(--Color-Text-Body);
   }
   .inputField::placeholder {

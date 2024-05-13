@@ -1,7 +1,8 @@
 ---
-import "../../styles/global.css";
-import InputField from "./InputField.astro";
-import RadioButton from "./RadioButton.astro";
+import "../styles/global.css";
+import InputField from "./atoms/InputField.astro";
+import RadioButton from "./atoms/RadioButton.astro";
+import Button from "./atoms/Button.astro";
 ---
 
 <form action="" id="ContactForm">
@@ -15,7 +16,7 @@ import RadioButton from "./RadioButton.astro";
   <div id="inquiry" class="formElement">
     <label for="radioButtonContainer" class="formHeadline">Inquiry type*</label>
     <div id="radioButtonContainer">
-      <RadioButton label="General" radioGroup="InquiryType" />
+      <RadioButton label="General" radioGroup="InquiryType" state="checked" />
       <RadioButton label="B2B" radioGroup="InquiryType" />
       <RadioButton label="Event" radioGroup="InquiryType" />
     </div>
@@ -24,9 +25,26 @@ import RadioButton from "./RadioButton.astro";
     <label for="radioButtonContainer" class="formHeadline">Inquiry message*</label>
     <textarea rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
   </div>
+  <Button style="teritary" label="Send message" size="fillContainer" />
+  <!-- onclick="resetForm()"  -->
 </form>
 
 <style>
+  .formElement {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  #ContactForm {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 660px;
+  }
+
   /* ---------- Text ---------- */
   .formHeadline,
   label,
@@ -45,24 +63,11 @@ import RadioButton from "./RadioButton.astro";
     line-height: 20px;
   }
   /* ---------- ---------- */
-  .formElement {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
-  #ContactForm {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    width: 660px;
-  }
-  /* ---------- ---------- */
 
   #inputFieldOrganizer {
     display: flex;
     align-items: flex-start;
+    flex-direction: row;
     gap: 12px;
     width: 100%;
   }
@@ -78,9 +83,32 @@ import RadioButton from "./RadioButton.astro";
     border: 1px solid var(--Color-Stroke-Primary);
     color: var(--Color-Text-Body);
     padding: 10px;
-    min-width: 576px;
   }
   textarea:focus {
     outline-color: var(--Color-Stroke-Blue);
   }
+
+  @media (max-width: 740px) {
+    #ContactForm {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #inputFieldOrganizer {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+  @media (max-width: 320px) {
+    #radioButtonContainer {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
 </style>
+
+<!-- <script>
+  function resetForm() {
+    const form = document.getElementById("ContactForm") as HTMLFormElement;
+    form.reset();
+  }
+</script> -->

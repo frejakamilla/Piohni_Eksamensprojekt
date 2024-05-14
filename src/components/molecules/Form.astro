@@ -6,14 +6,14 @@ import RadioButton from "../atoms/RadioButton.astro";
 
 <form action="" id="ContactForm">
   <div id="contactInfo" class="formElement">
-    <label for="radioButtonContainer" class="formHeadline">Contact information*</label>
+    <label for="radioButtonContainer" class="Typo-form-headline">Contact information*</label>
     <div id="inputFieldOrganizer">
       <InputField inputId="ContactName" type="text" autocomplete="name" placeholder="Name" />
       <InputField inputId="ContactMail" type="email" autocomplete="email" placeholder="E-mail" />
     </div>
   </div>
   <div id="inquiry" class="formElement">
-    <label for="radioButtonContainer" class="formHeadline">Inquiry type*</label>
+    <label for="radioButtonContainer" class="Typo-form-headline">Inquiry type*</label>
     <div id="radioButtonContainer">
       <RadioButton label="General" radioGroup="InquiryType" state="checked" />
       <RadioButton label="B2B" radioGroup="InquiryType" />
@@ -21,11 +21,11 @@ import RadioButton from "../atoms/RadioButton.astro";
     </div>
   </div>
   <div id="messageContainer" class="formElement">
-    <label for="radioButtonContainer" class="formHeadline">Inquiry message*</label>
-    <textarea rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
+    <label for="radioButtonContainer" class="Typo-form-headline">Inquiry message*</label>
+    <textarea class="Typo-form-placeholder" rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
   </div>
   <div class="formElement">
-    <input type="submit" value="Send message" class="button" id="formButton" />
+    <input type="submit" value="Send message" class="button Typo-button_label" id="formButton" />
   </div>
 </form>
 
@@ -45,23 +45,6 @@ import RadioButton from "../atoms/RadioButton.astro";
     max-width: 660px;
   }
 
-  /* ---------- Text ---------- */
-  .formHeadline,
-  label,
-  textarea {
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-  }
-  .formHeadline {
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: 0.77px;
-  }
-  label {
-    font-weight: 400;
-    line-height: 20px;
-  }
   /* ---------- contact information ---------- */
 
   #inputFieldOrganizer {
@@ -94,11 +77,6 @@ import RadioButton from "../atoms/RadioButton.astro";
     background-color: var(--Color-Fill-Button-Teritary);
     border: none;
     box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
     color: var(--Color-Text-White);
   }
 
@@ -121,10 +99,3 @@ import RadioButton from "../atoms/RadioButton.astro";
     }
   }
 </style>
-
-<!-- <script>
-  function resetForm() {
-    const form = document.getElementById("ContactForm") as HTMLFormElement;
-    form.reset();
-  }
-</script> -->

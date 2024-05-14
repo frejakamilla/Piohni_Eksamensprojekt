@@ -104,14 +104,14 @@ textarea {
   color: var(--Color-Text-Body);
 }
 /* ---------- Typography ----------- */
-.signature {
+.Typo-signature {
   font-size: 24px;
   font-family: "Square Peg", cursive;
   font-weight: 400;
   letter-spacing: 0.7699999809265137px;
   line-height: 108.80000591278076%;
 }
-.navigation {
+.Typo-navigation {
   font-size: 13.199999809265137px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -119,82 +119,85 @@ textarea {
   line-height: 22.440000534057617px;
   text-transform: uppercase;
 }
-.announcement {
+.Typo-announcement {
   font-size: 11px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: 0.7699999809265137px;
   line-height: 18.149999618530273px;
 }
-.testimonial {
+.Typo-testimonial {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: -0.17000000178813934px;
   line-height: 20px;
 }
-.button {
-  font-size: 18px;
+.Typo-button_label {
   font-family: "Roboto", sans-serif;
+
+  font-size: 18px;
+  font-style: normal;
   font-weight: 400;
-  letter-spacing: 0em;
-  line-height: 129.99999523162842%;
+  line-height: 130%;
+  text-decoration: none;
+  text-align: center;
 }
-.testimonial-reference {
+.Typo-testimonial-reference {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   letter-spacing: -0.17000000178813934px;
 }
-.link {
+.Typo-link {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.list {
+.Typo-list {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 1.7699999809265137px;
   line-height: 24px;
 }
-.chip {
+.Typo-chip {
   font-size: 16.734375px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: -0.17000000178813934px;
   line-height: 28.049999237060547px;
 }
-.body-regular {
+.Typo-body-regular {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
 }
-.body-small {
+.Typo-body-small {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.9240000247955322px;
   line-height: 18px;
 }
-.body-bold {
+.Typo-body-bold {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   letter-spacing: 0.9240000247955322px;
   line-height: 24px;
 }
-.body-large {
+.Typo-body-large {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 28px;
 }
-.body-large-uppercase {
+.Typo-body-large-uppercase {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -202,7 +205,7 @@ textarea {
   line-height: 22px;
   text-transform: uppercase;
 }
-.headline-large {
+.Typo-headline-large {
   font-size: 40px;
   font-family: "contralto-medium", sans-serif;
   font-weight: 700;
@@ -210,7 +213,7 @@ textarea {
   letter-spacing: 0.7699999809265137px;
   text-transform: uppercase;
 }
-.headline-sub-headline {
+.Typo-headline-sub-headline {
   font-size: 20px;
   font-family: "contralto-medium", sans-serif;
   font-weight: 300;
@@ -218,14 +221,14 @@ textarea {
   letter-spacing: 0.7699999809265137px;
   line-height: 28px;
 }
-.headline-medium-breaker {
+.Typo-headline-medium-breaker {
   font-size: 32px;
   font-family: "contralto-medium", sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.7699999809265137px;
 }
-.headline-medium-uppercase {
+.Typo-headline-medium-uppercase {
   font-size: 32px;
   font-family: "contralto-medium", sans-serif;
   font-weight: 700;
@@ -233,7 +236,7 @@ textarea {
   letter-spacing: 0.7699999809265137px;
   text-transform: uppercase;
 }
-.headline-medium-seconday {
+.Typo-headline-medium-seconday {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -241,21 +244,21 @@ textarea {
   line-height: 22px;
   text-transform: capitalize;
 }
-.headline-small-elegant {
+.Typo-headline-small-elegant {
   font-size: 24px;
   font-family: "contralto-medium", sans-serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.7699999809265137px;
 }
-.headline-small-classic {
+.Typo-headline-small-classic {
   font-size: 24.200000762939453px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: 1.694000005722046px;
   line-height: 36.29999923706055px;
 }
-.headline-xstrasmall-uppercase {
+.Typo-headline-xstrasmall-uppercase {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
@@ -263,14 +266,14 @@ textarea {
   line-height: 18px;
   text-transform: uppercase;
 }
-.headline-xstrasmall-classic {
+.Typo-headline-xstrasmall-classic {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.headline-xstrasmall-seconday {
+.Typo-headline-xstrasmall-seconday {
   font-size: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -278,14 +281,14 @@ textarea {
   line-height: 18px;
   text-transform: capitalize;
 }
-.footer-link {
+.Typo-footer-link {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: -0.17000000178813934px;
   line-height: 28.049999237060547px;
 }
-.footer-headline {
+.Typo-footer-headline {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -293,7 +296,7 @@ textarea {
   line-height: 22px;
   text-transform: uppercase;
 }
-.productcard-product {
+.Typo-productcard-product {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -301,55 +304,55 @@ textarea {
   line-height: 18px;
   text-transform: capitalize;
 }
-.productcard-price {
+.Typo-productcard-price {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.productcard-note {
+.Typo-productcard-note {
   font-size: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.form-label {
+.Typo-form-label {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 20px;
 }
-.form-placeholder {
+.Typo-form-placeholder {
   font-size: 17px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: 0em;
 }
-.form-headline {
+.Typo-form-headline {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.link-large {
+.Typo-link-large {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.button-explainer {
+.Typo-button-explainer {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 129.99999523162842%;
 }
-.price-large {
+.Typo-price-large {
   font-size: 19.799999237060547px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -365,16 +368,6 @@ textarea {
   gap: 10px;
   cursor: pointer;
   border-radius: 99px;
-}
-.button_label {
-  font-family: "Roboto", sans-serif;
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  text-decoration: none;
-  text-align: center;
 }
 
 .button:disabled {

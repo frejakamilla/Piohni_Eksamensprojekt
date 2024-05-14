@@ -103,3 +103,27 @@ label,
 textarea {
   color: var(--Color-Text-Body);
 }
+
+/* ---------- Button---------- */
+.button {
+  display: inline-flex;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 99px;
+}
+.button_label {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:disabled {
+  background-color: var(--Color-Fill-Button-Diabled);
+}

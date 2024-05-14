@@ -2,29 +2,15 @@
 const { style, label, href, size } = Astro.props;
 ---
 
-<div class="button" style-variant={style} size-variant={size}>
-  <a href={href} class="button_label" label-variant={style}>{label}</a>
+<div class="button buttonComponent" style-variant={style} size-variant={size}>
+  <a href={href} class="button_label button_labelComponent" label-variant={style}>{label}</a>
 </div>
 
 <style>
-  .button {
-    display: inline-flex;
-    padding: 12px 28px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 99px;
+  .buttonComponent {
     box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
   }
-  .button_label {
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    text-decoration: none;
-    text-align: center;
+  .button_labelComponent {
     color: var(--Color-Text-Button);
   }
   .button:hover {

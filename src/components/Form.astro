@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import InputField from "./atoms/InputField.astro";
 import RadioButton from "./atoms/RadioButton.astro";
-import Button from "./atoms/Button.astro";
 ---
 
 <form action="" id="ContactForm">
@@ -25,8 +24,9 @@ import Button from "./atoms/Button.astro";
     <label for="radioButtonContainer" class="formHeadline">Inquiry message*</label>
     <textarea rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
   </div>
-  <Button style="teritary" label="Send message" size="fillContainer" />
-  <!-- onclick="resetForm()"  -->
+  <div class="formElement">
+    <input type="submit" value="Send message" class="button" id="formButton" />
+  </div>
 </form>
 
 <style>
@@ -62,7 +62,7 @@ import Button from "./atoms/Button.astro";
     font-weight: 400;
     line-height: 20px;
   }
-  /* ---------- ---------- */
+  /* ---------- contact information ---------- */
 
   #inputFieldOrganizer {
     display: flex;
@@ -71,14 +71,14 @@ import Button from "./atoms/Button.astro";
     gap: 12px;
     width: 100%;
   }
-  /* ---------- ---------- */
+  /* ---------- inquiry selector ---------- */
   #radioButtonContainer {
     display: flex;
     align-items: flex-start;
     gap: 20px;
   }
 
-  /* ---------- ---------- */
+  /* ---------- message input field ---------- */
   textarea {
     border: 1px solid var(--Color-Stroke-Primary);
     color: var(--Color-Text-Body);
@@ -87,6 +87,22 @@ import Button from "./atoms/Button.astro";
   textarea:focus {
     outline-color: var(--Color-Stroke-Blue);
   }
+
+  /* ---------- Form button---------- */
+
+  #formButton {
+    background-color: var(--Color-Fill-Button-Teritary);
+    border: none;
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--Color-Text-White);
+  }
+
+  /* -------------------- */
 
   @media (max-width: 740px) {
     #ContactForm {

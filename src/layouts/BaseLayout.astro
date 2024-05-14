@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 import "../styles/reset.css";
+import AnnouncementBar from "../components/global/AnnouncementBar.astro";
+import Footer from "../components/global/Footer.astro";
+import Navbar from "../components/global/Navbar.astro";
 const { titleTag } = Astro.props;
 ---
 
@@ -19,6 +22,11 @@ const { titleTag } = Astro.props;
     <title>{titleTag}</title>
   </head>
   <body>
+    <header>
+      <AnnouncementBar />
+      <Navbar />
+    </header>
     <slot />
+    <Footer />
   </body>
 </html>

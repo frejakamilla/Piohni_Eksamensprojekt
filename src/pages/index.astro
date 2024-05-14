@@ -1,16 +1,11 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Form from "../components/Form.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="noindex" />
-    <title>Piohní - Discover Premium Matcha Excellence</title>
-  </head>
-  <body>
+<BaseLayout titleTag="Discover Premium Matcha Excellence">
+  <main>
     <h1>Creamy Calming Matcha</h1>
-  </body>
-</html>
+    <Form />
+  </main>
+</BaseLayout>

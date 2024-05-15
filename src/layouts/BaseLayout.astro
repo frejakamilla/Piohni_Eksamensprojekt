@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "../styles/reset.css";
 import Footer from "../components/global/Footer.astro";
 import Header from "../components/global/Header.astro";
-const { titleTag } = Astro.props;
+const { titleTag, pagename } = Astro.props;
 ---
 
 <html lang="en">
@@ -21,7 +21,7 @@ const { titleTag } = Astro.props;
     <title>{titleTag}</title>
   </head>
   <body>
-    <Header />
+    <Header activePage={pagename} />
     <slot />
     <Footer />
   </body>

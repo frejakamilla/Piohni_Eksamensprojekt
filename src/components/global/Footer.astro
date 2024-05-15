@@ -1,5 +1,109 @@
 ---
+import Image from "astro/components/Image.astro";
+import SecondaryLogo from "../../assets/images/global/LogoSecondary.png";
+import InputField from "../atoms/InputField.astro";
 ---
 
-<footer></footer>
-<style></style>
+<footer>
+  <div id="footer_content">
+    <div class="FooterColumn">
+      <p class="Typo-footer-headline">GET 10% OFF</p>
+      <p class="Typo-body-regular footerText">Never miss any special offers or free shipping as a member of the house.</p>
+      <form action="" id="NewsletterForm">
+        <InputField inputId="NewsletterSignUp" type="email" autocomplete="email" placeholder="E-mail" />
+        <input type="submit" value="Subscribe" class="button Typo-button_label" id="formButton" />
+      </form>
+    </div>
+    <div id="FooterLogo" class="FooterColumn">
+      <Image src={SecondaryLogo} alt="piohní logo" />
+    </div>
+    <div id="FooterMenu" class="FooterColumn">
+      <p class="Typo-footer-headline">menu</p>
+      <div class="links_container">
+        <a href="" class="footerLink Typo-footer-link">Shop</a>
+        <a href="" class="footerLink Typo-footer-link">B2B</a>
+        <a href="" class="footerLink Typo-footer-link">Privacy Policy</a>
+        <a href="" class="footerLink Typo-footer-link">Terms & Conditions</a>
+        <a href="" class="footerLink Typo-footer-link">Kontrolrapport</a>
+        <!-- Indsæt links her -->
+      </div>
+    </div>
+    <div id="Welcome" class="FooterColumn">
+      <p class="Typo-footer-headline">welcome</p>
+      <p class="Typo-body-regular footerText">Life can be super busy and overwhelming.<br />We think you deserve to feel good with the best matcha powder from Japan.</p>
+      <p class="Typo-footer-link footerText">Creamy — Calming — Not bitter.</p>
+    </div>
+  </div>
+  <div id="someLinks_container">
+    <a href="https://www.instagram.com/piohni" class="SoMeLink" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" class="SoMeIcon">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M10 2.43994C7.8275 2.43994 7.555 2.44911 6.70167 2.48827C5.85 2.52661 5.26833 2.66244 4.76 2.85994C4.22631 3.06077 3.74286 3.37558 3.34333 3.78244C2.9362 4.1819 2.62109 4.66536 2.42 5.19911C2.2225 5.70827 2.08667 6.29077 2.04833 7.14161C2.00833 7.99494 2 8.26661 2 10.4399C2 12.6124 2.00917 12.8849 2.04833 13.7383C2.08667 14.5899 2.2225 15.1716 2.42 15.6799C2.62085 16.2136 2.93566 16.6971 3.3425 17.0966C3.7875 17.5424 4.23417 17.8158 4.75917 18.0199C5.26833 18.2174 5.85 18.3533 6.70083 18.3916C7.555 18.4308 7.8275 18.4399 10 18.4399C12.1725 18.4399 12.445 18.4308 13.2983 18.3916C14.15 18.3533 14.7317 18.2174 15.24 18.0199C15.7737 17.8191 16.2571 17.5043 16.6567 17.0974C17.0638 16.698 17.3789 16.2145 17.58 15.6808C17.7775 15.1716 17.9133 14.5891 17.9517 13.7391C17.9908 12.8849 18 12.6124 18 10.4399C18 8.26744 17.9908 7.99494 17.9517 7.14161C17.9125 6.28994 17.7775 5.70827 17.58 5.19994C17.3792 4.66627 17.0643 4.18281 16.6575 3.78327C16.2581 3.37612 15.7746 3.06101 15.2408 2.85994C14.7317 2.66244 14.1492 2.52661 13.2983 2.48827C12.445 2.44827 12.1733 2.43994 10 2.43994ZM10 3.88161C12.1358 3.88161 12.3892 3.88994 13.2333 3.92827C14.0125 3.96327 14.4358 4.09411 14.7183 4.20327C15.0917 4.34827 15.3583 4.52161 15.6383 4.80161C15.9183 5.08161 16.0917 5.34827 16.2367 5.72161C16.3458 6.00327 16.4758 6.42744 16.5117 7.20744C16.55 8.05077 16.5583 8.30411 16.5583 10.4399C16.5583 12.5758 16.55 12.8291 16.5117 13.6733C16.4758 14.4524 16.3458 14.8766 16.2367 15.1583C16.1082 15.5059 15.9035 15.8203 15.6375 16.0783C15.3796 16.3439 15.0656 16.5483 14.7183 16.6766C14.4358 16.7858 14.0125 16.9166 13.2325 16.9516C12.3892 16.9899 12.1358 16.9983 9.99917 16.9983C7.86333 16.9983 7.61083 16.9899 6.7675 16.9516C5.9875 16.9166 5.56333 16.7858 5.28167 16.6766C4.93414 16.5484 4.61977 16.344 4.36167 16.0783C4.09598 15.8202 3.89152 15.5058 3.76333 15.1583C3.65417 14.8766 3.52333 14.4524 3.48833 13.6724C3.44917 12.8291 3.44167 12.5758 3.44167 10.4399C3.44167 8.30411 3.45 8.05077 3.48833 7.20661C3.52333 6.42744 3.65417 6.00411 3.76333 5.72161C3.90833 5.34827 4.08167 5.08161 4.36167 4.80161C4.61977 4.53592 4.93414 4.33146 5.28167 4.20327C5.56333 4.09411 5.9875 3.96327 6.7675 3.92827C7.61083 3.88994 7.86417 3.88161 10 3.88161ZM10 13.1066C9.29276 13.1066 8.61448 12.8257 8.11438 12.3256C7.61428 11.8255 7.33333 11.1472 7.33333 10.4399C7.33333 9.7327 7.61428 9.05442 8.11438 8.55432C8.61448 8.05423 9.29276 7.77327 10 7.77327C10.7072 7.77327 11.3855 8.05423 11.8856 8.55432C12.3857 9.05442 12.6667 9.7327 12.6667 10.4399C12.6667 11.1472 12.3857 11.8255 11.8856 12.3256C11.3855 12.8257 10.7072 13.1066 10 13.1066ZM10 6.33161C9.46049 6.33161 8.92625 6.43787 8.42781 6.64434C7.92936 6.8508 7.47646 7.15342 7.09497 7.53491C6.71348 7.9164 6.41086 8.3693 6.20439 8.86775C5.99793 9.3662 5.89167 9.90043 5.89167 10.4399C5.89167 10.9795 5.99793 11.5137 6.20439 12.0121C6.41086 12.5106 6.71348 12.9635 7.09497 13.345C7.47646 13.7265 7.92936 14.0291 8.42781 14.2355C8.92625 14.442 9.46049 14.5483 10 14.5483C11.0896 14.5483 12.1346 14.1154 12.905 13.345C13.6755 12.5745 14.1083 11.5295 14.1083 10.4399C14.1083 9.35034 13.6755 8.30537 12.905 7.53491C12.1346 6.76445 11.0896 6.33161 10 6.33161ZM15.23 6.16994C15.23 6.42455 15.1289 6.66873 14.9488 6.84876C14.7688 7.0288 14.5246 7.12994 14.27 7.12994C14.0154 7.12994 13.7712 7.0288 13.5912 6.84876C13.4111 6.66873 13.31 6.42455 13.31 6.16994C13.31 5.91533 13.4111 5.67115 13.5912 5.49112C13.7712 5.31108 14.0154 5.20994 14.27 5.20994C14.5246 5.20994 14.7688 5.31108 14.9488 5.49112C15.1289 5.67115 15.23 5.91533 15.23 6.16994Z"
+          fill="#3D2D21"
+          fill-opacity="0.65"></path>
+      </svg></a
+    >
+    <a href="https://www.linkedin.com/company/piohni/" class="SoMeLink" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.12416 5.00495C6.12896 4.79678 6.09212 4.58975 6.01577 4.39602C5.93943 4.20229 5.82514 4.02578 5.67961 3.87685C5.53408 3.72792 5.36025 3.60958 5.16834 3.52879C4.97643 3.44799 4.7703 3.40637 4.56207 3.40637C4.35385 3.40637 4.14772 3.44799 3.95581 3.52879C3.76389 3.60958 3.59006 3.72792 3.44453 3.87685C3.29901 4.02578 3.18471 4.20229 3.10837 4.39602C3.03203 4.58975 2.99518 4.79678 2.99999 5.00495C2.99518 5.21313 3.03203 5.42016 3.10837 5.61389C3.18471 5.80761 3.29901 5.98413 3.44453 6.13306C3.59006 6.28199 3.76389 6.40033 3.95581 6.48112C4.14772 6.56192 4.35385 6.60354 4.56207 6.60354C4.7703 6.60354 4.97643 6.56192 5.16834 6.48112C5.36025 6.40033 5.53408 6.28199 5.67961 6.13306C5.82514 5.98413 5.93943 5.80761 6.01577 5.61389C6.09212 5.42016 6.12896 5.21313 6.12416 5.00495ZM5.90999 16.44H3.21416V7.75662H5.90999V16.44ZM10.1833 7.75662H7.60082V16.44H10.2908V12.145C10.2908 11.0116 10.505 9.91495 11.9075 9.91495C13.2892 9.91495 13.3075 11.21 13.3075 12.2175V16.44H16V11.6775C16 9.33912 15.4958 7.54162 12.7692 7.54162C11.4583 7.54162 10.5783 8.26079 10.2192 8.94412H10.1825V7.75662H10.1833Z"
+          fill="#3D2D21"
+          fill-opacity="0.65"></path>
+      </svg></a
+    >
+  </div>
+</footer>
+<style>
+  footer {
+    display: flex;
+    width: 1440px;
+    padding: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    background-color: var(--Color-Background-Seconday);
+  }
+  #footer_content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  #someLinks_container {
+    display: flex;
+    gap: 32px;
+  }
+
+  .FooterColumn,
+  #NewsletterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 380px;
+  }
+
+  .links_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footerText {
+    color: var(--Color-Text-Body-Transparent);
+  }
+
+  .footerLink:hover {
+    text-decoration: underline;
+  }
+  #formButton {
+    background-color: var(--Color-Fill-Button-Teritary);
+    border: none;
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
+    color: var(--Color-Text-White);
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+const { headline, subhedline, buttonText, showButton } = Astro.props;
+import Button from "../atoms/Button.astro";
+---
+
+<div id="headline_section">
+  <div id="headlines">
+    <h1 id="pageHeadline" class="Typo-headline-medium-uppercase">{headline}</h1>
+    <h2 id="pageSubHeadline" class="Typo-headline-sub-headline">{subhedline}</h2>
+  </div>
+  <div class="buttonContainer" has-button={showButton}>
+    <Button label={buttonText} style="teritary" href="" />
+    <!-- Husk at indsætte link til knap -->
+  </div>
+</div>
+
+<style>
+  #headline_section {
+    width: 100%;
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  #headlines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #pageHeadline {
+    text-align: center;
+  }
+  #pageSubHeadline {
+    max-width: 865px;
+    text-align: center;
+  }
+  /* ----------- Variants ----------- */
+  /* HasButton = true */
+  [has-button="true"] {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  /* HasButton = true */
+  [has-button="false"] {
+    display: none;
+  }
+</style>

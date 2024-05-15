@@ -1,9 +1,96 @@
 ---
+// import PrimaryLogo from "../../assets/images/global/logoPrimary";
 import AnnouncementBar from "./AnnouncementBar.astro";
-import Navbar from "./Navbar.astro";
+const { activePage } = Astro.props;
 ---
 
 <header>
   <AnnouncementBar />
-  <Navbar />
+  <div id="Navbar">
+    <div id="logo_container">
+      <!-- <Image src={PrimaryLogo} alt="piohní logo" /> -->
+    </div>
+    <div id="NavMenu" active-navItem={activePage}>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">Shop</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">about matcha</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">recipes</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">partners</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">events</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">b2b</a></div>
+      <div class="NavItem"><a href="" class="NavLink Typo-navigation">about piohní</a></div>
+    </div>
+  </div>
+  <div id="shopIcons">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <path
+        d="M10.364 3.50001C9.38979 3.48866 8.42301 3.67074 7.51967 4.03569C6.61634 4.40065 5.7944 4.94124 5.10148 5.62613C4.40856 6.31102 3.85843 7.1266 3.48297 8.02562C3.10751 8.92465 2.91418 9.88924 2.91418 10.8635C2.91418 11.8378 3.10751 12.8024 3.48297 13.7014C3.85843 14.6004 4.40856 15.416 5.10148 16.1009C5.7944 16.7858 6.61634 17.3264 7.51967 17.6913C8.42301 18.0563 9.38979 18.2384 10.364 18.227C12.3021 18.2044 14.1531 17.4187 15.5156 16.0402C16.8781 14.6617 17.6422 12.8017 17.6422 10.8635C17.6422 8.92532 16.8781 7.06528 15.5156 5.68681C14.1531 4.30834 12.3021 3.5226 10.364 3.50001Z"
+        stroke="#3D2D21"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></path>
+      <path d="M15.8571 16.358L21.0001 21.501" stroke="#3D2D21" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <path
+        d="M7.5 8.75V7.25C7.5 6.05653 7.97411 4.91193 8.81802 4.06802C9.66193 3.22411 10.8065 2.75 12 2.75C13.1935 2.75 14.3381 3.22411 15.182 4.06802C16.0259 4.91193 16.5 6.05653 16.5 7.25V8.75M4.75 8.75C4.55109 8.75 4.36032 8.82902 4.21967 8.96967C4.07902 9.11032 4 9.30109 4 9.5L3 19.625C3 21.043 4.207 22.25 5.625 22.25H18.375C19.793 22.25 21 21.101 21 19.684L20 9.5C20 9.30109 19.921 9.11032 19.7803 8.96967C19.6397 8.82902 19.4489 8.75 19.25 8.75H4.75Z"
+        stroke="#3D2D21"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </div>
 </header>
+
+<style>
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+  }
+
+  #NavMenu {
+    display: flex;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+  .NavItem {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+  }
+  .NavItem:hover {
+    border-bottom: 2px solid var(--Color-Fill-Icon-transparent);
+  }
+
+  #shopIcons {
+    display: flex;
+    gap: 20px;
+  }
+  /* ----------- Variants ----------- */
+  /* HasButton = true */
+  [active-navItem="shop"] .NavItem:nth-child(1) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="about-matcha"] .NavItem:nth-child(2) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="recipes"] .NavItem:nth-child(3) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="partners"] .NavItem:nth-child(4) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="events"] .NavItem:nth-child(5) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="b2b"] .NavItem:nth-child(6) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+  [active-navItem="about-piohni"] .NavItem:nth-child(7) {
+    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+  }
+</style>

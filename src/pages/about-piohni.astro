@@ -3,12 +3,13 @@ import Image from "astro/components/Image.astro";
 import image1 from "../assets/images/matcha/flatlay01.png";
 import Arisholm from "../assets/images/events/Arisholm.png";
 import Quote from "../assets/images/graphics/JohanneQuote.svg";
+import Button from "../components/atoms/Button.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout titleTag="" pagename="about-piohni">
   <main>
-    <div id="AboutSection">
+    <section id="AboutSection">
       <div class="AboutRow">
         <div class="AboutColumn">
           <h1 class="headline Typo-headline-medium-uppercase">About Piohní</h1>
@@ -48,7 +49,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <section id="WhyPartnerSection">
+      <div class="ImageContainer">
+        <Image src={image1} alt="matcha powder in spoon" class="image" />
+      </div>
+      <div class="WhyColumn">
+        <p class="Typo-headline-medium-uppercase">Whant to partner with piohní ?</p>
+        <p class="Typo-body-large">
+          We supply our specialty quality matcha to hotels and cafés worldwide. <br />
+          <br />By partnering with us, you gain access to premium matcha products, expert training in matcha making, and a range of matcha-ware and equipment to enhance your offerings. Plus, unlock the opportunity to host unique matcha-themed events
+          that will captivate your customers and set your establishment apart. <br />
+          <br />Join us in the pursuit of matcha excellence and elevate your business to new heights.
+        </p>
+        <div class="button_container">
+          <Button style="teritary" label="Partner with Piohní" href="/b2b" />
+          <Button style="secondary" label="Plan your next event with Piohní" href="/events" />
+        </div>
+      </div>
+    </section>
   </main>
 
   <style>
@@ -95,7 +114,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       gap: 8px;
     }
     .aboutImage {
-      aspect-ratio: 500/607;
+      aspect-ratio: 500 / 607;
+    }
+
+    #WhyPartnerSection {
+      display: flex;
+      width: 100vw;
+      gap: 40px;
+      background: var(--Color-Background-Seconday, #f7f2ef);
+      overflow: hidden;
+      height: max-content;
+    }
+    #WhyPartnerSection .ImageContainer {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .WhyColumn {
+      display: flex;
+      padding: 40px var(--Spacing-Huge2, 80px) 40px 0px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+    }
+    .button_container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
   </style>
 </BaseLayout>

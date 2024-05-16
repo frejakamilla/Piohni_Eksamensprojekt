@@ -2,15 +2,17 @@
 import Image from "astro/components/Image.astro";
 import MatchaBar from "../assets/images/events/MatchaBar.jpg";
 import Masterclass from "../assets/images/events/Masterclass.webp";
+import Mothersday from "../assets/images/events/Mothersday.png";
+import SeurmWorkshop from "../assets/images/events/SerumWorkshop.jpg";
+
+import SJJ from "../assets/images/events/SJJ.png";
 import Arisholm from "../assets/images/events/Arisholm.png";
 import AudoNight from "../assets/images/events/AudoNight.png";
 import CPHFW from "../assets/images/events/CPHFW.png";
-import Mothersday from "../assets/images/events/Mothersday.png";
-import SJJ from "../assets/images/events/SJJ.png";
-import SeurmWorkshop from "../assets/images/events/SerumWorkshop.jpg";
 import SohoHouse from "../assets/images/events/SohoHouse.png";
 import SohoXmas from "../assets/images/events/SohoXmas.png";
 import TheMuses from "../assets/images/events/TheMuses.png";
+
 import FormSection from "../components/sections/FormSection.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -20,7 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main>
     <HeadlineSection
       headline="Matcha events for all occasions."
-      subhedline="Discover the versatility of Piohní matcha at your next event!<br>Whether it's a cozy gathering or a grand celebration, we offer a range of pre-made concepts like Piohní Matcha bar, Matcha Masterclass and aur Matcha serum workshop.<br>But don't let your imagination stop there! You can also create your own unique matcha-inspired event with us. Explore our previous events for inspiration and let us bring the magic of matcha to your occasion."
+      subhedline="Discover the versatility of Piohní matcha at your next event! Whether it's a cozy gathering or a grand celebration, we offer a range of pre-made concepts. But don't let your imagination stop there! You can also create your own unique matcha-inspired event with us. Explore our previous events for inspiration and let us bring the magic of matcha to your occasion."
       buttonText="Plan your next event with Piohní"
       showButton="true"
     />
@@ -79,8 +81,85 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section id="PreviousEvents">
       <h3 class="Typo-headline-medium-uppercase">Previous events</h3>
       <div id="EventGrid">
-        <div class="Event">
-          <div class="EventHeadlines"><p class="SecondaryHeadline Typo-headline-xstrasmall-seconday"></p><h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase"></h4></div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Masterclass</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">AT SOHO HOUSE</h4>
+          </div>
+          <Image src={SohoHouse} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            Members of Soho House were treated to an immersive Piohní Masterclass, where they escaped into the wonderful world of matcha. They experienced the healing powers of our matcha firsthand as we guided them through the process of making a
+            creamy Piohní Matcha latte.
+          </p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Bar</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">PIOHNÍ x SJJ</h4>
+          </div>
+          <Image src={SJJ} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            The most exclusive jewelry needs only the best quality matcha. At our exclusive event, attendees savored our delightful matcha lattes while celebrating the launch of the SJJ Winter Collection. If you missed out, you can still catch a
+            glimpse of the event by <a href="https://www.instagram.com/reel/C0t41cwMU_h/?hl=en" target="_blank" class="Typo-link">clicking here</a>.
+          </p>
+        </div>
+        <div id="EventCTA">
+          <p class="fill">Do you have an idea for<br />a new Piohní event?</p>
+          <p class="CTA Typo-body-regular">Send us an email: hello@piohni.com</p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Cocktails</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">AUDO OPENING NIGHT</h4>
+          </div>
+          <Image src={AudoNight} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            Neighbors and guests who attended the opening night of Audo Restaurant inside Audo Hotel in Copenhagen were treated to our signature Piohní matcha lattes and cocktails. It was a delightful evening of community and celebration, where our
+            cherished partnership truly shined.
+          </p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Bar</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">PIOHNÍ x THE MUSES</h4>
+          </div>
+          <Image src={TheMuses} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            Guests at Illumination, The Vacation Retreat with Amanda Norgaard have already indulged in our delicious matcha. Set against the picturesque backdrop of the iconic Marqi — One Strange Hotel in the mountains of Sintra, Portugal, it was a
+            sweet and intimate gathering filled with moments of joy and connection.
+          </p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Bar</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">ARISHOLM</h4>
+          </div>
+          <Image src={Arisholm} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            Piohní delighted 150 guests at the invite-only Arisholm showcase event at their Atelier in Hellerup with freshly prepared matcha lattes and matcha mocktails. It was a gathering filled with exquisite flavors and memorable moments, enjoyed
+            by all in attendance.
+          </p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Christmas with Piohní</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">Soho house</h4>
+          </div>
+          <Image src={SohoXmas} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            At the terrace at Soho House Copenhagen, attendees reveled in the festive spirit. While looking for the perfect Christmas gift, they enjoyed the calming sensation and taste of Piohní matcha amidst the holiday atmosphere.
+          </p>
+        </div>
+        <div class="EventCard">
+          <div class="EventHeadlines">
+            <p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Bar</p>
+            <h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">PIOHNÍ x CPHFW</h4>
+          </div>
+          <Image src={CPHFW} alt="event photo" class="EventImage image" />
+          <p class="EventInfo Typo-body-regular">
+            Piohní had the pleasure of being at the CPHFW NEWTALENT breakfast. We served our exquisite matcha lattes to all designers, press, and buyers at the invite-only showroom event during Copenhagen Fashion Week, creating a magical morning for
+            all attendees.
+          </p>
         </div>
       </div>
     </section>
@@ -166,4 +245,53 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     max-width: 433px;
   }
   /* Previous Section */
+
+  #EventGrid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 60px var(--Spacing-Huge1, 60px);
+    align-self: stretch;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #EventCTA {
+    display: flex;
+    width: 275px;
+    flex-direction: column;
+    gap: 20px;
+    align-self: stretch;
+  }
+  #EventCTA .fill {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px 16px;
+    background: var(--Color-Fill-step, #bad6eb);
+
+    color: var(--Color-Text-White, #fffffe);
+    text-align: center;
+    font-family: "Contralto Medium";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .EventCard {
+    display: flex;
+    width: 275px;
+    min-width: 260px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .EventImage {
+    width: 100%;
+    height: 100%;
+  }
 </style>

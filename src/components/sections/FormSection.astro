@@ -1,12 +1,12 @@
 ---
 import Form from "../molecules/Form.astro";
-const { headline, subhedline } = Astro.props;
+const { headline, subheadline } = Astro.props;
 ---
 
 <section id="form_section">
   <div id="formHeadings">
     <h2 id="formHeadline" class="Typo-headline-medium-uppercase">{headline}</h2>
-    <p id="formSubHeadline" class="Typo-headline-sub-headline">{subhedline}</p>
+    <p id="formSubHeadline" class="Typo-headline-sub-headline">{subheadline}</p>
   </div>
   <Form />
 </section>
@@ -28,6 +28,7 @@ const { headline, subhedline } = Astro.props;
   #formHeadline,
   #formSubHeadline {
     text-align: center;
+    max-width: 657px;
   }
   @media (min-width: 740px) {
     #form_section {

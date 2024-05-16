@@ -1,4 +1,5 @@
 ---
+import FormSection from "../components/sections/FormSection.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -12,5 +13,68 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       showButton="true"
     />
     <!-- Ret til så <br> ikke kommer ind i teksten men skifter linje istedet -->
+    <section id="eventConcepts">
+      <div class="eventConcept">
+        <div class="eventConceptHeadlines">
+          <h3 class="Typo-headline-xstrasmall-uppercase">PIOHNÍ MATCHA BAR</h3>
+          <p class="Typo-body-regular">Elevate your event with our live matcha bar — delicious and beautiful matcha lattes served by our matchamelier.</p>
+        </div>
+        <div class="eventConceptImage_container"></div>
+      </div>
+      <div class="eventConcept">
+        <div class="eventConceptHeadlines">
+          <h3 class="Typo-headline-xstrasmall-uppercase">MATCHA MASTERCLASS</h3>
+          <p class="Typo-body-regular">Learn how to prepare the perfect Piohní matcha. Dive in to the calming world of real Japanese matcha.</p>
+        </div>
+        <div class="eventConceptImage_container"></div>
+      </div>
+      <div class="eventConcept">
+        <div class="eventConceptHeadlines">
+          <h3 class="Typo-headline-xstrasmall-uppercase">MATCHA SERUM WORKSHOP</h3>
+          <p class="Typo-body-regular">Say goodbye to winter skin woes as we unveil our weather-proof serum designed to keep your skin glowing all season long.</p>
+        </div>
+        <div class="eventConceptImage_container"></div>
+      </div>
+    </section>
+    <section id="UpCommingEvents"></section>
+    <section id="PreviousEvents"></section>
+    <FormSection
+      headline="let’s plan an event!"
+      subheadline="Elevate your event with Piohní matcha! Choose from our pre-made concepts like the Matcha Bar, Matcha Masterclass, or create your own unique matcha-inspired experience with us. Let's bring the magic of matcha to your occasion together!"
+    />
   </main>
 </BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    padding: var(--Spacing-Huge4, 120px) 0px 40px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Spacing-Huge4, 120px);
+  }
+
+  #eventConcepts {
+    display: flex;
+    width: 100%;
+    padding: 0px var(--Spacing-Huge2, 80px);
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--Spacing-Huge1, 60px);
+  }
+  .eventConcept {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: blanchedalmond;
+  }
+
+  .eventConceptHeadlines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+</style>

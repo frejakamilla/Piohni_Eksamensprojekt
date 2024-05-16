@@ -1,6 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
-import PrimaryLogo from "../../assets/images/global/logoPrimary.png";
+import PrimaryLogo from "../../assets/images/global/PrimaryLogo.png";
 import AnnouncementBar from "./AnnouncementBar.astro";
 const { activePage } = Astro.props;
 ---
@@ -8,18 +8,17 @@ const { activePage } = Astro.props;
 <header>
   <AnnouncementBar />
   <div id="NavBar">
-    <a href="" id="logo_container">
-      <Image src={PrimaryLogo} alt="piohní logo" />
+    <a href="/" id="logo_container">
+      <Image src={PrimaryLogo} alt="piohní logo" width="85" height="53" />
     </a>
     <div id="NavMenu" active-navItem={activePage}>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">Shop</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">about matcha</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">recipes</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">partners</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">events</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">b2b</a></div>
-      <div class="NavItem"><a href="" class="NavLink Typo-navigation">about piohní</a></div>
-      <!-- link til siderne -->
+      <div class="NavItem"><a href="/shop" class="NavLink Typo-navigation">Shop</a></div>
+      <div class="NavItem"><a href="/about-matcha" class="NavLink Typo-navigation">about matcha</a></div>
+      <div class="NavItem"><a href="/recipes" class="NavLink Typo-navigation">recipes</a></div>
+      <div class="NavItem"><a href="/partners" class="NavLink Typo-navigation">partners</a></div>
+      <div class="NavItem"><a href="/events" class="NavLink Typo-navigation">events</a></div>
+      <div class="NavItem"><a href="/b2b" class="NavLink Typo-navigation">b2b</a></div>
+      <div class="NavItem"><a href="/about-piohni" class="NavLink Typo-navigation">about piohní</a></div>
     </div>
     <div id="shopIcons">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">

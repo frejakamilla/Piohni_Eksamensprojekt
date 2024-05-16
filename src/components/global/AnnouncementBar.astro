@@ -1,2 +1,82 @@
 ---
 ---
+
+<div id="AnnouncementBar">
+  <div id="A1" class="Announcement slide-out-bottom"><p class="Typo-announcement">Creamy — Calming — Not bitter</p></div>
+  <div id="A2" class="Announcement slide-out-bottom"><p class="Typo-announcement">Free standard delivery on orders over 500 kr*</p></div>
+</div>
+
+<style>
+  #AnnouncementBar {
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--Color-Background-Accent);
+  }
+  .Announcement {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Color-Background-Accent);
+    position: absolute;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .slide-in-top {
+    animation: slide-in-top 0.8s ease-out both;
+  }
+  .slide-out-bottom {
+    animation: slide-out-bottom 0.8s ease-out forwards;
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-32px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out-bottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(32px);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  // Function to control the sliding animations
+  function slideAnnouncements() {
+    const announcements = document.querySelectorAll(".Announcement");
+    announcements.forEach((announcement, index) => {
+      setTimeout(() => {
+        announcement.classList.remove("slide-out-bottom");
+        announcement.classList.add("slide-in-top");
+        setTimeout(() => {
+          announcement.classList.remove("slide-in-top");
+          announcement.classList.add("slide-out-bottom");
+        }, 3000); // Adjust the delay between animations
+      }, index * 3000); // Adjust the delay between announcements
+    });
+
+    // Call the function recursively after all announcements have been animated
+    setTimeout(slideAnnouncements, announcements.length * 3000);
+  }
+
+  // Call the function initially
+  slideAnnouncements();
+</script>

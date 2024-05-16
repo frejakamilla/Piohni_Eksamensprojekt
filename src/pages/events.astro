@@ -1,4 +1,16 @@
 ---
+import Image from "astro/components/Image.astro";
+import MatchaBar from "../assets/images/events/MatchaBar.jpg";
+import Masterclass from "../assets/images/events/Masterclass.webp";
+import Arisholm from "../assets/images/events/Arisholm.png";
+import AudoNight from "../assets/images/events/AudoNight.png";
+import CPHFW from "../assets/images/events/CPHFW.png";
+import Mothersday from "../assets/images/events/Mothersday.png";
+import SJJ from "../assets/images/events/SJJ.png";
+import SeurmWorkshop from "../assets/images/events/SerumWorkshop.jpg";
+import SohoHouse from "../assets/images/events/SohoHouse.png";
+import SohoXmas from "../assets/images/events/SohoXmas.png";
+import TheMuses from "../assets/images/events/TheMuses.png";
 import FormSection from "../components/sections/FormSection.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -19,26 +31,61 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h3 class="Typo-headline-xstrasmall-uppercase">PIOHNÍ MATCHA BAR</h3>
           <p class="Typo-body-regular">Elevate your event with our live matcha bar — delicious and beautiful matcha lattes served by our matchamelier.</p>
         </div>
-        <div class="eventConceptImage_container"></div>
+        <div class="eventConceptImage_container"><Image src={MatchaBar} alt="Piohní Matcha Bar" class="eventConceptImage" /></div>
+        <p class="eventDecription Typo-body-regular">
+          Picture the scene: guests delighting in the warmth of delicious matcha lattes expertly whisked by our matchamelier right before their eyes. This engaging experience not only brings vibrancy to your showcase but also garners significant
+          online attention for your event. Matcha – The most photogenic drink out there.
+        </p><a href="#EventFormSection" class="Typo-link">Plan your next event here</a>
       </div>
       <div class="eventConcept">
         <div class="eventConceptHeadlines">
           <h3 class="Typo-headline-xstrasmall-uppercase">MATCHA MASTERCLASS</h3>
           <p class="Typo-body-regular">Learn how to prepare the perfect Piohní matcha. Dive in to the calming world of real Japanese matcha.</p>
         </div>
-        <div class="eventConceptImage_container"></div>
+        <div class="eventConceptImage_container"><Image src={Masterclass} alt="Piohní Matcha Masterclass" class="eventConceptImage" /></div>
+        <p class="eventDecription Typo-body-regular">
+          Indulge in a serene 60-minute experience where you'll learn the art of preparing matcha, all while savoring sweet wagashi pairings that perfectly complement the nutty flavor of the matcha. As a special treat, receive a gift bag with your
+          very own matcha starter kit to recreate the experience at home: Sip, breathe out & relax.
+        </p><a href="#EventFormSection" class="Typo-link">Plan your next event here</a>
       </div>
       <div class="eventConcept">
         <div class="eventConceptHeadlines">
           <h3 class="Typo-headline-xstrasmall-uppercase">MATCHA SERUM WORKSHOP</h3>
           <p class="Typo-body-regular">Say goodbye to winter skin woes as we unveil our weather-proof serum designed to keep your skin glowing all season long.</p>
         </div>
-        <div class="eventConceptImage_container"></div>
+        <div class="eventConceptImage_container"><Image src={SeurmWorkshop} alt="Piohní Matcha Serum Workshop" class="eventConceptImage" /></div>
+        <p class="eventDecription Typo-body-regular">
+          Our exclusive Matcha Serum Workshop, in collaboration with health expert Nicole Punzi! Perfect for sensitive skin and those prone to redness or rosacea, this serum is your secret weapon for achieving a healthy, radiant complexion throughout
+          the winter months. An opportunity to learn and glow with us!
+        </p><a href="#EventFormSection" class="Typo-link">Plan your next event here</a>
       </div>
     </section>
-    <section id="UpCommingEvents"></section>
-    <section id="PreviousEvents"></section>
+    <section id="UpCommingEvents">
+      <h3 class="Typo-headline-medium-uppercase">Upcoming events</h3>
+      <div class="UpCommingEvent">
+        <div class="image_container">
+          <Image src={Mothersday} alt="matcha latte in a cup" class="image" />
+        </div>
+        <div class="UpCommingEventInfo">
+          <div class="EventHeadlines"><p class="SecondaryHeadline Typo-headline-xstrasmall-seconday">Matcha Brunch</p><h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase">mother’s day brunch X Audo</h4></div>
+          <p class="EventInfo Typo-body-regular">
+            Join us at Audo Restaurant as we celebrate Mother's Day with a delightful Matcha Brunch. Together with Audo we've curated a special treat for you to enjoy, featuring a Honey Matcha Latte and a Chia Pudding infused with matcha and coconut.
+            And as a special mother’s day gift we’ve put together a little complimentary Matcha gift pouch for all attendees to bring home
+          </p>
+          <a href="https://shop.fresto.io/en/audo/events/ida53VKnO2bTBfZe5cwX" class="linkToForm Typo-link" target="_blank">Get your ticket here</a>
+        </div>
+      </div>
+    </section>
+    <section id="PreviousEvents">
+      <h3 class="Typo-headline-medium-uppercase">Previous events</h3>
+      <div id="EventGrid">
+        <div class="Event">
+          <div class="EventHeadlines"><p class="SecondaryHeadline Typo-headline-xstrasmall-seconday"></p><h4 class="PrimaryHeadline Typo-headline-xstrasmall-uppercase"></h4></div>
+        </div>
+      </div>
+    </section>
     <FormSection
+      SectionId="EventFormSection"
       headline="let’s plan an event!"
       subheadline="Elevate your event with Piohní matcha! Choose from our pre-made concepts like the Matcha Bar, Matcha Masterclass, or create your own unique matcha-inspired experience with us. Let's bring the magic of matcha to your occasion together!"
     />
@@ -53,7 +100,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     align-items: flex-start;
     gap: var(--Spacing-Huge4, 120px);
   }
-
+  /* Concepts Section */
   #eventConcepts {
     display: flex;
     width: 100%;
@@ -68,7 +115,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    background-color: blanchedalmond;
   }
 
   .eventConceptHeadlines {
@@ -77,4 +123,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     align-items: flex-start;
     gap: 8px;
   }
+
+  .eventConceptImage {
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 386/457;
+  }
+
+  /* Up Comming Section */
+  #UpCommingEvents,
+  #PreviousEvents {
+    display: flex;
+    width: 100%;
+    padding: 0px var(--Spacing-Huge2, 80px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .UpCommingEvent {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: fit-content;
+  }
+  .UpCommingEvent .image_container,
+  .UpCommingEvent .image_container .image {
+    width: 100%;
+    height: 100%;
+  }
+  .UpCommingEventInfo {
+    width: 100%;
+    display: flex;
+    padding: 20px 0px 20px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+  }
+  .eventInfo {
+    max-width: 433px;
+  }
+  /* Previous Section */
 </style>

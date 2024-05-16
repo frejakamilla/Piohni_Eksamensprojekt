@@ -18,6 +18,8 @@
 
   --Primitives-Color-WarmBlue-200: #dee5ed;
   --Primitives-Color-WarmBlue-400: #bad6eb;
+  --Primitives-Color-WarmBlue-500: #81a9c7;
+  --Primitives-Color-WarmBlue-600: #3f6e91;
   --Primitives-Color-WarmBlue-900: #051e30;
 
   --Primitives-Color-gray-100: #fafafa;
@@ -83,6 +85,7 @@
   --Color-Text-Headline: var(--Primitives-Color-Brown-800);
   --Color-Text-Navigation: var(--Primitives-Color-Brown-800);
   --Color-Text-White: var(--Primitives-Color-Sand-50);
+  --Color-Text-Hover: var(--Primitives-Color-WarmBlue-600);
 }
 
 body {
@@ -157,6 +160,9 @@ a {
   font-weight: 300;
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
+}
+.Typo-link:hover {
+  color: var(--Color-Text-Hover);
 }
 .Typo-list {
   font-size: 16px;
@@ -375,4 +381,8 @@ a {
 
 .button:disabled {
   background-color: var(--Color-Fill-Button-Diabled);
+}
+
+.image {
+  object-fit: cover;
 }

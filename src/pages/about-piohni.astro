@@ -1,7 +1,101 @@
 ---
+import Image from "astro/components/Image.astro";
+import image1 from "../assets/images/matcha/flatlay01.png";
+import Arisholm from "../assets/images/events/Arisholm.png";
+import Quote from "../assets/images/graphics/JohanneQuote.svg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout titleTag="" pagename="about-piohni">
-  <main></main>
+  <main>
+    <div id="AboutSection">
+      <div class="AboutRow">
+        <div class="AboutColumn">
+          <h1 class="headline Typo-headline-medium-uppercase">About Piohní</h1>
+          <div class="abouttext">
+            <h3 class="sectionHeader Typo-headline-xstrasmall-classic">Introducing Piohní:</h3>
+            <p class="Typo-body-regular">
+              Piohní was founded upon a quest for tranquility amidst the chaos of everyday life. Like the Midas touch of health, Piohní offers a moment of tranquility amidst the chaos of modern life. Our foundation centers on simplicity, grounded in
+              the belief that less is often more.<br />
+              <br />At the core of Piohní's philosophy lies a commitment to excellence. We proudly curate only the most exceptional ceremonial-grade matcha, meticulously sourced directly from the esteemed "Champagne" region of Japan. Renowned for its
+              pristine quality and unparalleled flavor profile, our matcha embodies a harmonious blend of creaminess and sweetness, without a trace of bitterness.
+            </p>
+            <div class="ImageContainer">
+              <Image src={Quote} alt="I sifted through 147 varieties of matcha in search of the perfect brew. Quote: founder, Johanne Cornelia" class="image" />
+            </div>
+          </div>
+        </div>
+        <div class="ImageContainer">
+          <Image src={image1} alt="matcha powder in spoon" class="image aboutImage" />
+        </div>
+      </div>
+      <div class="AboutRow">
+        <div class="ImageContainer">
+          <Image src={Arisholm} alt="matcha powder in spoon" class="image aboutImage" />
+        </div>
+        <div class="AboutColumn">
+          <h2 class="headline Typo-headline-medium-uppercase">About the founder</h2>
+          <div class="abouttext">
+            <h3 class="sectionHeader Typo-headline-xstrasmall-classic">The Founder's Journey:</h3>
+            <p class="Typo-body-regular">
+              My journey into the world of matcha began with a personal quest for peace. Recognizing the profound calmness matcha brought to my life, I was driven by the belief that everyone deserves to experience such serenity daily, not just
+              occasionally. However, I encountered a common issue: the matcha available often fell short, either lacking in quality or altogether absent from menus.<br /><br /> After two years of relentless exploration spanning the globe, I sifted through
+              147 varieties of matcha in search of the perfect brew. My journey led me to the verdant tea gardens nestled in the southernmost reaches of Japan, where I discovered the ultimate matcha – a blend that transcended all others in taste and quality.<br
+              /><br />
+              Today, Piohní stands as a beacon of serenity, offering authentic Japanese matcha that warms the heart and soothes the soul. Join us in savoring the simple joys of life, one cup of matcha at a time.
+            </p>
+            <p class="Typo-signature">Warm regards, <br />Johanne Cornelia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    main {
+      display: flex;
+      padding: var(--Spacing-Huge4, 120px) 0px;
+      flex-direction: column;
+      align-items: center;
+      gap: 160px;
+    }
+    #AboutSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--Spacing-Huge2, 80px);
+    }
+    .AboutRow {
+      display: flex;
+      width: 1040px;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .AboutColumn,
+    .ImageContainer {
+      width: 100%;
+    }
+    .ImageContainer {
+      overflow: hidden;
+    }
+    .AboutColumn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .image {
+      height: 100%;
+      width: 100%;
+    }
+    .abouttext {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .aboutImage {
+      aspect-ratio: 500/607;
+    }
+  </style>
 </BaseLayout>

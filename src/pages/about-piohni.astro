@@ -51,11 +51,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
     <section id="WhyPartnerSection">
-      <div class="ImageContainer">
-        <Image src={image1} alt="matcha powder in spoon" class="image" />
+      <div class="WhyImageContainer">
+        <Image src={image1} alt="matcha powder in spoon" class="WhyImage" />
       </div>
       <div class="WhyColumn">
-        <p class="Typo-headline-medium-uppercase">Whant to partner with piohní ?</p>
+        <p class="Typo-headline-medium-uppercase">Want to partner with Piohní?</p>
         <p class="Typo-body-large">
           We supply our specialty quality matcha to hotels and cafés worldwide. <br />
           <br />By partnering with us, you gain access to premium matcha products, expert training in matcha making, and a range of matcha-ware and equipment to enhance your offerings. Plus, unlock the opportunity to host unique matcha-themed events
@@ -63,86 +63,116 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <br />Join us in the pursuit of matcha excellence and elevate your business to new heights.
         </p>
         <div class="button_container">
-          <Button style="teritary" label="Partner with Piohní" href="/b2b" />
+          <Button style="tertiary" label="Partner with Piohní" href="/b2b" />
           <Button style="secondary" label="Plan your next event with Piohní" href="/events" />
         </div>
       </div>
     </section>
   </main>
-
-  <style>
-    main {
-      display: flex;
-      padding: var(--Spacing-Huge4, 120px) 0px;
-      flex-direction: column;
-      align-items: center;
-      gap: 160px;
-    }
-    #AboutSection {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--Spacing-Huge2, 80px);
-    }
-    .AboutRow {
-      display: flex;
-      width: 1040px;
-      justify-content: flex-end;
-      align-items: flex-start;
-      gap: 40px;
-    }
-    .AboutColumn,
-    .ImageContainer {
-      width: 100%;
-    }
-    .ImageContainer {
-      overflow: hidden;
-    }
-    .AboutColumn {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .image {
-      height: 100%;
-      width: 100%;
-    }
-    .abouttext {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .aboutImage {
-      aspect-ratio: 500 / 607;
-    }
-
-    #WhyPartnerSection {
-      display: flex;
-      width: 100vw;
-      gap: 40px;
-      background: var(--Color-Background-Seconday, #f7f2ef);
-      overflow: hidden;
-      height: max-content;
-    }
-    #WhyPartnerSection .ImageContainer {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .WhyColumn {
-      display: flex;
-      padding: 40px var(--Spacing-Huge2, 80px) 40px 0px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-      width: 100%;
-    }
-    .button_container {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-  </style>
 </BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    padding: var(--Spacing-Huge4, 120px) 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 160px;
+  }
+  #AboutSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Spacing-Huge2, 80px);
+  }
+  .AboutRow {
+    display: flex;
+    width: 1040px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .AboutColumn,
+  .ImageContainer {
+    width: 100%;
+  }
+  .ImageContainer {
+    overflow: hidden;
+  }
+  .AboutColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+  .abouttext {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .aboutImage {
+    aspect-ratio: 500 / 607;
+  }
+
+  /* Why Partner section */
+  #WhyPartnerSection {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    background: var(--Color-Background-Secondary, #f7f2ef);
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  .WhyImageContainer {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .WhyImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .WhyColumn {
+    flex: 1 0 0;
+    padding: 40px var(--Spacing-Huge2, 80px) 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .button_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px 20px;
+    flex-wrap: wrap;
+  }
+</style>
+
+<script>
+  function adjustHeights() {
+    const whyColumn = document.querySelector(".WhyColumn") as HTMLElement;
+    const whyImageContainer = document.querySelector(".WhyImageContainer") as HTMLElement;
+    const whyImage = document.querySelector(".WhyImage") as HTMLElement;
+
+    if (whyColumn && whyImageContainer && whyImage) {
+      const columnHeight = whyColumn.clientHeight;
+      whyImageContainer.style.height = `${columnHeight}px`;
+      whyImage.style.height = `${columnHeight}px`;
+    }
+  }
+
+  window.addEventListener("load", adjustHeights);
+  window.addEventListener("resize", adjustHeights);
+</script>

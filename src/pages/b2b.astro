@@ -3,9 +3,11 @@ import Image from "astro/components/Image.astro";
 import image1 from "../assets/images/matcha/matcha-pour.jpg";
 import image2 from "../assets/images/matcha/matcha-and-cookie.jpg";
 import IcedMatcha from "../assets/images/matcha/IcedMatcha.webp";
+import IcedMatcha2 from "../assets/images/matcha/matcha-iced.jpg";
 import MatchaDessert from "../assets/images/matcha/matcha-dessert.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
+import Button from "../components/atoms/Button.astro";
 ---
 
 <BaseLayout titleTag="" pagename="b2b">
@@ -79,6 +81,24 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
         </div>
       </div>
     </section>
+    <section id="WhyPartner">
+      <div class="StretchImageContainer3">
+        <Image src={IcedMatcha2} alt="matcha powder in spoon" class="StretchImage3" />
+      </div>
+      <div class="TextColumn3">
+        <p class="Typo-headline-medium-uppercase">Why partner with piohní ?</p>
+        <p class="Typo-body-large">
+          We supply our specialty quality matcha to hotels and cafés worldwide. <br />
+          <br />By partnering with us, you gain access to premium matcha products, expert training in matcha making, and a range of matcha-ware and equipment to enhance your offerings. Plus, unlock the opportunity to host unique matcha-themed events
+          that will captivate your customers and set your establishment apart.<br />
+          <br />Join us in the pursuit of matcha excellence and elevate your business to new heights.
+        </p>
+        <div class="button_container">
+          <Button style="tertiary" label="Partner with Piohní" href="/b2b" />
+          <Button style="secondary" label="Plan your next event with Piohní" href="/events" />
+        </div>
+      </div>
+    </section>
 
     <style>
       main {
@@ -91,17 +111,17 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
       }
       /* Why Partner section */
       #ImageTextSection,
-      #TextImageSection {
+      #TextImageSection,
+      #WhyPartner {
         display: flex;
         align-items: flex-start;
         padding: 0px var(--Spacing-Huge2, 80px);
         gap: 40px;
-        overflow: hidden;
-        width: 100vw;
       }
 
       .StretchImageContainer,
-      .StretchImageContainer2 {
+      .StretchImageContainer2,
+      .StretchImageContainer3 {
         flex: 1 0 0;
         display: flex;
         align-items: center;
@@ -110,7 +130,8 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
       }
 
       .StretchImage,
-      .StretchImage2 {
+      .StretchImage2,
+      .StretchImage3 {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -118,7 +139,8 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
       }
 
       .TextColumn,
-      .TextColumn2 {
+      .TextColumn2,
+      .TextColumn3 {
         flex: 1 0 0;
         display: flex;
         flex-direction: column;
@@ -127,7 +149,8 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
       }
 
       .TextColumn2 .Typo-body-large,
-      .TextColumn .Typo-body-large {
+      .TextColumn .Typo-body-large,
+      .TextColumn3 .Typo-body-large {
         max-width: 700px;
       }
 
@@ -185,6 +208,13 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
         width: 100%;
         height: 100%;
       }
+
+      .button_container {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px 20px;
+        flex-wrap: wrap;
+      }
     </style>
 
     <script>
@@ -192,6 +222,7 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
         const sections = [
           { text: ".TextColumn", image: ".StretchImageContainer", imageChild: ".StretchImage" },
           { text: ".TextColumn2", image: ".StretchImageContainer2", imageChild: ".StretchImage2" },
+          { text: ".TextColumn3", image: ".StretchImageContainer3", imageChild: ".StretchImage3" },
         ];
 
         sections.forEach((section) => {

@@ -2,6 +2,8 @@
 import Image from "astro/components/Image.astro";
 import image1 from "../assets/images/matcha/matcha-pour.jpg";
 import image2 from "../assets/images/matcha/matcha-and-cookie.jpg";
+import IcedMatcha from "../assets/images/matcha/IcedMatcha.webp";
+import MatchaDessert from "../assets/images/matcha/matcha-dessert.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 ---
@@ -30,7 +32,7 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
     </section>
     <section id="TextImageSection">
       <div class="TextColumn2">
-        <p class="Typo-headline-medium-uppercase">What is piohní?</p>
+        <p class="Typo-headline-medium-uppercase">But why serve matcha?</p>
         <p class="Typo-body-large">
           Matcha isn't just a passing trend; it's a lifestyle embraced by millions, and its popularity is skyrocketing. With its great taste, versatility, and aesthetic appeal, matcha is a must-have addition to your menu. <br />
           <br />Not only does matcha offer a delicious flavour that customers crave, but it's also a versatile ingredient that can be used in both warm and cold drinks, as well as in cooking. Plus, its vibrant green colour makes it instantly
@@ -43,88 +45,170 @@ import HeadlineSection from "../components/sections/HeadlineSection.astro";
         <Image src={image2} alt="matcha powder in spoon" class="StretchImage2" />
       </div>
     </section>
+    <section id="MatchaRange">
+      <div class="sectionHeadlines">
+        <h2 class="Typo-headline-medium-uppercase">piohní for all your matcha needs</h2>
+        <p class="Typo-body-large">Matcha, similar to wine, comes in a variety of qualities and tastes. Selecting the right type of matcha depends on the taste desired and usage intended.</p>
+      </div>
+      <div id="RangeGrid">
+        <div class="Range">
+          <div class="RangeHeadlines">
+            <h3 class="Typo-headline-small-elegant">Matcha for beverages</h3>
+            <p class="Typo-body-regular">Our AAA+ Ceremonial Grade matcha is perfect to bew and drink with its naturally sweet and creamy taste, that is only obtained in the highest quality matcha.</p>
+          </div>
+          <div class="RangeImageContainer">
+            <Image src={IcedMatcha} alt="matcha powder in spoon" class="RangeImage image" />
+          </div>
+          <p class="Typo-body-regular">
+            Celebrated for its luscious and sweet taste profile, this AAA+ ceremonial grade is the finest of its kind. Made by only the topmost baby leaves, it has a beautiful deep green colour. The enticing aroma has fresh, natural top notes almost
+            similar to the scent of white chocolate, which contests its complex, round taste and heightened mildness. It is the matcha sort with the least bitterness, making it a buttery-sweet brew on its own.
+          </p>
+        </div>
+        <div class="Range">
+          <div class="RangeHeadlines">
+            <h3 class="Typo-headline-small-elegant">Matcha for culinary creations</h3>
+            <p class="Typo-body-regular">Our Pattiserie-grade Yumi 友美 matcha is superb in desserts, ice-cream, treats, smoothies, baked goods, chocolate, and many other culinary creations.</p>
+          </div>
+          <div class="RangeImageContainer">
+            <Image src={MatchaDessert} alt="matcha powder in spoon" class="RangeImage image" />
+          </div>
+          <p class="Typo-body-regular">
+            This matcha offers a full-flavoured and harmonious brew. With well-defined flavour profile and harmonious nuances of earthy and umami notes, it serves as the perfect way to cut through sweet treats and culinary creations. Our Yumi matcha
+            comes in bags of 500g and gives a delicious and rich 'matcha flavour' for chefs and artisans to create magic with.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      main {
+        display: flex;
+        width: 100vw;
+        padding: var(--Spacing-Huge4, 120px) 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: 164px;
+      }
+      /* Why Partner section */
+      #ImageTextSection,
+      #TextImageSection {
+        display: flex;
+        align-items: flex-start;
+        padding: 0px var(--Spacing-Huge2, 80px);
+        gap: 40px;
+        overflow: hidden;
+        width: 100vw;
+      }
+
+      .StretchImageContainer,
+      .StretchImageContainer2 {
+        flex: 1 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .StretchImage,
+      .StretchImage2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .TextColumn,
+      .TextColumn2 {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .TextColumn2 .Typo-body-large,
+      .TextColumn .Typo-body-large {
+        max-width: 700px;
+      }
+
+      .button_container {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px 20px;
+        flex-wrap: wrap;
+      }
+
+      /* Matcha range */
+
+      #MatchaRange {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 100%;
+        padding: 40px var(--Spacing-Huge2, 80px);
+        gap: 40px;
+      }
+      .sectionHeadlines {
+        max-width: 660px;
+      }
+      #RangeGrid {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+      }
+      .Range {
+        background: var(--Color-Background-Seconday, #f7f2ef);
+        display: flex;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        flex: 1 0 0;
+      }
+      .RangeHeadlines {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+      }
+
+      .RangeImageContainer {
+        aspect-ratio: 6 / 4;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+      .RangeImage {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <script>
+      function adjustHeights() {
+        const sections = [
+          { text: ".TextColumn", image: ".StretchImageContainer", imageChild: ".StretchImage" },
+          { text: ".TextColumn2", image: ".StretchImageContainer2", imageChild: ".StretchImage2" },
+        ];
+
+        sections.forEach((section) => {
+          const TextColumn = document.querySelector(section.text) as HTMLElement;
+          const StretchImageContainer = document.querySelector(section.image) as HTMLElement;
+          const StretchImage = document.querySelector(section.imageChild) as HTMLElement;
+
+          if (TextColumn && StretchImageContainer && StretchImage) {
+            const columnHeight = TextColumn.clientHeight;
+            StretchImageContainer.style.height = `${columnHeight}px`;
+            StretchImage.style.height = `${columnHeight}px`;
+          }
+        });
+      }
+
+      window.addEventListener("load", adjustHeights);
+      window.addEventListener("resize", adjustHeights);
+    </script>
   </main>
 </BaseLayout>
-
-<style>
-  main {
-    display: flex;
-    width: 100vw;
-    padding: var(--Spacing-Huge4, 120px) 0px;
-    flex-direction: column;
-    align-items: center;
-    gap: 164px;
-  }
-  /* Why Partner section */
-  #ImageTextSection,
-  #TextImageSection {
-    display: flex;
-    align-items: flex-start;
-    padding: 0px var(--Spacing-Huge2, 80px);
-    gap: 40px;
-    overflow: hidden;
-    width: 100vw;
-  }
-
-  .StretchImageContainer,
-  .StretchImageContainer2 {
-    flex: 1 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .StretchImage,
-  .StretchImage2 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .TextColumn,
-  .TextColumn2 {
-    flex: 1 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .TextColumn2 .Typo-body-large,
-  .TextColumn .Typo-body-large {
-    max-width: 700px;
-  }
-
-  .button_container {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px 20px;
-    flex-wrap: wrap;
-  }
-</style>
-
-<script>
-  function adjustHeights() {
-    const sections = [
-      { text: ".TextColumn", image: ".StretchImageContainer", imageChild: ".StretchImage" },
-      { text: ".TextColumn2", image: ".StretchImageContainer2", imageChild: ".StretchImage2" },
-    ];
-
-    sections.forEach((section) => {
-      const TextColumn = document.querySelector(section.text) as HTMLElement;
-      const StretchImageContainer = document.querySelector(section.image) as HTMLElement;
-      const StretchImage = document.querySelector(section.imageChild) as HTMLElement;
-
-      if (TextColumn && StretchImageContainer && StretchImage) {
-        const columnHeight = TextColumn.clientHeight;
-        StretchImageContainer.style.height = `${columnHeight}px`;
-        StretchImage.style.height = `${columnHeight}px`;
-      }
-    });
-  }
-
-  window.addEventListener("load", adjustHeights);
-  window.addEventListener("resize", adjustHeights);
-</script>

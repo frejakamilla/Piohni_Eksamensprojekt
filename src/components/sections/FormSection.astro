@@ -1,9 +1,9 @@
 ---
 import Form from "../molecules/Form.astro";
-const { headline, subheadline, SectionId } = Astro.props;
+const { headline, subheadline, SectionId, hasBackground } = Astro.props;
 ---
 
-<section id={SectionId} class="form_section">
+<section id={SectionId} class="form_section" color-variant={hasBackground}>
   <div id="formHeadings">
     <h2 id="formHeadline" class="Typo-headline-medium-uppercase">{headline}</h2>
     <p id="formSubHeadline" class="Typo-headline-sub-headline">{subheadline}</p>
@@ -35,5 +35,13 @@ const { headline, subheadline, SectionId } = Astro.props;
     #form_section {
       padding: var(--Spacing-Huge2, 80px) var(--Spacing-Huge2, 80px) var(--Spacing-Huge4, 120px) var(--Spacing-Huge2, 80px);
     }
+  }
+
+  /* ----------- Variants ----------- */
+
+  /* With background */
+  [color-variant="true"] {
+    background-color: var(--Color-Background-Secondary);
+    padding: 40px 80px;
   }
 </style>

@@ -45,7 +45,7 @@
   /* Background colors */
   --Color-Background-Accent: var(--Primitives-Color-WarmBlue-400);
   --Color-Background-Primary: var(--Primitives-Color-Sand-100);
-  --Color-Background-Seconday: var(--Primitives-Color-Sand-200);
+  --Color-Background-Secondary: var(--Primitives-Color-Sand-200);
 
   /* Effect colors */
   --Color-Effect-Dropshadow-Button-Default: var(--Primitives-Color-Brown-500-25t);
@@ -56,8 +56,8 @@
   /* Button colors */
   --Color-Fill-Button-Disabled: var(--Primitives-Color-gray-100);
   --Color-Fill-Button-Primary: var(--Primitives-Color-Sand-200);
-  --Color-Fill-Button-Seconday: var(--Primitives-Color-Sand-50);
-  --Color-Fill-Button-Teritary: var(--Primitives-Color-Brown-500);
+  --Color-Fill-Button-Secondary: var(--Primitives-Color-Sand-50);
+  --Color-Fill-Button-Tertiary: var(--Primitives-Color-Brown-500);
 
   /* Icon colors */
   --Color-Fill-Icon-Disabled: var(--Primitives-Color-gray-400);

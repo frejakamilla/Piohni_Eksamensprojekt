@@ -1,7 +1,130 @@
 ---
+import Image from "astro/components/Image.astro";
+import image1 from "../assets/images/matcha/matcha-pour.jpg";
+import image2 from "../assets/images/matcha/matcha-and-cookie.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeadlineSection from "../components/sections/HeadlineSection.astro";
 ---
 
 <BaseLayout titleTag="" pagename="b2b">
-  <main></main>
+  <main>
+    <HeadlineSection
+      headline="Elevate your menu with Piohní matcha"
+      subhedline="Enhance Your Business with Piohní Matcha: Elevate Your Menu and Delight Your Customers with the Exquisite Flavour, Premium Quality, and Health Benefits of Authentic Japanese Matcha."
+      buttonText="Get Piohní matcha for your business"
+      showButton="true"
+    />
+    <section id="ImageTextSection">
+      <div class="StretchImageContainer">
+        <Image src={image1} alt="matcha powder in spoon" class="StretchImage" />
+      </div>
+      <div class="TextColumn">
+        <p class="Typo-headline-medium-uppercase">What is piohní?</p>
+        <p class="Typo-body-large">
+          Piohní offers quality in ceremonial-grade matcha sourced directly from Japan's renowned "Champagne" region. Our matcha embodies a perfect balance of creaminess and sweetness, without a hint of bitterness, and boasts a vibrant green colour
+          indicative of its superior quality. <br />
+          <br />By partnering with us, you attract loyal customers who appreciate superior taste and generate social media buzz with our signature creamy flavor and exclusive events.
+        </p>
+        <a href="#" class="Typo-link-large">Let’s work together</a>
+      </div>
+    </section>
+    <section id="TextImageSection">
+      <div class="TextColumn2">
+        <p class="Typo-headline-medium-uppercase">What is piohní?</p>
+        <p class="Typo-body-large">
+          Matcha isn't just a passing trend; it's a lifestyle embraced by millions, and its popularity is skyrocketing. With its great taste, versatility, and aesthetic appeal, matcha is a must-have addition to your menu. <br />
+          <br />Not only does matcha offer a delicious flavour that customers crave, but it's also a versatile ingredient that can be used in both warm and cold drinks, as well as in cooking. Plus, its vibrant green colour makes it instantly
+          instaworthy, guaranteeing social media shares and increased visibility for your business.<br /><br />By offering matcha, you're not just providing a beverage; you're offering an experience that keeps customers coming back for more. So why
+          wait?<br />Join the matcha movement and watch your business thrive!
+        </p>
+        <a href="#" class="Typo-link-large">Let’s work together</a>
+      </div>
+      <div class="StretchImageContainer2">
+        <Image src={image2} alt="matcha powder in spoon" class="StretchImage2" />
+      </div>
+    </section>
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    width: 100vw;
+    padding: var(--Spacing-Huge4, 120px) 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 164px;
+  }
+  /* Why Partner section */
+  #ImageTextSection,
+  #TextImageSection {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px var(--Spacing-Huge2, 80px);
+    gap: 40px;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  .StretchImageContainer,
+  .StretchImageContainer2 {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .StretchImage,
+  .StretchImage2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .TextColumn,
+  .TextColumn2 {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .TextColumn2 .Typo-body-large,
+  .TextColumn .Typo-body-large {
+    max-width: 700px;
+  }
+
+  .button_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px 20px;
+    flex-wrap: wrap;
+  }
+</style>
+
+<script>
+  function adjustHeights() {
+    const sections = [
+      { text: ".TextColumn", image: ".StretchImageContainer", imageChild: ".StretchImage" },
+      { text: ".TextColumn2", image: ".StretchImageContainer2", imageChild: ".StretchImage2" },
+    ];
+
+    sections.forEach((section) => {
+      const TextColumn = document.querySelector(section.text) as HTMLElement;
+      const StretchImageContainer = document.querySelector(section.image) as HTMLElement;
+      const StretchImage = document.querySelector(section.imageChild) as HTMLElement;
+
+      if (TextColumn && StretchImageContainer && StretchImage) {
+        const columnHeight = TextColumn.clientHeight;
+        StretchImageContainer.style.height = `${columnHeight}px`;
+        StretchImage.style.height = `${columnHeight}px`;
+      }
+    });
+  }
+
+  window.addEventListener("load", adjustHeights);
+  window.addEventListener("resize", adjustHeights);
+</script>

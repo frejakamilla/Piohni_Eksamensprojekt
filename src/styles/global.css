@@ -354,6 +354,9 @@ a {
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
+.Typo-link-large:hover {
+  color: var(--Color-Text-Hover);
+}
 .Typo-button-explainer {
   font-size: 10px;
   font-family: "Roboto", sans-serif;

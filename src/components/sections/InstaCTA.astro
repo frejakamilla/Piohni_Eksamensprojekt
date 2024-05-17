@@ -1,0 +1,74 @@
+---
+import Image from "astro/components/Image.astro";
+import image1 from "../../assets/images/instagram/437135769_17975928059690643_1568165159519572161_n.jpg";
+import image2 from "../../assets/images/instagram/matcha-brunch.png";
+import image3 from "../../assets/images/matcha/matcha-dessert.jpg";
+import image4 from "../../assets/images/instagram/435231047_17974737722690643_3806457038119157261_n.jpg";
+const { headline } = Astro.props;
+---
+
+<section>
+  <div class="headlines">
+    <h3 class="Typo-headline-medium-uppercase">{headline}</h3>
+    <p class="Typo-headline-sub-headline">Follow <a class="instaTag" href="https://www.instagram.com/piohni" target="_blank">@piohni</a> on Instagram, where we post news, events, behind the scenes and share your #mypiohnimoment</p>
+  </div>
+  <a href="https://www.instagram.com/piohni" target="_blank">
+    <div class="ImageGrid">
+      <div class="image1"><Image src={image1} alt="matcha powder in spoon" class="image" /></div>
+      <div class="image2-3"><div class="image2"><Image src={image2} alt="matcha powder in spoon" class="image" /></div><div class="image3"><Image src={image3} alt="matcha powder in spoon" class="image" /></div></div>
+      <div class="image4"><Image src={image4} alt="matcha powder in spoon" class="image" /></div>
+    </div>
+  </a>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .headlines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .headlines p {
+    max-width: 620px;
+    text-align: center;
+  }
+  .instaTag {
+    text-decoration: none;
+  }
+  .instaTag:hover {
+    color: var(--Color-Text-Hover);
+  }
+
+  .ImageGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    max-width: 1400px;
+  }
+  .image2-3 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .image1,
+  .image2,
+  .image3,
+  .image4 {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 6px white solid;
+  }
+
+  .image {
+    width: 100%;
+    object-fit: contain;
+  }
+</style>

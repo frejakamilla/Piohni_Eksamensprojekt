@@ -5,6 +5,21 @@ import image2 from "../assets/images/matcha/matcha-and-cookie.jpg";
 import IcedMatcha from "../assets/images/matcha/IcedMatcha.webp";
 import IcedMatcha2 from "../assets/images/matcha/matcha-iced.jpg";
 import MatchaDessert from "../assets/images/matcha/matcha-dessert.jpg";
+
+import GridImage1 from "../assets/images/matcha/matcha-coffee.jpg";
+import GridImage2 from "../assets/images/matcha/matcha.jpg";
+import GridImage3 from "../assets/images/matcha/matcha-iced-latte.jpg";
+import GridImage4 from "../assets/images/matcha/matcha-latte.png";
+import GridImage6 from "../assets/images/matcha/matcha-butter.jpg";
+import GridImage7 from "../assets/images/matcha/matcha-tea.jpg";
+import GridImage9 from "../assets/images/matcha/matcha-cake.jpg";
+import GridImage10 from "../assets/images/matcha/flatlay02.png";
+import GridImage11 from "../assets/images/recipes/matcha-gin-tonic.png";
+import GridImage12 from "../assets/images/instagram/435231047_17974737722690643_3806457038119157261_n.jpg";
+import GridImage13 from "../assets/images/matcha/matcha-and-cake.jpg";
+import GridImage14 from "../assets/images/matcha/matcha-foam.jpg";
+import GridImage15 from "../assets/images/matcha/Iced-Strawberry-Matcha-Latte01.png";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import Button from "../components/atoms/Button.astro";
@@ -96,6 +111,60 @@ import Button from "../components/atoms/Button.astro";
         <div class="button_container">
           <Button style="tertiary" label="Partner with Piohní" href="/b2b" />
           <Button style="secondary" label="Plan your next event with Piohní" href="/events" />
+        </div>
+      </div>
+    </section>
+    <section id="VersatillitySection">
+      <div class="VersatillityHeadlines">
+        <h3 class="Typo-headline-medium-uppercase">A versatile and aesthetic product</h3>
+        <p class="Typo-body-large">Piohní matcha is not only delicious and beautiful, it is versatile too!</p>
+      </div>
+      <Button style="secondary" label="Find matcha recipes" href="/recepies" />
+      <div id="InspoImageGrid">
+        <div class="GridImageContainer">
+          <Image src={GridImage1} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage2} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage3} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage4} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={image2} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage6} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage7} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={MatchaDessert} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage9} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage10} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage11} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage12} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage13} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage14} alt="" class="GridImage" />
+        </div>
+        <div class="GridImageContainer">
+          <Image src={GridImage15} alt="" class="GridImage" />
         </div>
       </div>
     </section>
@@ -214,6 +283,58 @@ import Button from "../components/atoms/Button.astro";
         align-items: flex-start;
         gap: 12px 20px;
         flex-wrap: wrap;
+      }
+      /* VersatillitySection */
+      #VersatillitySection {
+        display: flex;
+        width: 100%;
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        background: var(--Color-Fill-Button-Primary, #f7f2ef);
+      }
+      .VersatillityHeadlines {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      #InspoImageGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding: 0 12px;
+      }
+      .GridImageContainer {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: 100%;
+        grid-area: span 1;
+      }
+      .GridImageContainer:nth-child(n + 13) {
+        display: none;
+      }
+      .GridImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 520px) {
+        #InspoImageGrid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 699px) {
+        #InspoImageGrid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+        .GridImageContainer:nth-child(n + 13) {
+          display: block;
+        }
       }
     </style>
 

@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
-import recipeImage from "../../assets/images/recipes/matcha-latte.jpg";
-import recipeIllu from "../../assets/images/recipes/matcha-latte.jpg";
+import recipeImage from "../../assets/images/recipes/strawberry-matcha.png";
+import recipeIllu from "../../assets/images/recipes/illu3.svg";
 
 import "../../styles/recipes.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -13,19 +13,19 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
   <main>
     <section id="recipe_section">
       <div id="ingredient_section">
-        <RecipeIngredients recipeName="">
-          <li slot="ingredient1"></li>
-          <li slot="ingredient2"></li>
-          <li slot="ingredient3"></li>
-          <li slot="ingredient4"></li>
-          <li slot="ingredient5"></li>
-          <li slot="ingredient6"></li>
-          <li slot="ingredient7"></li>
-          <li slot="equipment1"></li>
-          <li slot="equipment2"></li>
-          <li slot="equipment3"></li>
-          <li slot="equipment4"></li>
-          <li slot="equipment5"></li>
+        <RecipeIngredients recipeName="Iced Strawberry Matcha latte" recipeType="Summer Recipe" ingredientNote="">
+          <li slot="ingredient1">2-3 Strawberries</li>
+          <li slot="ingredient2">0.5 dl Creamer or milk of choice</li>
+          <li slot="ingredient3">1.5 tsp Piohní Ceremonial matcha powder</li>
+          <li slot="ingredient4">0.5 dl Water 70ºC or 167ºF</li>
+          <li slot="ingredient5">1 dl milk (we are using oat milk)</li>
+          <li slot="ingredient6">maple syrup or other sweetener (optional)</li>
+          <li slot="ingredient7">Ice cubes</li>
+          <li slot="equipment1">Piohní matcha powder</li>
+          <li slot="equipment2">Matcha whisk</li>
+          <li slot="equipment3">Chawan bowl</li>
+          <li slot="equipment4">kettle or pot</li>
+          <li slot="equipment5">Blender</li>
         </RecipeIngredients>
         <div class="ImageContainer">
           <Image src={recipeImage} alt="" class="RecipeImage" />
@@ -35,7 +35,13 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
         <div class="IlluContainer">
           <Image src={recipeIllu} alt="" class="RecipeImage" />
         </div>
-        <RecipeDirections step1="hej" step2="hej hej" step3="hej hej hej" step4="hej" step5="hej hej" />
+        <RecipeDirections
+          step1="Blend strawberries, creamer and sweetener (optional) until smooth. We recommend fresh strawberries, but frozen will do the job well."
+          step2="Add the strawberry mixture to a nice glass, and fill it with ice cubes to the top."
+          step3="Carefully pour your milk of choice into the glass. We like to pair our matcha with oat milk to complement the nutty flavour profile of our little green gem."
+          step4="In your chawan bowl add Piohní Ceremonial Grade matcha with 50 ml of warm water and whisk the matcha until velvety smooth and with no clumps remaining. "
+          step5="Pour the matcha on top of the strawberry mixture, creating an ombre effect with the matcha, milk and strawberry mix."
+        />
       </div>
     </section>
     <section id="matchaGear_section"></section>

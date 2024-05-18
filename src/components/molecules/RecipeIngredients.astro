@@ -1,11 +1,11 @@
 ---
-const { recipeName, recipeType } = Astro.props;
+const { recipeName, recipeType, ingredientNote } = Astro.props;
 ---
 
 <div id="recipeTextBox">
   <div>
-    <h2 class="Typo-headline-medium-secondary">Classic Recipe{recipeType}</h2>
-    <h1 class="Typo-headline-medium-uppercase">Matcha latte{recipeName}</h1>
+    <h2 class="Typo-headline-medium-secondary">{recipeType}</h2>
+    <h1 class="Typo-headline-medium-uppercase">{recipeName}</h1>
   </div>
   <div class="ingrediens_container">
     <h3 class="Typo-headline-xstrasmall-classic">Ingredients</h3>
@@ -18,7 +18,7 @@ const { recipeName, recipeType } = Astro.props;
       <slot name="ingredient6" />
       <slot name="ingredient7" />
     </ul>
-    <p class="Typo-body-small">*we like to use oat milk to complement the nutty flavour profile of our matcha powder</p>
+    <p class="Typo-body-small">{ingredientNote}</p>
   </div>
   <div class="equipment_container">
     <h3 class="Typo-headline-xstrasmall-classic">Equipment</h3>

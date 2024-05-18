@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import recipeImage from "../../assets/images/recipes/matcha-latte.jpg";
-import recipeIllu from "../../assets/images/recipes/matcha-latte.jpg";
+import recipeIllu from "../../assets/images/recipes/illu4.svg";
 
 import "../../styles/recipes.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -9,23 +9,20 @@ import RecipeIngredients from "../../components/molecules/RecipeIngredients.astr
 import RecipeDirections from "../../components/molecules/RecipeDirections.astro";
 ---
 
-<BaseLayout titleTag="" pagename="matcha-latte" step1="" step2="" step3="" step4="" step5="">
+<BaseLayout titleTag="Recipe, Creamy Matcha Latte" pagename="matcha-latte">
   <main>
     <section id="recipe_section">
       <div id="ingredient_section">
-        <RecipeIngredients recipeName="">
-          <li slot="ingredient1"></li>
-          <li slot="ingredient2"></li>
-          <li slot="ingredient3"></li>
-          <li slot="ingredient4"></li>
-          <li slot="ingredient5"></li>
-          <li slot="ingredient6"></li>
-          <li slot="ingredient7"></li>
-          <li slot="equipment1"></li>
-          <li slot="equipment2"></li>
-          <li slot="equipment3"></li>
-          <li slot="equipment4"></li>
-          <li slot="equipment5"></li>
+        <RecipeIngredients recipeName="Matcha Latte" recipeType="Classic Recipe" ingredientNote="*we like to use oat milk to complement the nutty flavour profile of our matcha powder">
+          <li slot="ingredient1">1.5 tsp Piohní Ceremonial Grade Matcha</li>
+          <li slot="ingredient2">50 ml Water</li>
+          <li slot="ingredient3">150 ml Milk of choice*</li>
+          <li slot="ingredient4">Sweetener (optional)</li>
+          <li slot="equipment1">Piohní matcha powder</li>
+          <li slot="equipment2">Matcha whisk</li>
+          <li slot="equipment3">Chawan bowl</li>
+          <li slot="equipment4">kettle or pot</li>
+          <li slot="equipment5">milk foamer (optional)</li>
         </RecipeIngredients>
         <div class="ImageContainer">
           <Image src={recipeImage} alt="" class="RecipeImage" />
@@ -35,7 +32,13 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
         <div class="IlluContainer">
           <Image src={recipeIllu} alt="" class="RecipeImage" />
         </div>
-        <RecipeDirections step1="" step2="" step3="" step4="" step5="" />
+        <RecipeDirections
+          step1="Add Piohní Ceremonial Grade matcha powder into 50 ml water. We do not recommend using boiling water, since it scorches the delicate matcha powder making it taste burnt."
+          step2="Next, infuse the matcha into the water using our chasen, bamboo matcha whisk in back-and-forth motions, create a 'W' shape with your wrist, and mix the matcha until foamy and smooth."
+          step3="Optional — add 1 to 2 tsp of sugar or sweetener into the matcha. (This step it not needed with the high quality of our ceremonial grade matcha, but some may like it extra sweet)."
+          step4="Heat up 150ml of your favourite milk. We like to foam our milk with a handheld frother for that café-effect."
+          step5="and pour the milk into the matcha."
+        />
       </div>
     </section>
     <section id="matchaGear_section"></section>

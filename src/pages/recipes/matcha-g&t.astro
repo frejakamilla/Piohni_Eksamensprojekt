@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
-import recipeImage from "../../assets/images/recipes/matcha-latte.jpg";
-import recipeIllu from "../../assets/images/recipes/matcha-latte.jpg";
+import recipeImage from "../../assets/images/recipes/matcha-gin-tonic.png";
+import recipeIllu from "../../assets/images/recipes/illu1.svg";
 
 import "../../styles/recipes.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -13,19 +13,16 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
   <main>
     <section id="recipe_section">
       <div id="ingredient_section">
-        <RecipeIngredients recipeName="">
-          <li slot="ingredient1"></li>
-          <li slot="ingredient2"></li>
-          <li slot="ingredient3"></li>
-          <li slot="ingredient4"></li>
-          <li slot="ingredient5"></li>
-          <li slot="ingredient6"></li>
-          <li slot="ingredient7"></li>
-          <li slot="equipment1"></li>
-          <li slot="equipment2"></li>
-          <li slot="equipment3"></li>
-          <li slot="equipment4"></li>
-          <li slot="equipment5"></li>
+        <RecipeIngredients recipeName="MATCHA GIN TONIC" recipeType="Cocktails">
+          <li slot="ingredient1">1.5 tsp Piohní Ceremonial Grade Matcha</li>
+          <li slot="ingredient2">4 cl Gin</li>
+          <li slot="ingredient3">10 cl Tonic water</li>
+          <li slot="ingredient4">Ice cubes</li>
+          <li slot="ingredient5">Garnish – Cucumber, Lime or fresh Rosemary</li>
+
+          <li slot="equipment1">Piohní matcha powder</li>
+          <li slot="equipment2">Shaker or Chawan bowl</li>
+          <li slot="equipment3">Knife</li>
         </RecipeIngredients>
         <div class="ImageContainer">
           <Image src={recipeImage} alt="" class="RecipeImage" />
@@ -35,7 +32,13 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
         <div class="IlluContainer">
           <Image src={recipeIllu} alt="" class="RecipeImage" />
         </div>
-        <RecipeDirections step1="" step2="" step3="" step4="" step5="" />
+        <RecipeDirections
+          step1="Whisk Piohní matcha and gin together. Use a shaker if to avoid using your chawan bowl 茶碗 and whisk with the gin."
+          step2="Fill a highball glass with ice cubes."
+          step3="Top with tonic water and stir gently."
+          step4="Pour the matcha and gin mix over the tonic water nice and slow. If you aim for the ice cubes and pour slowly, the ombre effect will turn out better. "
+          step5="Garnish with lime wheels, cucumber slices or a spring of rosemary"
+        />
       </div>
     </section>
     <section id="matchaGear_section"></section>

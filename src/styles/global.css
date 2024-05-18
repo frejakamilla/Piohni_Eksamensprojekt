@@ -91,7 +91,20 @@
 body {
   background-color: var(--Tokens-Color-Background-Primary);
 }
+main {
+  display: flex;
+  width: 100vw;
+  padding: 20px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
 
+@media (min-width: 700px) {
+  main {
+    padding: var(--Spacing-Huge4, 120px) 0px;
+  }
+}
 h1,
 h2,
 h3,
@@ -164,6 +177,7 @@ a {
 .Typo-link:hover {
   color: var(--Color-Text-Hover);
 }
+li,
 .Typo-list {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
@@ -244,7 +258,7 @@ a {
   letter-spacing: 0.7699999809265137px;
   text-transform: uppercase;
 }
-.Typo-headline-medium-seconday {
+.Typo-headline-medium-secondary {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -281,7 +295,7 @@ a {
   letter-spacing: 0.7699999809265137px;
   line-height: 18px;
 }
-.Typo-headline-xstrasmall-seconday {
+.Typo-headline-xstrasmall-secondary {
   font-size: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;

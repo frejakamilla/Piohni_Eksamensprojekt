@@ -1,0 +1,200 @@
+---
+import Image from "astro/components/Image.astro";
+import recipeImage from "../assets/images/recipes/matcha-latte.jpg";
+import recipeIllu from "../assets/images/recipes/matcha-latte.jpg";
+
+const { recipeName, recipeType, step1, step2, step3, step4, step5 } = Astro.props;
+// ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, equipment1, equipment2, equipment3, equipment4, equipment5
+---
+
+<section id="recipe_section">
+  <div id="ingredient_section">
+    <div id="recipeTextBox">
+      <div>
+        <h2 class="Typo-headline-medium-secondary">Classic Recipe{recipeType}</h2>
+        <h1 class="Typo-headline-medium-uppercase">Matcha latte{recipeName}</h1>
+      </div>
+      <div class="ingrediens_container">
+        <h3 class="Typo-headline-xstrasmall-classic">Ingredients</h3>
+        <ul>
+          <slot name="ingredient1" />
+          <slot name="ingredient2" />
+          <slot name="ingredient3" />
+          <slot name="ingredient4" />
+          <slot name="ingredient5" />
+          <slot name="ingredient6" />
+          <slot name="ingredient7" />
+        </ul>
+        <p class="Typo-body-small">*we like to use oat milk to complement the nutty flavour profile of our matcha powder</p>
+      </div>
+      <div class="equipment_container">
+        <h3 class="Typo-headline-xstrasmall-classic">Equipment</h3>
+        <ul>
+          <slot name="equipment1" />
+          <slot name="equipment2" />
+          <slot name="equipment3" />
+          <slot name="equipment4" />
+          <slot name="equipment5" />
+        </ul>
+      </div>
+    </div>
+    <div class="ImageContainer">
+      <Image src={recipeImage} alt="" class="RecipeImage" />
+    </div>
+  </div>
+  <div id="direction_section">
+    <div class="IlluContainer">
+      <Image src={recipeIllu} alt="" class="RecipeImage" />
+    </div>
+    <div id="directions">
+      <h3 class="Typo-headline-xstrasmall-classic">Directions</h3>
+      <div id="steps">
+        <div class="step_container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="27" viewBox="0 0 18 27" fill="none">
+            <path d="M18 13.3799C18 8.40932 13.9706 4.37988 9 4.37988C4.02944 4.37988 0 8.40932 0 13.3799C0 18.3504 4.02944 22.3799 9 22.3799C13.9706 22.3799 18 18.3504 18 13.3799Z" fill="#BAD6EB"></path>
+            <path d="M9.56641 8.81348V17.3799H8.86914V9.69824L6.54883 10.5596V9.89746L9.44922 8.81348H9.56641Z" fill="#3D2D21"></path>
+          </svg>
+          <p class="step Typo-body-regular">{step1}</p>
+        </div>
+        <div class="step_container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="27" viewBox="0 0 18 27" fill="none">
+            <path d="M18 13.3799C18 8.40932 13.9706 4.37988 9 4.37988C4.02944 4.37988 0 8.40932 0 13.3799C0 18.3504 4.02944 22.3799 9 22.3799C13.9706 22.3799 18 18.3504 18 13.3799Z" fill="#BAD6EB"></path>
+            <path
+              d="M11.6465 16.7764V17.3799H6.30859V16.835L9.10352 13.665C9.45117 13.2705 9.72852 12.9248 9.93555 12.6279C10.1426 12.3271 10.291 12.0537 10.3809 11.8076C10.4746 11.5576 10.5215 11.3154 10.5215 11.0811C10.5215 10.7373 10.4531 10.4346 10.3164 10.1729C10.1836 9.91113 9.98438 9.70605 9.71875 9.55762C9.45312 9.40918 9.125 9.33496 8.73438 9.33496C8.34375 9.33496 8.00391 9.41895 7.71484 9.58691C7.42578 9.75488 7.20312 9.98926 7.04688 10.29C6.89453 10.5869 6.81836 10.9248 6.81836 11.3037H6.12109C6.12109 10.835 6.22461 10.4053 6.43164 10.0146C6.64258 9.62402 6.94336 9.31347 7.33398 9.083C7.72461 8.84862 8.19141 8.73145 8.73438 8.73145C9.25 8.73145 9.69336 8.82323 10.0645 9.00683C10.4355 9.18651 10.7207 9.44629 10.9199 9.78613C11.123 10.126 11.2246 10.5361 11.2246 11.0166C11.2246 11.2744 11.1777 11.5342 11.084 11.7959C10.9941 12.0576 10.8691 12.3193 10.709 12.5811C10.5527 12.8389 10.373 13.0947 10.1699 13.3486C9.9707 13.6025 9.76172 13.8525 9.54297 14.0986L7.16406 16.7764H11.6465Z"
+              fill="#3D2D21"></path>
+          </svg>
+          <p class="step Typo-body-regular">{step2}</p>
+        </div>
+        <div class="step_container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="27" viewBox="0 0 18 27" fill="none">
+            <path d="M18 13.3799C18 8.40932 13.9706 4.37988 9 4.37988C4.02944 4.37988 0 8.40932 0 13.3799C0 18.3504 4.02944 22.3799 9 22.3799C13.9706 22.3799 18 18.3504 18 13.3799Z" fill="#BAD6EB"></path>
+            <path
+              d="M7.86719 12.7275H8.58203C9.01953 12.7275 9.38477 12.6533 9.67773 12.5049C9.97461 12.3525 10.1973 12.1514 10.3457 11.9014C10.498 11.6514 10.5742 11.374 10.5742 11.0693C10.5742 10.7256 10.5098 10.4248 10.3809 10.167C10.252 9.90527 10.0547 9.70215 9.78906 9.55762C9.52734 9.40918 9.19141 9.33496 8.78125 9.33496C8.42188 9.33496 8.10156 9.40527 7.82031 9.5459C7.53906 9.68652 7.31641 9.88769 7.15234 10.1494C6.98828 10.4111 6.90625 10.7236 6.90625 11.0869H6.20898C6.20898 10.6221 6.32031 10.2139 6.54297 9.8623C6.76562 9.50684 7.07227 9.22948 7.46289 9.03026C7.85352 8.83104 8.29297 8.73145 8.78125 8.73145C9.28516 8.73145 9.72266 8.82323 10.0938 9.00683C10.4688 9.19042 10.7578 9.45801 10.9609 9.80957C11.168 10.1611 11.2715 10.5889 11.2715 11.0928C11.2715 11.3506 11.2148 11.6045 11.1016 11.8545C10.9922 12.1045 10.8281 12.3311 10.6094 12.5342C10.3906 12.7334 10.1191 12.8936 9.79492 13.0146C9.4707 13.1357 9.09375 13.1963 8.66406 13.1963H7.86719V12.7275ZM7.86719 13.3311V12.8682H8.66406C9.15234 12.8682 9.57031 12.9248 9.91797 13.0381C10.2656 13.1475 10.5508 13.3037 10.7734 13.5068C11 13.7061 11.166 13.9385 11.2715 14.2041C11.377 14.4697 11.4297 14.7549 11.4297 15.0596C11.4297 15.4502 11.3652 15.7959 11.2363 16.0967C11.1074 16.3975 10.9238 16.6533 10.6855 16.8643C10.4512 17.0713 10.1738 17.2295 9.85352 17.3389C9.53711 17.4443 9.18945 17.4971 8.81055 17.4971C8.4668 17.4971 8.13086 17.4463 7.80273 17.3447C7.47852 17.2432 7.18555 17.0928 6.92383 16.8936C6.66602 16.6904 6.46094 16.4365 6.30859 16.1318C6.15625 15.8232 6.08008 15.4678 6.08008 15.0654H6.77734C6.77734 15.4248 6.86328 15.7432 7.03516 16.0205C7.20703 16.2939 7.44531 16.5088 7.75 16.665C8.05859 16.8174 8.41211 16.8936 8.81055 16.8936C9.21289 16.8936 9.55664 16.8252 9.8418 16.6885C10.1309 16.5479 10.3516 16.3428 10.5039 16.0732C10.6562 15.8037 10.7324 15.4736 10.7324 15.083C10.7324 14.6729 10.6406 14.3389 10.457 14.0811C10.2773 13.8232 10.0254 13.6338 9.70117 13.5127C9.38086 13.3916 9.00781 13.3311 8.58203 13.3311H7.86719Z"
+              fill="#3D2D21"></path>
+          </svg>
+          <p class="step Typo-body-regular">{step3}</p>
+        </div>
+        <div class="step_container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="27" viewBox="0 0 18 27" fill="none">
+            <path d="M18 13.3799C18 8.40932 13.9706 4.37988 9 4.37988C4.02944 4.37988 0 8.40932 0 13.3799C0 18.3504 4.02944 22.3799 9 22.3799C13.9706 22.3799 18 18.3504 18 13.3799Z" fill="#BAD6EB"></path>
+            <path d="M11.9395 14.626V15.2236H5.89844V14.8193L9.8418 8.84863H10.4277L9.5957 10.2959L6.75391 14.626H11.9395ZM10.6094 8.84863V17.3799H9.91211V8.84863H10.6094Z" fill="#3D2D21"></path>
+          </svg>
+          <p class="step Typo-body-regular">{step4}</p>
+        </div>
+        <div class="step_container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="27" viewBox="0 0 18 27" fill="none">
+            <path d="M18 13.0693C18 8.09877 13.9706 4.06934 9 4.06934C4.02944 4.06934 0 8.09877 0 13.0693C0 18.0399 4.02944 22.0693 9 22.0693C13.9706 22.0693 18 18.0399 18 13.0693Z" fill="#BAD6EB"></path>
+            <path
+              d="M7.33398 12.8506L6.7832 12.6924L7.19922 8.53809H11.4648V9.19434H7.79688L7.49805 12.0654C7.64648 11.9599 7.86133 11.8564 8.14258 11.7549C8.42773 11.6494 8.74805 11.5967 9.10352 11.5967C9.48242 11.5967 9.82617 11.6611 10.1348 11.79C10.4473 11.915 10.7148 12.0986 10.9375 12.3408C11.1602 12.5791 11.332 12.8682 11.4531 13.208C11.5742 13.5439 11.6348 13.9248 11.6348 14.3506C11.6348 14.7607 11.584 15.1377 11.4824 15.4814C11.3809 15.8252 11.2266 16.126 11.0195 16.3838C10.8125 16.6377 10.5488 16.8349 10.2285 16.9756C9.9082 17.1162 9.52734 17.1865 9.08594 17.1865C8.74609 17.1865 8.42578 17.1396 8.125 17.0459C7.82812 16.9482 7.5625 16.8017 7.32812 16.6064C7.09375 16.4111 6.90234 16.165 6.75391 15.8682C6.60938 15.5713 6.51953 15.2236 6.48438 14.8252H7.1582C7.20508 15.208 7.30859 15.5303 7.46875 15.792C7.62891 16.0537 7.84375 16.251 8.11328 16.3838C8.38672 16.5166 8.71094 16.583 9.08594 16.583C9.39062 16.583 9.65625 16.5342 9.88281 16.4365C10.1133 16.3389 10.3047 16.1963 10.457 16.0088C10.6133 15.8174 10.7305 15.5849 10.8086 15.3115C10.8906 15.0342 10.9316 14.7178 10.9316 14.3623C10.9316 14.0576 10.8887 13.7783 10.8027 13.5244C10.7168 13.2666 10.5898 13.042 10.4219 12.8506C10.2578 12.6553 10.0547 12.5049 9.8125 12.3994C9.57031 12.2939 9.29297 12.2412 8.98047 12.2412C8.57422 12.2412 8.25 12.2959 8.00781 12.4053C7.76953 12.5146 7.54492 12.6631 7.33398 12.8506Z"
+              fill="#3D2D21"></path>
+          </svg>
+          <p class="step Typo-body-regular">{step5}</p>
+        </div>
+      </div>
+      <p class="Typo-signature">Sip, Breathe, Enjoy</p>
+    </div>
+  </div>
+</section>
+
+<section id="matchaGear_section"></section>
+
+<style>
+  #recipe_section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 40px;
+  }
+
+  .ImageContainer {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 375px;
+    height: 100%;
+    object-fit: contain;
+  }
+  .RecipeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ingredients */
+  #ingredient_section,
+  #direction_section {
+    display: flex;
+    width: 100%;
+    max-width: 1040px;
+    gap: 20px;
+  }
+  #ingredient_section {
+    flex-direction: column-reverse;
+  }
+  #recipeTextBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 50%;
+  }
+  .ingrediens_container,
+  .equipment_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 426px;
+  }
+
+  /* directions */
+
+  #direction_section {
+    flex-direction: column;
+  }
+
+  #directions {
+    display: flex;
+    width: 583px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .IlluContainer {
+    aspect-ratio: 1 / 1;
+    max-width: 320px;
+  }
+  #steps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+  }
+  .step_container {
+    display: flex;
+    padding-left: 8px;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+  }
+  .step_container svg {
+    width: 18px;
+  }
+  .step {
+    width: 100%;
+  }
+
+  @media (min-width: 700px) {
+    #ingredient_section,
+    #direction_section {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+</style>

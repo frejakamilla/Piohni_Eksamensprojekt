@@ -1,0 +1,25 @@
+---
+import Image from "astro/components/Image.astro";
+import RecipeImage from "../../assets/images/matcha/mathca-hands.webp";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RecipeLayout from "../../layouts/RecipeLayout.astro";
+---
+
+<BaseLayout titleTag="" pagename="matcha-latte" step1="" step2="" step3="" step4="" step5="">
+  <main>
+    <RecipeLayout recipeName="">
+      <li slot="ingredient1"></li>
+      <li slot="ingredient2"></li>
+      <li slot="ingredient3"></li>
+      <li slot="ingredient4"></li>
+      <li slot="ingredient5"></li>
+      <li slot="ingredient6"></li>
+      <li slot="ingredient7"></li>
+      <li slot="equipment1"></li>
+      <li slot="equipment2"></li>
+      <li slot="equipment3"></li>
+      <li slot="equipment4"></li>
+      <li slot="equipment5"></li>
+    </RecipeLayout>
+  </main>
+</BaseLayout>

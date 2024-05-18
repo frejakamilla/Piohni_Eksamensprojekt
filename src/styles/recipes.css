@@ -1,0 +1,51 @@
+#recipe_section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  padding: 0 40px;
+}
+
+.ImageContainer {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  min-height: 375px;
+  height: 100%;
+  object-fit: contain;
+}
+.RecipeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#ingredient_section,
+#direction_section {
+  display: flex;
+  width: 100%;
+  max-width: 1040px;
+  gap: 20px;
+}
+#ingredient_section {
+  flex-direction: column-reverse;
+}
+#direction_section {
+  flex-direction: column;
+}
+.IlluContainer {
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+}
+
+@media (min-width: 700px) {
+  #ingredient_section,
+  #direction_section {
+    flex-direction: row;
+    gap: 40px;
+  }
+}

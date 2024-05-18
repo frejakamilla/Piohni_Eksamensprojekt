@@ -1,7 +1,102 @@
 ---
+import Image from "astro/components/Image.astro";
+import icedMatcha from "../assets/images/matcha/IcedMatcha.webp";
+import strawberryMatcha from "../assets/images/recipes/strawberry-matcha.png";
+import gnt from "../assets/images/recipes/matcha-gin-tonic.png";
+import matchaLatte from "../assets/images/recipes/matcha-latte.jpg";
+import matchaTea from "../assets/images/recipes/matcha-tea.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout titleTag="" pagename="recipes">
-  <main></main>
+<BaseLayout titleTag="Piohní matcha recipes" pagename="recipes">
+  <main>
+    <section id="recipe_section">
+      <div class="headline">
+        <h1 class="Typo-headline-large">Here's how to make your Piohni matcha at home</h1>
+      </div>
+      <div id="recipe_container">
+        <div class="recipe_card">
+          <div class="ImageContainer">
+            <Image src={matchaLatte} alt="" class="RecipeImage" />
+          </div>
+          <h2 class="Typo-headline-xstrasmall-classic">Matcha Latte</h2>
+          <p class="Typo-body-regular">How to make the perfect matcha latte with Piohní ceremonial matcha powder. A delicious and relaxing way start to your day.</p>
+          <a href="/matcha-latte" class="Typo-link">Jump to recipe</a>
+        </div>
+        <div class="recipe_card">
+          <div class="ImageContainer">
+            <Image src={icedMatcha} alt="" class="RecipeImage" />
+          </div>
+          <h2 class="Typo-headline-xstrasmall-classic">Iced Matcha Latte</h2>
+          <p class="Typo-body-regular">Perfect for warmer days or when you are in need of a calming and creamy refreshment.</p>
+          <a href="/iced-matcha-latte" class="Typo-link">Jump to recipe</a>
+        </div>
+        <div class="recipe_card">
+          <div class="ImageContainer">
+            <Image src={matchaTea} alt="" class="RecipeImage" />
+          </div>
+          <h2 class="Typo-headline-xstrasmall-classic">Matcha Tea</h2>
+          <p class="Typo-body-regular">A self-care ritual that is over 800-years old, famous from the tea ceremonies in Japan. Today a sweet treat everyone can enjoy.</p>
+          <a href="/matcha-tea" class="Typo-link">Jump to recipe</a>
+        </div>
+        <div class="recipe_card">
+          <div class="ImageContainer">
+            <Image src={gnt} alt="" class="RecipeImage" />
+          </div>
+          <h2 class="Typo-headline-xstrasmall-classic">Matcha Gin Tonic</h2>
+          <p class="Typo-body-regular">A reimagined classic – mixing the stable energy powers of matcha with one of the late night favorites. Cheers!</p>
+          <a href="/matcha-gin-tonic" class="Typo-link">Jump to recipe</a>
+        </div>
+        <div class="recipe_card">
+          <div class="ImageContainer">
+            <Image src={strawberryMatcha} alt="" class="RecipeImage" />
+          </div>
+          <h2 class="Typo-headline-xstrasmall-classic">Strawberry Matcha</h2>
+          <p class="Typo-body-regular">A summery twist on our classic refreshing iced matcha latte. Enjoy the rich notes of matcha combined with fresh strawberries.</p>
+          <a href="/iced-strawberry-matcha-latte" class="Typo-link">Jump to recipe</a>
+        </div>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
+
+<style>
+  #recipe_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Spacing-Huge2, 80px);
+  }
+  #recipe_container {
+    display: grid;
+    gap: 60px;
+    padding: 0 40px;
+  }
+  .recipe_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .ImageContainer {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .RecipeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .Typo-body-regular {
+    align-self: stretch;
+  }
+  @media (min-width: 600px) {
+    #recipe_container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -7,6 +7,7 @@ import "../../styles/recipes.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RecipeIngredients from "../../components/molecules/RecipeIngredients.astro";
 import RecipeDirections from "../../components/molecules/RecipeDirections.astro";
+import MatchaKitSection from "../../components/sections/MatchaKitSection.astro";
 ---
 
 <BaseLayout titleTag="" pagename="matcha-tea">
@@ -39,6 +40,6 @@ import RecipeDirections from "../../components/molecules/RecipeDirections.astro"
         />
       </div>
     </section>
-    <section id="matchaGear_section"></section>
+    <MatchaKitSection />
   </main>
 </BaseLayout>

@@ -6,6 +6,8 @@ import gnt from "../assets/images/recipes/matcha-gin-tonic.png";
 import matchaLatte from "../assets/images/recipes/matcha-latte.jpg";
 import matchaTea from "../assets/images/recipes/matcha-tea.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import InstaCTA from "../components/sections/InstaCTA.astro";
+import MatchaKitSection from "../components/sections/MatchaKitSection.astro";
 ---
 
 <BaseLayout titleTag="Piohní matcha recipes" pagename="recipes">
@@ -19,7 +21,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <a href="/recipes/matcha-latte" class="ImageContainer">
             <Image src={matchaLatte} alt="" class="RecipeImage" />
           </a>
-          <h2 class="Typo-headline-xstrasmall-classic">Matcha Latte</h2>
+
+          <a href="/recipes/matcha-latte" class="headline_link"><h2 class="Typo-headline-xstrasmall-classic">Matcha Latte</h2></a>
           <p class="Typo-body-regular">How to make the perfect matcha latte with Piohní ceremonial matcha powder. A delicious and relaxing way start to your day.</p>
           <a href="/recipes/matcha-latte" class="Typo-link">Jump to recipe</a>
         </div>
@@ -55,53 +58,111 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p class="Typo-body-regular">A summery twist on our classic refreshing iced matcha latte. Enjoy the rich notes of matcha combined with fresh strawberries.</p>
           <a href="/recipes/iced-strawberry-matcha-latte" class="Typo-link">Jump to recipe</a>
         </div>
+        <div class="recipe_card">
+          <div id="InstaCTA"><p class="fill">We would love to see your matcha creations!</p></div>
+
+          <h2 class="Typo-headline-xstrasmall-classic">Show us your matcha moment</h2>
+          <p class="Typo-body-regular">
+            Our matchamelie loves seeing your creations, share your moments using <a class="instaTag" href="">#mypiohnimoment</a> – We repost our favorites <a class="instaTag" href="https://www.instagram.com/piohni" target="_blank">@piohni</a>
+          </p>
+        </div>
       </div>
     </section>
+    <InstaCTA headline="We love to see your piohní moments" />
+    <MatchaKitSection />
   </main>
+
+  <style>
+    #recipe_section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--Spacing-Huge2, 80px);
+      padding: 0 40px;
+    }
+    #recipe_container {
+      display: grid;
+      gap: 60px;
+
+      max-width: 1200px;
+    }
+    .recipe_card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .ImageContainer {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .RecipeImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .RecipeImage:hover {
+      opacity: 80%;
+    }
+    .headline_link {
+      text-decoration: none;
+    }
+    .headline_link:hover h2 {
+      opacity: 80%;
+    }
+    .Typo-headline-large {
+      text-align: center;
+    }
+    .Typo-body-regular {
+      align-self: stretch;
+    }
+
+    /*  */
+    #InstaCTA {
+      display: flex;
+      aspect-ratio: 1 / 1;
+      flex-direction: column;
+      gap: 20px;
+      align-self: stretch;
+    }
+    #InstaCTA .fill {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 20px 16px;
+      background: var(--Color-Fill-step, #bad6eb);
+
+      color: var(--Color-Text-White, #fffffe);
+      text-align: center;
+      font-family: "Contralto Medium";
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .instaTag {
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .instaTag:hover {
+      color: var(--Color-Text-Hover);
+    }
+    @media (min-width: 600px) {
+      #recipe_container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 900px) {
+      #recipe_container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  #recipe_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--Spacing-Huge2, 80px);
-  }
-  #recipe_container {
-    display: grid;
-    gap: 60px;
-    padding: 0 40px;
-  }
-  .recipe_card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .ImageContainer {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .RecipeImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .Typo-body-regular {
-    align-self: stretch;
-  }
-  @media (min-width: 600px) {
-    #recipe_container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 900px) {
-    #recipe_container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-</style>

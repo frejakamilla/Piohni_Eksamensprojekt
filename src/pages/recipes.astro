@@ -16,44 +16,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div id="recipe_container">
         <div class="recipe_card">
-          <div class="ImageContainer">
+          <a href="/recipes/matcha-latte" class="ImageContainer">
             <Image src={matchaLatte} alt="" class="RecipeImage" />
-          </div>
+          </a>
           <h2 class="Typo-headline-xstrasmall-classic">Matcha Latte</h2>
           <p class="Typo-body-regular">How to make the perfect matcha latte with Piohní ceremonial matcha powder. A delicious and relaxing way start to your day.</p>
-          <a href="/matcha-latte" class="Typo-link">Jump to recipe</a>
+          <a href="/recipes/matcha-latte" class="Typo-link">Jump to recipe</a>
         </div>
         <div class="recipe_card">
-          <div class="ImageContainer">
+          <a href="/recipes/iced-matcha-latte" class="ImageContainer" '>
             <Image src={icedMatcha} alt="" class="RecipeImage" />
-          </div>
+          </a>
           <h2 class="Typo-headline-xstrasmall-classic">Iced Matcha Latte</h2>
           <p class="Typo-body-regular">Perfect for warmer days or when you are in need of a calming and creamy refreshment.</p>
-          <a href="/iced-matcha-latte" class="Typo-link">Jump to recipe</a>
+          <a href="/recipes/iced-matcha-latte" class="Typo-link">Jump to recipe</a>
         </div>
         <div class="recipe_card">
-          <div class="ImageContainer">
+          <a href="/recipes/matcha-tea" class="ImageContainer" '>
             <Image src={matchaTea} alt="" class="RecipeImage" />
-          </div>
+          </a>
           <h2 class="Typo-headline-xstrasmall-classic">Matcha Tea</h2>
           <p class="Typo-body-regular">A self-care ritual that is over 800-years old, famous from the tea ceremonies in Japan. Today a sweet treat everyone can enjoy.</p>
-          <a href="/matcha-tea" class="Typo-link">Jump to recipe</a>
+          <a href="/recipes/matcha-tea" class="Typo-link">Jump to recipe</a>
         </div>
         <div class="recipe_card">
-          <div class="ImageContainer">
+          <a href="/recipes/matcha-gin-tonic" class="ImageContainer" '>
             <Image src={gnt} alt="" class="RecipeImage" />
-          </div>
+          </a>
           <h2 class="Typo-headline-xstrasmall-classic">Matcha Gin Tonic</h2>
           <p class="Typo-body-regular">A reimagined classic – mixing the stable energy powers of matcha with one of the late night favorites. Cheers!</p>
-          <a href="/matcha-gin-tonic" class="Typo-link">Jump to recipe</a>
+          <a href="/recipes/matcha-gin-tonic" class="Typo-link">Jump to recipe</a>
         </div>
         <div class="recipe_card">
-          <div class="ImageContainer">
+          <a href="/recipes/iced-strawberry-matcha-latte" class="ImageContainer" '>
             <Image src={strawberryMatcha} alt="" class="RecipeImage" />
-          </div>
+          </a>
           <h2 class="Typo-headline-xstrasmall-classic">Strawberry Matcha</h2>
           <p class="Typo-body-regular">A summery twist on our classic refreshing iced matcha latte. Enjoy the rich notes of matcha combined with fresh strawberries.</p>
-          <a href="/iced-strawberry-matcha-latte" class="Typo-link">Jump to recipe</a>
+          <a href="/recipes/iced-strawberry-matcha-latte" class="Typo-link">Jump to recipe</a>
         </div>
       </div>
     </section>
@@ -97,6 +97,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   @media (min-width: 600px) {
     #recipe_container {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    #recipe_container {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

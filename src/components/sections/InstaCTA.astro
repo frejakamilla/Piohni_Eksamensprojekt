@@ -10,15 +10,20 @@ const { headline } = Astro.props;
 <section>
   <div class="headlines">
     <h3 class="Typo-headline-medium-uppercase">{headline}</h3>
-    <p class="Typo-headline-sub-headline">Follow <a class="instaTag" href="https://www.instagram.com/piohni" target="_blank">@piohni</a> on Instagram, where we post news, events, behind the scenes and share your #mypiohnimoment</p>
+    <p class="Typo-headline-sub-headline">
+      Follow <a class="instaTag" href="https://www.instagram.com/piohni" target="_blank">@piohni</a> on Instagram, where we post news, events, behind the scenes and share your <a class="instaTag" href="">#mypiohnimoment</a>
+    </p>
   </div>
-  <a href="https://www.instagram.com/piohni" target="_blank">
-    <div class="ImageGrid">
-      <div class="image1"><Image src={image1} alt="matcha powder in spoon" class="image" /></div>
-      <div class="image2-3"><div class="image2"><Image src={image2} alt="matcha powder in spoon" class="image" /></div><div class="image3"><Image src={image3} alt="matcha powder in spoon" class="image" /></div></div>
-      <div class="image4"><Image src={image4} alt="matcha powder in spoon" class="image" /></div>
-    </div>
-  </a>
+  <div class="link_container">
+    <a href="https://www.instagram.com/piohni" target="_blank">
+      <div class="ImageGrid">
+        <div class="image1"><Image src={image1} alt="matcha powder in spoon" class="image" /></div>
+        <div class="image2-3"><div class="image2"><Image src={image2} alt="matcha powder in spoon" class="image" /></div><div class="image3"><Image src={image3} alt="matcha powder in spoon" class="image" /></div></div>
+        <div class="image4"><Image src={image4} alt="matcha powder in spoon" class="image" /></div>
+      </div>
+    </a>
+    <a class="instaTagBig Typo-body-large-uppercase" href="https://www.instagram.com/piohni" target="_blank">@piohni</a>
+  </div>
 </section>
 
 <style>
@@ -27,6 +32,7 @@ const { headline } = Astro.props;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    max-width: 1200px;
   }
   .headlines {
     display: flex;
@@ -39,13 +45,27 @@ const { headline } = Astro.props;
     max-width: 620px;
     text-align: center;
   }
+
+  .link_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
   .instaTag {
     text-decoration: none;
+    font-weight: 400;
   }
+  .instaTagBig:hover,
   .instaTag:hover {
     color: var(--Color-Text-Hover);
   }
 
+  .instaTagBig {
+    text-decoration: none;
+    width: 100%;
+    text-align: end;
+    padding: 6px;
+  }
   .ImageGrid {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;

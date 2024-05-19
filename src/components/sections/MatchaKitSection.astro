@@ -1,0 +1,154 @@
+---
+import Image from "astro/components/Image.astro";
+import matchaPowder from "../../assets/images/products/matcha-30g.webp";
+import matchaPowderHover from "../../assets/images/matcha/mathca-hands.webp";
+import matchaWhisk from "../../assets/images/products/whisk.webp";
+import matchaWhiskHover from "../../assets/images/matcha/matcha-whisk02.webp";
+import matchaSpoon from "../../assets/images/products/spoon.webp";
+import matchaSpoonHover from "../../assets/images/products/spoon-dark.webp";
+import Button from "../atoms/Button.astro";
+---
+
+<section>
+  <h3 class="Typo-headline-medium-breaker">Missing something for your matcha kit?</h3>
+  <div id="card_container">
+    <a class="card">
+      <div class="ImageContainer">
+        <Image src={matchaPowder} alt="" class="Image" />
+        <Image src={matchaPowderHover} alt="" class="HoverImage" />
+      </div>
+      <div class="InfoContainer">
+        <p class="productName Typo-productcard-product">Ceremonial Matcha Powder - 30g</p>
+        <p class="productPrice Typo-productcard-price">289,00 DKK</p>
+        <div class="notes">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0.339844L7.34708 4.48574H11.7063L8.17963 7.04805L9.52671 11.1939L6 8.63164L2.47329 11.1939L3.82037 7.04805L0.293661 4.48574H4.65292L6 0.339844Z" fill="#3D2D21"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0.339844L7.34708 4.48574H11.7063L8.17963 7.04805L9.52671 11.1939L6 8.63164L2.47329 11.1939L3.82037 7.04805L0.293661 4.48574H4.65292L6 0.339844Z" fill="#3D2D21"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0.339844L7.34708 4.48574H11.7063L8.17963 7.04805L9.52671 11.1939L6 8.63164L2.47329 11.1939L3.82037 7.04805L0.293661 4.48574H4.65292L6 0.339844Z" fill="#3D2D21"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0.339844L7.34708 4.48574H11.7063L8.17963 7.04805L9.52671 11.1939L6 8.63164L2.47329 11.1939L3.82037 7.04805L0.293661 4.48574H4.65292L6 0.339844Z" fill="#3D2D21"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 0.339844L7.34708 4.48574H11.7063L8.17963 7.04805L9.52671 11.1939L6 8.63164L2.47329 11.1939L3.82037 7.04805L0.293661 4.48574H4.65292L6 0.339844Z" fill="#3D2D21"></path>
+            </svg>
+          </div>
+          <p class="note Typo-productcard-note">(5.0)</p>
+        </div>
+      </div>
+    </a>
+    <a class="card">
+      <div class="ImageContainer">
+        <Image src={matchaWhisk} alt="" class="Image" />
+        <Image src={matchaWhiskHover} alt="" class="HoverImage" />
+      </div>
+      <div class="InfoContainer">
+        <p class="productName Typo-productcard-product">Matcha Whisk</p>
+        <p class="productPrice Typo-productcard-price">149,00 DKK</p>
+      </div>
+    </a>
+    <a class="card">
+      <div class="ImageContainer">
+        <Image src={matchaSpoon} alt="" class="Image" />
+        <Image src={matchaSpoonHover} alt="" class="HoverImage" />
+      </div>
+      <div class="InfoContainer">
+        <p class="productName Typo-productcard-product">Matcha spoon</p>
+        <p class="productPrice Typo-productcard-price">80,00 DKK</p>
+        <div class="notes">
+          <p class="note Typo-productcard-note">2 COLORS AVAILABLE</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div id="button_container">
+    <Button style="primary" label="View all products" size="fillContainer" href="/shop" />
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  #card_container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 280px;
+  }
+  .ImageContainer {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    display: grid;
+  }
+
+  .Image,
+  .HoverImage {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    grid-area: 1/ 2/ 1/ 2;
+  }
+  .Image {
+    background-color: var(--Color-Background-Primary);
+    z-index: 1;
+  }
+
+  .card:hover .ImageContainer .Image {
+    animation: fade-out 0.4s ease-in both;
+  }
+
+  .InfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+  .productName,
+  .productPrice {
+    width: 100%;
+    text-align: center;
+  }
+  .notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+  }
+  .stars {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  #button_container {
+    width: 100%;
+    max-width: 400px;
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

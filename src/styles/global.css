@@ -62,6 +62,7 @@
   /* Icon colors */
   --Color-Fill-Icon-Disabled: var(--Primitives-Color-gray-400);
   --Color-Fill-Icon-Icon: var(--Primitives-Color-Brown-800);
+  --Color-Fill_Icon_White: var(--Primitives-Color-Sand-50);
   --Color-Fill-Icon-transparent: var(--Primitives-Color-Brown-800-65t);
 
   /* Other fill colors */

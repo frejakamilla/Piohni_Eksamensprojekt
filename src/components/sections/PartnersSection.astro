@@ -1,0 +1,55 @@
+---
+import Image from "astro/components/Image.astro";
+
+import audo from "../../assets/images/partners/audo.png";
+import bagatelle from "../../assets/images/partners/bagatelle.png";
+import depaneur from "../../assets/images/partners/depaneur.png";
+import format from "../../assets/images/partners/format.png";
+import lillePetra from "../../assets/images/partners/lille-petra.png";
+import torvehallerne from "../../assets/images/partners/torvehallerne.png";
+---
+
+<section>
+  <p class="Typo-footer-headline">SOME OF OUR LOVELY PARTNERS</p>
+  <div class="image_flex">
+    <Image class="image" src={bagatelle} alt="bagatelle logo" />
+    <Image class="image" src={audo} alt="audo logo" />
+    <Image class="image" src={format} alt="format logo" />
+    <Image class="image" src={lillePetra} alt="lille Petra logo" />
+    <Image class="image" src={depaneur} alt="depaneur logo" />
+    <Image class="image" src={torvehallerne} alt="torvehallerne logo" />
+  </div>
+</section>
+<style>
+  section {
+    display: flex;
+    padding: 40px 20ch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .image_flex {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0 40px;
+  }
+  .image {
+    object-fit: contain;
+  }
+
+  @media (min-width: 600px) {
+    .image_flex {
+      gap: 64px;
+    }
+  }
+  @media (min-width: 1040px) {
+    .image_flex {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+</style>

@@ -1,13 +1,15 @@
 ---
 import Image from "astro/components/Image.astro";
 import heroImage from "../assets/images/matcha/matcha-whisk03.webp";
+import guide from "../assets/images/recipes/guideIllu.svg";
+import cafe from "../assets/images/events/MatchaBar.jpg";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FormSection from "../components/sections/FormSection.astro";
-import Button from "../components/atoms/Button.astro";
+
 import HeroSection from "../components/sections/HeroSection.astro";
 import ProductSection from "../components/sections/ProductSection.astro";
 import InstaCTA from "../components/sections/InstaCTA.astro";
-import Testimonial from "../components/molecules/Testimonial.astro";
+
 import TestimonialSection from "../components/sections/TestimonialSection.astro";
 import FAQSection from "../components/sections/FAQSection.astro";
 import PartnersSection from "../components/sections/PartnersSection.astro";
@@ -18,18 +20,116 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
     <HeroSection />
     <ProductSection id="product_section" />
     <TestimonialSection />
-    <!-- have a taste section -->
-    <!-- how to make section -->
 
+    <section id="TextImageSection">
+      <div class="TextColumn1">
+        <p class="Typo-headline-medium-uppercase">Have a taste of piohní</p>
+        <p class="Typo-body-regular">
+          Discover the delicious taste of Piohní matcha at our partnering cafés in Copenhagen!
+          <br /><br />Treat yourself to a creamy matcha latte or savor the rich flavors of our matcha-infused treats. Find your nearest café and indulge in the magic of matcha today!
+        </p>
+        <a href="#" class="Typo-link">Find a list of our Partners</a>
+      </div>
+      <div class="StretchImageContainer1">
+        <Image src={cafe} alt="piohní matcha at cafées" class="StretchImage1" />
+      </div>
+    </section>
+    <section id="ImageTextSection">
+      <div class="StretchImageContainer2">
+        <Image src={guide} alt="how to prepare matcha" class="StretchImage2" />
+      </div>
+      <div class="TextColumn2">
+        <p class="Typo-headline-medium-uppercase">how to make matcha</p>
+        <p class="Typo-body-regular">
+          Piohní matcha is creamy, sweet and very versatile.
+          <br /><br />Wether you want a cold and refreshing iced matcha latte, a classic and creamy matcha latte or something new and exciting, we’ve got a recipe for you.
+        </p>
+        <a href="#" class="Typo-link">Try our matcha recipes</a>
+      </div>
+    </section>
     <FAQSection />
     <InstaCTA headline="Want to be a part of the comunity?" />
     <PartnersSection />
   </main>
 </BaseLayout>
+
 <style>
   main {
     padding-top: 0;
     padding-bottom: 0;
   }
-  /* ---------- Product section ---------- */
+  /* ----------  section ---------- */
+
+  #ImageTextSection,
+  #TextImageSection {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px var(--Spacing-Huge2, 80px);
+    gap: 40px;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  .StretchImageContainer1,
+  .StretchImageContainer2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .StretchImage1,
+  .StretchImage2 {
+    width: 100%;
+    height: 100%;
+  }
+  .StretchImage1 {
+    object-fit: cover;
+    object-position: center;
+  }
+  .StretchImage2 {
+    object-fit: contain;
+  }
+  .TextColumn1,
+  .TextColumn2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .TextColumn1 {
+    padding: 64px 0;
+  }
+  .TextColumn2 .Typo-body-large,
+  .TextColumn1 .Typo-body-large {
+    max-width: 700px;
+  }
 </style>
+
+<script>
+  // window.addEventListener("load", adjustHeights);
+  document.addEventListener("DOMContentLoaded", adjustHeights);
+  window.addEventListener("resize", adjustHeights);
+
+  function adjustHeights() {
+    const sections = [
+      { text: ".TextColumn1", image: ".StretchImageContainer1", imageChild: ".StretchImage1" },
+      { text: ".TextColumn2", image: ".StretchImageContainer2", imageChild: ".StretchImage2" },
+    ];
+
+    sections.forEach((section) => {
+      const TextColumn = document.querySelector(section.text) as HTMLElement;
+      const StretchImageContainer = document.querySelector(section.image) as HTMLElement;
+      const StretchImage = document.querySelector(section.imageChild) as HTMLElement;
+
+      if (TextColumn && StretchImageContainer && StretchImage) {
+        const columnHeight = TextColumn.clientHeight;
+        StretchImageContainer.style.height = `${columnHeight}px`;
+        StretchImage.style.height = `${columnHeight}px`;
+      }
+    });
+  }
+</script>

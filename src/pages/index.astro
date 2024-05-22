@@ -5,14 +5,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import FormSection from "../components/sections/FormSection.astro";
 import Button from "../components/atoms/Button.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
+import ProductSection from "../components/sections/ProductSection.astro";
 ---
 
 <BaseLayout titleTag="Discover Premium Matcha Excellence">
-  <HeroSection />
   <main>
-    <section id="product_section"></section>
+    <HeroSection />
+    <ProductSection />
   </main>
 </BaseLayout>
 <style>
+  main {
+    padding-top: 0;
+  }
   /* ---------- Product section ---------- */
 </style>

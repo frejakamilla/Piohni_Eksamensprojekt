@@ -6,12 +6,14 @@ import matchaWhisk from "../../assets/images/products/whisk.webp";
 import matchaWhiskHover from "../../assets/images/matcha/matcha-whisk02.webp";
 import matchaSpoon from "../../assets/images/products/spoon.webp";
 import matchaSpoonHover from "../../assets/images/products/spoon-dark.webp";
+import matchaCapsule from "../../assets/images/products/capsule.png";
+import matchaCapsuleHover from "../../assets/images/matcha/matcha-pour.jpg";
 
 import Button from "../atoms/Button.astro";
 ---
 
 <section>
-  <h3 class="Typo-headline-medium-breaker">Missing something for your matcha kit?</h3>
+  <h3 class="Typo-headline-medium-uppercase">Discover Premium Matcha Excellence</h3>
   <div id="card_container">
     <a class="card">
       <div class="ImageContainer">
@@ -64,6 +66,16 @@ import Button from "../atoms/Button.astro";
         <div class="notes">
           <p class="note Typo-productcard-note">2 COLORS AVAILABLE</p>
         </div>
+      </div>
+    </a>
+    <a class="card">
+      <div class="ImageContainer">
+        <Image src={matchaCapsule} alt="" class="Image" />
+        <Image src={matchaCapsuleHover} alt="" class="HoverImage" />
+      </div>
+      <div class="InfoContainer">
+        <p class="productName Typo-productcard-product">Piohní Matcha Capsules</p>
+        <p class="productPrice Typo-productcard-price">Coming Soon</p>
       </div>
     </a>
   </div>

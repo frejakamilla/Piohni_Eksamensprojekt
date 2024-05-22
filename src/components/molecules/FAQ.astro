@@ -1,0 +1,92 @@
+---
+const { question } = Astro.props;
+---
+
+<div class="faq_container">
+  <div class="question_container">
+    <p class="question Typo-body-regular">{question}</p>
+    <div class="open-close">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="answer_container">
+    <p class="answer Typo-body-small">
+      Lorem ipsum dolor sit amet consectetur. Amet lacus dictum vulputate adipiscing lacus dictumst nisl sed. Accumsan cras ornare tincidunt nunc dictum ullamcorper. Bibendum pretium ante neque faucibus est at metus velit massa. Volutpat ligula a
+      dictum adipiscing mi at eu. Pharetra nec ornare tempor metus. Bibendum laoreet sapien elit mi in etiam eu. Sit quisque sagittis mauris neque aliquet tellus sit ipsum eget. Nullam adipiscing nisl eu semper amet. Justo convallis ac placerat
+      ultrices ut facilisi leo.
+    </p>
+  </div>
+</div>
+
+<style>
+  .faq_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* question */
+  .question_container {
+    display: flex;
+    padding: 24px 10px;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    cursor: pointer;
+    width: 100%;
+  }
+  .question {
+    max-width: 480px;
+  }
+  .open-close {
+    display: grid;
+  }
+
+  .line {
+    width: 14px;
+    height: 2px;
+    background-color: var(--Color-Stroke-Secondary);
+    border-radius: 1px;
+    grid-area: 1 / 2 / 1 / 2;
+    transition: transform 0.3s;
+  }
+  .line:first-child {
+    transform: rotate(90deg);
+  }
+  .question_container.active .line:first-child {
+    transform: rotate(0deg);
+  }
+  /* answer */
+  .answer_container {
+    display: flex;
+    padding: 0 20px 24px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    display: none;
+  }
+  .answer_container.visible {
+    display: block;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const questionContainers = document.querySelectorAll(".question_container");
+
+    questionContainers.forEach((container) => {
+      container.addEventListener("click", () => {
+        const answerContainer = container.nextElementSibling as HTMLElement;
+
+        container.classList.toggle("active");
+        if (answerContainer.style.display === "none" || answerContainer.style.display === "") {
+          answerContainer.style.display = "block";
+        } else {
+          answerContainer.style.display = "none";
+        }
+      });
+    });
+  });
+</script>

@@ -40,7 +40,7 @@ import Button from "../../components/atoms/Button.astro";
   }
   .scrollIndicator {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     height: 100%;
     width: 100%;
     display: flex;
@@ -78,6 +78,7 @@ import Button from "../../components/atoms/Button.astro";
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+    z-index: 2;
   }
   .headlines {
     display: flex;
@@ -94,5 +95,6 @@ import Button from "../../components/atoms/Button.astro";
     flex-direction: column;
     align-items: center;
     gap: 2px;
+    cursor: pointer;
   }
 </style>

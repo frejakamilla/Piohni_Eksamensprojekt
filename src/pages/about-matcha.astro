@@ -1,7 +1,133 @@
 ---
+import Image from "astro/components/Image.astro";
+import matcha from "../assets/images/matcha/matchaPowder.png";
+import leaves from "../assets/images/matcha/leaves.jpg";
+import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FAQSection from "../components/sections/FAQSection.astro";
 ---
 
 <BaseLayout titleTag="" pagename="about-matcha">
-  <main></main>
+  <main>
+    <section class="what-is-matcha">
+      <div class="textBox">
+        <HeadlineSection showButton="false" headline="So what is matcha?" subheadline="Matcha — 抹茶 — is essentially finely milled green tea powder known to be more nutrient than both tea and coffee. But to us, matcha is much more than that." />
+        <div class="benefits">
+          <div class="benefit">
+            <h2 class="Typo-headline-xstrasmall-classic">Calming</h2>
+            <p class="Typo-body-small">We specialize in authentic Japanese matcha because it's not just a coffee alternative — it's a moment of peace. With matcha, you take a sip, exhale, and feel "aaahhh."</p>
+          </div>
+          <div class="benefit">
+            <h2 class="Typo-headline-xstrasmall-classic">Mood Enhancing</h2>
+            <p class="Typo-body-small">Matcha is a mood lifting powerhouse. Loaded with L-theanine , it boosts serotonin for daily happiness and relaxation.</p>
+          </div>
+          <div class="benefit">
+            <h2 class="Typo-headline-xstrasmall-classic">Energy Stabilizing</h2>
+            <p class="Typo-body-small">With its blend of caffeine and L-theanine, matcha offers lasting energy, keeping you focused longer — akin to Japanese monks during meditation sessions.</p>
+          </div>
+          <div class="benefit">
+            <h2 class="Typo-headline-xstrasmall-classic">Rich in Antioxidants</h2>
+            <p class="Typo-body-small">Matcha is rich in antioxidants, with over 10 times the amount found in a standard cup of green tea. These antioxidants combat harmful molecules & reduce oxidative stress.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matchaImage"><Image src={matcha} alt="matcha powder" /></div>
+    </section>
+    <FAQSection />
+    <section>
+      <div class="questionForm"></div>
+    </section>
+    <section class="history_section">
+      <div class="history_container">
+        <h2 class="Typo-headline-medium-uppercase">The History of Matcha</h2>
+        <p class="Typo-body-regular">
+          Matcha has a rich history dating back to ancient China, where it was initially used for medicinal purposes. However, it was in Japan where matcha truly flourished. Zen Buddhists monks brought it to Japan in the 12th century, where it became
+          an integral part of Japanese tea ceremonies. Over time, matcha evolved from a ceremonial drink to a popular everyday beverage enjoyed by people worldwide for its unique flavor and numerous health benefits.
+        </p>
+        <div class="text_container">
+          <p class="Typo-body-bold">How was matcha discovered?</p>
+          <p class="Typo-body-regular">
+            Legend has it that Monk Eisai, a Japanese Buddhist monk, was the one who introduced matcha to Japan in the 12th century. <br /><br />The tale begins in 1191, where Eisai traveled to China to further his studies of buddhism. After
+            finishing his studies he brought back tea seeds and the knowledge of powdered green tea, or matcha, to Japan. He planted these seeds in the fields of Kyoto and developed the Japanese tradition of cultivating tea.<br /><br />Eisai believed
+            in the medicinal properties of matcha, promoting it for its ability to improve focus, meditation, and overall well-being. His teachings and advocacy helped popularize matcha consumption in Japan, laying the foundation for its integration
+            into Japanese culture and the development of the revered Japanese tea ceremony.
+          </p>
+        </div>
+        <div class="text_container">
+          <p class="Typo-body-bold">The Very First Book About Matcha</p>
+          <p class="Typo-body-regular">
+            In his later years, in 1211, Eisai, the now Zen priest, wrote a book about the healing powers of matcha and how to prepare the delicate beverage. "Kissa Yojoki," which translates to "The Book of Tea and Health," is the oldest tea book in
+            Japan and it played a significant role in popularizing the consumption of tea in Japan and contributed to the development of the Japanese tea culture.<br /><br /> It remains an important historical text, offering valuable insights into the
+            cultural and medicinal significance of tea in Japanese society.
+          </p>
+        </div>
+        <p class="Typo-body-regular">
+          In recent years matcha has become popular in the rest of the world mainly due to its calming powers and benefits. Like wine, it comes in different, taste and qualities. We at Piohní have scorched the globe for the best ceremonial grade
+          latte.
+          <br />Luckily, this wellness-gem is no longer exclusive to Japanese monks, but a drink that we can all enjoy whenever we need a little liquid hug.
+        </p>
+      </div>
+      <div class="historyImage_container"><Image src={leaves} alt="matcha leaves" class="image" /></div>
+    </section>
+  </main>
+
+  <style>
+    /* what is matcha section */
+    .what-is-matcha {
+      display: flex;
+      padding: 0px 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .textBox {
+      display: flex;
+
+      padding: 0px 80px;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+    .benefits {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      align-self: stretch;
+    }
+    .benefit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      flex: 1 0 0;
+    }
+    .benefit p {
+      max-width: 260px;
+      text-align: center;
+    }
+    /* history of matcha section */
+
+    .history_section {
+      display: flex;
+      width: 100%;
+      padding: 0px 80px;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .history_container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+    }
+    .historyImage_container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </BaseLayout>

@@ -1,12 +1,12 @@
 ---
-const { headline, subhedline, buttonText, showButton } = Astro.props;
+const { headline, subheadline, buttonText, showButton } = Astro.props;
 import Button from "../atoms/Button.astro";
 ---
 
 <div id="headline_section">
   <div id="headlines">
     <h1 id="pageHeadline" class="Typo-headline-medium-uppercase">{headline}</h1>
-    <p id="pageSubHeadline" class="Typo-headline-sub-headline">{subhedline}</p>
+    <p id="pageSubHeadline" class="Typo-headline-sub-headline">{subheadline}</p>
   </div>
   <div class="buttonContainer" has-button={showButton}>
     <Button label={buttonText} style="tertiary" href="" />

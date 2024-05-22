@@ -1,0 +1,34 @@
+---
+import Testimonial from "../../components/molecules/Testimonial.astro";
+---
+
+<section>
+  <div class="testimonials">
+    <Testimonial cosName="Anett Moglich" review="First matcha I actually liked" />
+    <Testimonial cosName="Charlotta Borelius" review="10/10. Nice packaging, great quality" />
+    <Testimonial cosName="Maria Catherine van Ooy" review="I always get their Matcha at cafés and after buing the Piohni Matcha spoon that is designed to be able to measure the powder correct I enjoy it even more at home!" />
+    <Testimonial cosName="Christine Bülow" review="The best matcha on the market! worth every penny.Great and quick service, i’m very satisfied." />
+    <Testimonial
+      cosName="Nicole Punzi"
+      review="I have tried so many matchas the last 10 years, and I just love Piohní. The taste, the philosophy, the branding. But most of all the nutritional factors of the quality and taste👌🏻 My favorite matcha moment and feeling is with Piohní matcha. Thank you"
+    />
+    <Testimonial cosName="Anette Brammer" review="The tastiest matcha. Pleasant and mild taste - no bitterness. Definitely a quality matcha" />
+    <Testimonial cosName="Sofie Eriis Hansen" review="I only drink matcha at places that serve Piohní" />
+    <Testimonial cosName="Chanel Lariising" review="I've had matcha before where I thought I hated it, but then I tried Piohní. Seriously so good!!" />
+  </div>
+</section>
+
+<style>
+  section {
+    width: 100vw;
+    overflow: scroll;
+    border-top: 1px solid var(--Color-Stroke-Primary, #d5d0c8);
+    background-color: var(--Color-Background-Secondary);
+  }
+  .testimonials {
+    display: flex;
+    gap: 40px;
+    width: fit-content;
+    padding: 40px;
+  }
+</style>

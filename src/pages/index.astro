@@ -6,12 +6,21 @@ import FormSection from "../components/sections/FormSection.astro";
 import Button from "../components/atoms/Button.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
 import ProductSection from "../components/sections/ProductSection.astro";
+import InstaCTA from "../components/sections/InstaCTA.astro";
+import Testimonial from "../components/molecules/Testimonial.astro";
+import TestimonialSection from "../components/sections/TestimonialSection.astro";
 ---
 
 <BaseLayout titleTag="Discover Premium Matcha Excellence">
   <main>
     <HeroSection />
-    <ProductSection />
+    <ProductSection id="product_section" />
+    <TestimonialSection />
+    <!-- have a taste section -->
+    <!-- how to make section -->
+    <!-- faq section -->
+    <InstaCTA headline="Want to be a part of the comunity?" />
+    <!-- partners section -->
   </main>
 </BaseLayout>
 <style>

@@ -1,9 +1,14 @@
 ---
-const { style, label, href, size } = Astro.props;
+const { style, label, href, size, hasIcon } = Astro.props;
 ---
 
 <div class="button buttonComponent" style-variant={style} size-variant={size}>
   <a href={href} class="Typo-button_label button_labelComponent" label-variant={style}>{label}</a>
+  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none" class="icon_container" icon-variant={hasIcon}>
+    <path
+      d="M5 10.7495C4.58579 10.7495 4.25 11.0853 4.25 11.4995C4.25 11.9137 4.58579 12.2495 5 12.2495V10.7495ZM16.5303 12.0298C16.8232 11.7369 16.8232 11.2621 16.5303 10.9692L11.7574 6.19623C11.4645 5.90334 10.9896 5.90334 10.6967 6.19623C10.4038 6.48912 10.4038 6.964 10.6967 7.25689L14.9393 11.4995L10.6967 15.7421C10.4038 16.035 10.4038 16.5099 10.6967 16.8028C10.9896 17.0957 11.4645 17.0957 11.7574 16.8028L16.5303 12.0298ZM5 12.2495H16V10.7495H5V12.2495Z"
+    ></path>
+  </svg>
 </div>
 
 <style>
@@ -12,6 +17,10 @@ const { style, label, href, size } = Astro.props;
   }
   .button_labelComponent {
     color: var(--Color-Text-Button);
+  }
+
+  .icon_container {
+    display: none;
   }
   .button:hover {
     box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Hover);
@@ -32,15 +41,24 @@ const { style, label, href, size } = Astro.props;
   [style-variant="primary"] {
     background-color: var(--Color-Fill-Button-Primary);
   }
+  [style-variant="primary"] .icon_container {
+    fill: var(--Color-Fill_Icon_Icon);
+  }
 
   /* Secondary */
   [style-variant="secondary"] {
     background-color: var(--Color-Fill-Button-Secondary);
   }
+  [style-variant="secondary"] .icon_container {
+    fill: var(--Color-Fill_Icon_Icon);
+  }
 
   /* tertiary */
   [style-variant="tertiary"] {
     background-color: var(--Color-Fill-Button-Tertiary);
+  }
+  [style-variant="tertiary"] .icon_container {
+    fill: var(--Color-Fill_Icon_White);
   }
   [style-variant="tertiary"]:hover {
     box-shadow: 0px 1px 4px 0px var(--Color-Fill-Icon-transparent);
@@ -59,5 +77,10 @@ const { style, label, href, size } = Astro.props;
   /* Fill container width variant */
   [size-variant="fillContainer"] {
     width: 100%;
+  }
+
+  /* with or without icon variant */
+  [icon-variant="true"] {
+    display: block;
   }
 </style>

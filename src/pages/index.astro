@@ -4,101 +4,15 @@ import heroImage from "../assets/images/matcha/matcha-whisk03.webp";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FormSection from "../components/sections/FormSection.astro";
 import Button from "../components/atoms/Button.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
 ---
 
 <BaseLayout titleTag="Discover Premium Matcha Excellence">
-  <section class="hero_section">
-    <div class="scrollIndicator">
-      <a href="#product_section">
-        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="16" viewBox="0 0 31 16" fill="none">
-          <path d="M2 2L15.5 13.5L29 2" stroke="#FFFFFE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg></a
-      >
-    </div>
-    <div class="heroImage_container"><Image src={heroImage} alt="Piohni's premium matcha" class="heroImage" /></div>
-    <div class="hero_textbox_container">
-      <div class="hero_textbox">
-        <div class="headlines">
-          <h1 class="heroHeadline Typo-headline-large">Creamy Calming Matcha</h1>
-          <h2 class="heroSubHeadline Typo-headline-sub-headline">Indulge in a matcha that makes you go 'ahhh' with every sip, whether for personal enjoyment or to elevate your establishment's offerings through wholesale partnerships.</h2>
-        </div>
-        <div class="button_container">
-          <div class="button_wrapper">
-            <Button style="tertiary" label="Buy Piohní matcha" href="/shop" hasIcon="true" />
-          </div>
-          <div class="button_wrapper">
-            <Button style="secondary" label="Partner with Piohní" href="/b2b" hasIcon="true" />
-            <p class="Typo-button-explainer">Sell or serve Piohní matcha</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <FormSection />
-  </section>
-  <main></main>
+  <HeroSection />
+  <main>
+    <section id="product_section"></section>
+  </main>
 </BaseLayout>
 <style>
-  .hero_section {
-    width: 100vw;
-    height: calc(100vh - 125px);
-    position: relative;
-  }
-  .scrollIndicator {
-    position: absolute;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 12px;
-  }
-
-  .heroImage_container {
-    position: absolute;
-    height: 100%;
-    width: 66%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-
-  .heroImage {
-    object-fit: cover;
-  }
-  .hero_textbox_container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .hero_textbox {
-    position: absolute;
-    background-color: var(--Color-Background-Secondary);
-    right: 0px;
-    max-width: 610px;
-
-    display: flex;
-    padding: 40px;
-    margin-right: 6%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-  }
-  .headlines {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .button_container {
-    display: flex;
-    gap: 20px;
-  }
-  .button_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-  }
+  /* ---------- Product section ---------- */
 </style>

@@ -154,13 +154,21 @@ a {
 }
 .Typo-button_label {
   font-family: "Roboto", sans-serif;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
   text-decoration: none;
   text-align: center;
+}
+.Typo-button-label-small {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
 }
 .Typo-testimonial-reference {
   font-size: 14px;

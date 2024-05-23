@@ -79,31 +79,35 @@ import Button from "../atoms/Button.astro";
     align-items: center;
     gap: 20px;
   }
-
+  h3 {
+    padding: 0 20px;
+    text-align: center;
+  }
   #card_container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 32px;
+    flex-direction: column;
   }
   .card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    width: 280px;
+    width: 300px;
   }
   .ImageContainer {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     display: grid;
   }
 
   .Image,
   .HoverImage {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     grid-area: 1/ 2/ 1/ 2;
   }
@@ -143,7 +147,7 @@ import Button from "../atoms/Button.astro";
 
   #button_container {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     margin-top: 20px;
   }
   @keyframes fade-out {
@@ -152,6 +156,44 @@ import Button from "../atoms/Button.astro";
     }
     100% {
       opacity: 0;
+    }
+  }
+  @media (min-width: 550px) {
+    #card_container {
+      flex-direction: row;
+    }
+    .card {
+      width: 28vw;
+    }
+    .ImageContainer {
+      width: 28vw;
+      height: 28vw;
+    }
+
+    .Image,
+    .HoverImage {
+      width: 28vw;
+      height: 28vw;
+    }
+
+    #button_container {
+      max-width: 400px;
+    }
+  }
+
+  @media (min-width: 920px) {
+    .card {
+      width: 280px;
+    }
+    .ImageContainer {
+      width: 280px;
+      height: 280px;
+    }
+
+    .Image,
+    .HoverImage {
+      width: 280px;
+      height: 280px;
     }
   }
 </style>

@@ -8,10 +8,19 @@ const { activePage } = Astro.props;
 <header>
   <AnnouncementBar />
   <div id="NavBar">
+    <div id="burger">
+      <div class="burgerLine"></div>
+      <div class="burgerLine"></div>
+      <div class="burgerLine"></div>
+    </div>
     <a href="/" id="logo_container">
       <Image src={PrimaryLogo} alt="piohní logo" width="85" height="53" />
     </a>
     <div id="NavMenu" active-navItem={activePage}>
+      <div class="exit">
+        <div class="burgerLine"></div>
+        <div class="burgerLine"></div>
+      </div>
       <div class="NavItem"><a href="/shop" class="NavLink Typo-navigation">Shop</a></div>
       <div class="NavItem"><a href="/cafees" class="NavLink Typo-navigation">cafées</a></div>
       <div class="NavItem"><a href="/recipes" class="NavLink Typo-navigation">recipes</a></div>
@@ -50,21 +59,58 @@ const { activePage } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 48px;
+    padding: 16px 20px;
+  }
+  #burger {
+    display: flex;
+    flex-direction: column;
+    height: 16px;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-right: 46px;
+  }
+  .burgerLine {
+    width: 22px;
+    height: 1.5px;
+    background-color: var(--Primitives-Color-Brown-800);
+  }
+  .exit {
+    display: grid;
+    height: 20px;
+    cursor: pointer;
+  }
+  .exit .burgerLine:nth-child(1) {
+    transform: rotate(45deg);
+    grid-area: 1 / 2 / 1 / 2;
+  }
+  .exit .burgerLine:nth-child(2) {
+    transform: rotate(-45deg);
+    grid-area: 1 / 2 / 1 / 2;
   }
 
   #NavMenu {
-    display: flex;
-    gap: 40px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
     box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 100vh;
+    background-color: var(--Color-Background-Accent);
+    align-items: flex-start;
+    border-right: 1px solid var(--Color-Stroke-Blue-Dark);
+    padding: 40px;
+    z-index: 999;
   }
   .NavItem {
     display: flex;
-    height: 40px;
-    justify-content: center;
+    height: 80px;
+    justify-content: flex-start;
     align-items: center;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid var(--Color-Stroke-Blue-Dark);
     border-top: 2px solid transparent;
+    width: 100%;
   }
   .NavItem:hover {
     border-bottom: 2px solid var(--Color-Fill-Icon-transparent);
@@ -74,28 +120,116 @@ const { activePage } = Astro.props;
     display: flex;
     gap: 20px;
   }
-  /* ----------- active page indicator ----------- */
-  [active-navItem="shop"] .NavItem:nth-child(1) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
-  [active-navItem="cafees"] .NavItem:nth-child(2) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
 
-  [active-navItem="recipes"] .NavItem:nth-child(3) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
+  @media (min-width: 1040px) {
+    #burger {
+      display: none;
+    }
+    #NavBar {
+      padding: 20px 48px;
+    }
+    #NavMenu {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      box-sizing: border-box;
+      position: relative;
+      height: fit-content;
+      width: fit-content;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
 
-  [active-navItem="events"] .NavItem:nth-child(4) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
-  [active-navItem="b2b"] .NavItem:nth-child(5) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
-  [active-navItem="about-matcha"] .NavItem:nth-child(6) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
-  }
-  [active-navItem="about-piohni"] .NavItem:nth-child(7) {
-    border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    .NavItem {
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid transparent;
+      border-top: 2px solid transparent;
+    }
+    .NavLink {
+      width: max-content;
+      text-align: center;
+    }
+    .exit {
+      display: none;
+    }
+
+    /* ----------- active page indicator ----------- */
+    [active-navItem="shop"] .NavItem:nth-child(2) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+    [active-navItem="cafees"] .NavItem:nth-child(3) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+
+    [active-navItem="recipes"] .NavItem:nth-child(4) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+
+    [active-navItem="events"] .NavItem:nth-child(5) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+    [active-navItem="b2b"] .NavItem:nth-child(6) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+    [active-navItem="about-matcha"] .NavItem:nth-child(7) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
+    [active-navItem="about-piohni"] .NavItem:nth-child(8) {
+      border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
+    }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById("burger");
+    const navMenu = document.getElementById("NavMenu");
+    const exit = document.querySelector(".exit");
+    const navLinks = document.querySelectorAll(".NavLink");
+
+    function closeNavMenu() {
+      if (window.innerWidth < 1040) {
+        navMenu.style.display = "none";
+      }
+    }
+
+    function openNavMenu() {
+      navMenu.style.display = "flex";
+    }
+
+    burger.addEventListener("click", function () {
+      openNavMenu();
+    });
+
+    exit.addEventListener("click", closeNavMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeNavMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+      const target = event.target as Node;
+      if (!navMenu.contains(target) && !burger.contains(target)) {
+        closeNavMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 1040) {
+        navMenu.style.display = "flex";
+      } else {
+        navMenu.style.display = "none";
+      }
+    });
+
+    if (window.innerWidth >= 1040) {
+      navMenu.style.display = "flex";
+    } else {
+      navMenu.style.display = "none";
+    }
+  });
+</script>

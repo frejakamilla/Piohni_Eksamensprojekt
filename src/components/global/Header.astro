@@ -184,7 +184,7 @@ const { activePage } = Astro.props;
   }
 </style>
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
     const burger = document.getElementById("burger");
     const navMenu = document.getElementById("NavMenu");
@@ -228,6 +228,60 @@ const { activePage } = Astro.props;
 
     if (window.innerWidth >= 1040) {
       navMenu.style.display = "flex";
+    } else {
+      navMenu.style.display = "none";
+    }
+  });
+</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById("burger");
+    const navMenu = document.getElementById("NavMenu");
+    const exit = document.querySelector(".exit");
+    const navLinks = document.querySelectorAll(".NavLink");
+
+    function closeNavMenu() {
+      if (window.innerWidth < 1040) {
+        navMenu.style.display = "none";
+        document.body.style.overflow = "auto"; // Enable scrolling
+      }
+    }
+
+    function openNavMenu() {
+      navMenu.style.display = "flex";
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    }
+
+    burger.addEventListener("click", function () {
+      openNavMenu();
+    });
+
+    exit.addEventListener("click", closeNavMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeNavMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+      const target = event.target as Node;
+      if (!navMenu.contains(target) && !burger.contains(target)) {
+        closeNavMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 1040) {
+        navMenu.style.display = "flex";
+        document.body.style.overflow = "auto"; // Enable scrolling
+      } else {
+        navMenu.style.display = "none";
+      }
+    });
+
+    // Initialize menu display on page load
+    if (window.innerWidth >= 1040) {
+      navMenu.style.display = "flex";
+      document.body.style.overflow = "auto"; // Enable scrolling
     } else {
       navMenu.style.display = "none";
     }

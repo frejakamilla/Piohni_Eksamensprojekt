@@ -13,7 +13,7 @@ const { activePage } = Astro.props;
     </a>
     <div id="NavMenu" active-navItem={activePage}>
       <div class="NavItem"><a href="/shop" class="NavLink Typo-navigation">Shop</a></div>
-      <div class="NavItem"><a href="/partners" class="NavLink Typo-navigation">cafées</a></div>
+      <div class="NavItem"><a href="/cafees" class="NavLink Typo-navigation">cafées</a></div>
       <div class="NavItem"><a href="/recipes" class="NavLink Typo-navigation">recipes</a></div>
       <div class="NavItem"><a href="/events" class="NavLink Typo-navigation">plan events</a></div>
       <div class="NavItem"><a href="/b2b" class="NavLink Typo-navigation">b2b</a></div>
@@ -74,24 +74,25 @@ const { activePage } = Astro.props;
     display: flex;
     gap: 20px;
   }
-  /* ----------- Variants ----------- */
-  /* HasButton = true */
+  /* ----------- active page indicator ----------- */
   [active-navItem="shop"] .NavItem:nth-child(1) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
-  [active-navItem="about-matcha"] .NavItem:nth-child(2) {
+  [active-navItem="cafees"] .NavItem:nth-child(2) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
+
   [active-navItem="recipes"] .NavItem:nth-child(3) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
-  [active-navItem="partners"] .NavItem:nth-child(4) {
+
+  [active-navItem="events"] .NavItem:nth-child(4) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
-  [active-navItem="events"] .NavItem:nth-child(5) {
+  [active-navItem="b2b"] .NavItem:nth-child(5) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
-  [active-navItem="b2b"] .NavItem:nth-child(6) {
+  [active-navItem="about-matcha"] .NavItem:nth-child(6) {
     border-bottom: 2px solid var(--Color-Fill-Icon-Icon);
   }
   [active-navItem="about-piohni"] .NavItem:nth-child(7) {

@@ -76,6 +76,7 @@
   --Color-Stroke-Primary: var(--Primitives-Color-Sand-400);
   --Color-Stroke-Secondary: var(--Primitives-Color-Brown-800);
   --Color-Stroke-Blue: var(--Primitives-Color-WarmBlue-400);
+  --Color-Stroke-Blue-Dark: var(--Primitives-Color-WarmBlue-500);
 
   /* Text colors */
   --Color-Text-Announcment: var(--Primitives-Color-WarmBlue-900);

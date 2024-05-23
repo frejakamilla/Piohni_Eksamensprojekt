@@ -25,13 +25,51 @@ import CafeCard from "../components/molecules/CafeCard.astro";
         <p id="pageSubHeadline" class="Typo-headline-sub-headline">You can purchase our matcha products at select stores in Copenhagen or savor our matcha powder prepared in various ways at hotels and cafés worldwide.</p>
       </div>
       <div class="button_container">
-        <Button label="Taste in cafés" style="primary" href="" />
-        <Button label="Outside of Denmark" style="primary" href="" />
-        <Button label="Buy products in stores" style="primary" href="" />
         <!-- Find ud a det med anden størrelse, ikoner og link til sektioner -->
+        <div class="button">
+          <a href="#copenhagen-cafees" class="Typo-button-label-small">Taste in cafés</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+            <path
+              d="M3 19H18M15.5 9H5L5.5 15C5.5 15 6 17.5 8.5 17.5C11 17.5 10.5 17.5 12.5 17.5C14.5 17.5 15 15 15 15L15.1667 13M15.5 9L15.1667 13M15.5 9C15.5 9 17.5 8.99997 18 9.5C18.7868 10.2868 18.5 12.5001 17.5 13C16.5 13.4999 15.1667 13 15.1667 13M7 10.5C7 10.5 7 13.5 7.5 14.5C8 15.5 9 15.5 9 15.5M8.5 7.5C8.5 7.5 8 7 8 6C8 5 8.5 5 8.5 4C8.5 3.5 8 3 8 3M10.5 7.5C10.5 7.5 10 7 10 6C10 5 10.5 5 10.5 4C10.5 3.5 10 3 10 3M12.5 7.5C12.5 7.5 12 7 12 6C12 5 12.5 5 12.5 4C12.5 3.5 12 3 12 3"
+              stroke="#3D2D21"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="button">
+          <a href="#other-cafees" class="Typo-button-label-small">Outside of Denmark</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7.5" stroke="#3D2D21"></circle>
+            <path
+              d="M14.5 4.49957C14.1667 4.66623 13.5 4.99957 13 4.49957C12.5 3.99956 12.5 3.99957 12 3.99957C11.5 3.99957 11.5 4.49957 11 4.49957C10.5 4.49957 9.99999 3.99957 9.49999 4.49957C8.99999 4.99957 9.49999 5.99957 8.49999 6.49957C7.49999 6.99957 8.99997 6.99957 8.99999 7.49957C9.00001 7.99957 10.3112 7.31079 11 7.99957C11.6888 8.68834 11.5 8.99951 12 9.49951C12.3536 9.85306 12.5 9.49951 13 9.99951C13.3536 10.3531 13.5 10.4996 14 9.99957C14.4 9.59957 14.8333 9.49957 15 9.49957M3.5 2.49957C4.5 2.49957 5.5 2.99957 5.5 3.49957C5.5 3.99957 6 5.49957 5 5.49957C4 5.49957 3 5.99957 3 6.49957C3 6.89957 3.66667 7.66623 4 7.99957C4.5 8.3329 5.4 9.19957 5 9.99957C4.5 10.9996 4 12.4996 3.5 11.9996C3.14645 11.646 3.76491 9.63202 2.5 8.99957C1.5 8.49957 2 5.99957 1 5.99957M7.49999 12.9996C7.33332 12.9996 6.99999 12.7996 6.99999 11.9996C6.99999 10.9996 5.99999 11.4996 6.49999 9.99957C6.99999 8.49957 8 8.49957 8.5 8.99957C9 9.49957 10 8.99957 10 9.49957C10 9.99957 10 10.4996 9 11.4996C8 12.4996 7.99999 13.4996 7.49999 12.9996ZM7 1.99951C8 1.99951 8 1.49957 8.5 1.99957C9 2.49957 8.50001 3.99957 8 3.99957C7.49999 3.99957 7.5 2.99957 7 2.99957C6.5 2.99957 6 1.99951 7 1.99951Z"
+              stroke="#3D2D21"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="button">
+          <a href="#stores" class="Typo-button-label-small">Buy products in stores</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path
+              d="M12.9896 6.00004H2.03093C1.88474 5.99874 1.73998 6.03018 1.60641 6.09224C1.47285 6.15429 1.35361 6.24552 1.25672 6.35976C1.15983 6.47401 1.08755 6.6086 1.04476 6.75448C1.00197 6.90035 0.989668 7.0541 1.00868 7.20537L1.75493 13.072C1.78736 13.3302 1.90922 13.5672 2.09753 13.7381C2.28584 13.9091 2.52759 14.0022 2.77718 14H12.2229C12.4724 14.0022 12.7142 13.9091 12.9025 13.7381C13.0908 13.5672 13.2126 13.3302 13.2451 13.072L13.9914 7.20537C14.0101 7.05589 13.9983 6.90395 13.9567 6.75958C13.9151 6.61519 13.8447 6.48166 13.75 6.36777C13.6554 6.25387 13.5386 6.16221 13.4076 6.09882C13.2765 6.03544 13.134 6.00177 12.9896 6.00004Z"
+              stroke="#3D2D21"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path d="M4.31177 8.31738V11.3462" stroke="#3D2D21" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M7.34058 8.31738V11.3462" stroke="#3D2D21" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.3694 8.31738V11.3462" stroke="#3D2D21" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M11 2C11.7131 2.11602 12.3664 2.4482 12.8607 2.94601C13.355 3.44381 13.6631 4.08002 13.7381 4.75785L14 7" stroke="#3D2D21" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M1 7L1.2619 4.74775C1.34181 4.0709 1.65205 3.43695 2.14589 2.94136C2.63974 2.44578 3.29044 2.11541 4 2" stroke="#3D2D21" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M11 2C11 2.13132 10.9547 2.26136 10.8668 2.38268C10.7788 2.50401 10.6499 2.61425 10.4874 2.7071C10.3249 2.79997 10.132 2.87362 9.91969 2.92388C9.70738 2.97414 9.47981 3 9.25 3H5.75C5.28587 3 4.84076 2.89464 4.51257 2.7071C4.18438 2.51957 4 2.26522 4 2C4 1.73478 4.18438 1.48043 4.51257 1.29289C4.84076 1.10536 5.28587 1 5.75 1H9.25C9.71413 1 10.1592 1.10536 10.4874 1.29289C10.8156 1.48043 11 1.73478 11 2Z"
+              stroke="#3D2D21"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
       </div>
     </section>
-    <section id="copenhagenCafees_section">
+    <section id="copenhagen-cafees">
       <h2 class="Typo-headline-medium-classic">Taste Piohní at cafées in Copenhagen</h2>
       <div class="cafeCardGrid">
         <CafeCard cafe="Lille Petra Café" adress1="Kronprinsessegade 4" adress2="1306 Copenhagen" serves="Serves: Matcha Tea, Matcha Latte & Iced Matcha Latte"><Image src={lillePetra} alt="" /></CafeCard>
@@ -44,7 +82,7 @@ import CafeCard from "../components/molecules/CafeCard.astro";
         <CafeCard cafe="Søly" adress1="Vedbæk Strandvej 362" adress2="2950 Vedbæk" serves=""><Image src={soly} alt="" /></CafeCard>
       </div>
     </section>
-    <section id="otherCafees_section">
+    <section id="other-cafees">
       <h2 class="Typo-headline-medium-classic">Taste Piohní outside of Denmark</h2>
       <div class="cafeCardGrid">
         <CafeCard cafe="Arev – St. Tropez " adress1="8 Chemin des Vendanges" adress2="83990 Saint-Tropez, France" serves=""><Image src={arev} alt="" /></CafeCard>
@@ -52,7 +90,7 @@ import CafeCard from "../components/molecules/CafeCard.astro";
         <CafeCard cafe="Batch – Belgium" adress1="Chau. de Waterloo 559" adress2="1050 Ixelles, Belgium" serves=""><Image src={batch} alt="" /></CafeCard>
       </div>
     </section>
-    <section id="stores_section">
+    <section id="stores">
       <h2 class="Typo-headline-medium-classic">Buy our products in Copenhagen</h2>
       <div class="city_container">
         <div class="city_column">
@@ -127,6 +165,9 @@ import CafeCard from "../components/molecules/CafeCard.astro";
 </BaseLayout>
 
 <style>
+  .main {
+    gap: 0;
+  }
   /* headline section */
   #headline_section {
     width: 100%;
@@ -153,14 +194,37 @@ import CafeCard from "../components/molecules/CafeCard.astro";
     display: flex;
     gap: 20px;
   }
+  .button {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 99px;
+    background-color: var(--Color-Fill-Button-Primary);
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
+  }
+  .button:hover {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Hover);
+  }
+  .button:focus {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Hover);
+    border: 1.5px solid var(--Color-Stroke-Primary, #d5d0c8);
+  }
+  .button:active {
+    box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Pressed), 0px 4px 4px 0px var(--Color-Effect-Dropshadow-Button-Default) inset;
+  }
+  .button:disabled {
+    background-color: var(--Color-Fill-Button-Diabled);
+  }
 
   /* café sections */
-  #copenhagenCafees_section,
-  #otherCafees_section,
-  #stores_section {
+  #copenhagen-cafees,
+  #other-cafees,
+  #stores {
     display: flex;
     width: 100%;
-    padding: 0 80px;
+    padding: 60px 80px;
     flex-direction: column;
     align-items: flex-start;
     gap: 60px;
@@ -208,7 +272,28 @@ import CafeCard from "../components/molecules/CafeCard.astro";
     background: var(--Color-Stroke-Secondary, #3d2d21);
     align-self: center;
   }
+  @media (max-width: 660px) {
+    .button_container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 300px;
+    }
+    .button {
+      width: 100%;
+    }
+  }
+  @media (max-width: 770px) {
+    .cafeCardGrid {
+      margin: 0px;
+    }
+  }
   @media (max-width: 880px) {
+    #copenhagen-cafees,
+    #other-cafees,
+    #stores {
+      padding: 60px 20px;
+    }
     .city_container {
       flex-direction: column;
     }

@@ -102,11 +102,6 @@ main {
   gap: 120px;
 }
 
-@media (min-width: 700px) {
-  main {
-    padding: var(--Spacing-Huge4, 120px) 0px;
-  }
-}
 h1,
 h2,
 h3,

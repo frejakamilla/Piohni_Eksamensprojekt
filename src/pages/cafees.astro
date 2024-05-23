@@ -52,7 +52,77 @@ import CafeCard from "../components/molecules/CafeCard.astro";
         <CafeCard cafe="Batch – Belgium" adress1="Chau. de Waterloo 559" adress2="1050 Ixelles, Belgium" serves=""><Image src={batch} alt="" /></CafeCard>
       </div>
     </section>
-    <section id="stores_section"><h2 class="Typo-headline-medium-classic">Buy our products in Copenhagen</h2></section>
+    <section id="stores_section">
+      <h2 class="Typo-headline-medium-classic">Buy our products in Copenhagen</h2>
+      <div class="city_container">
+        <div class="city_column">
+          <p class="Typo-headline-small-classic">Central Copenhagen</p>
+          <div class="shop_container">
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">Deli Drop – Torvehallerne</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Frederiksborggade 21</p>
+                <p class="adressSecondLine">1360 Copenhagen K</p>
+              </div>
+            </div>
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">One Thirty Lab Studio</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Palægade 2,</p>
+                <p class="adressSecondLine">1261 Copenhagen K</p>
+              </div>
+            </div>
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">25 Hours Hotel Copenhagen</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Pilestræde 65</p>
+                <p class="adressSecondLine">1112 Copenhagen K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacerLine"></div>
+        <div class="city_column">
+          <p class="Typo-headline-small-classic">Østerbro</p>
+          <div class="shop_container">
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">Meny – Bryggervangen</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Bryggervangen 17</p>
+                <p class="adressSecondLine">2100 Copenhagen Ø</p>
+              </div>
+            </div>
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">Meny – Østerfælled Torv</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Østerfælled Torv 21</p>
+                <p class="adressSecondLine">2100 Copenhagen Ø</p>
+              </div>
+            </div>
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">PWR.8 Studio – Østerbro</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Dampfærgevej 10, Stuen</p>
+                <p class="adressSecondLine">2100 København Ø</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacerLine"></div>
+        <div class="city_column">
+          <p class="Typo-headline-small-classic">Frederiksberg</p>
+          <div class="shop_container">
+            <div class="shop">
+              <h3 class="shopName Typo-headline-xstrasmall-classic">PWR.8 Studio – FRB</h3>
+              <div class="adress">
+                <p class="adressFirstLine">Nyvej 17B, Baghuset</p>
+                <p class="adressSecondLine">1851 Frederiksberg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
@@ -90,7 +160,7 @@ import CafeCard from "../components/molecules/CafeCard.astro";
   #stores_section {
     display: flex;
     width: 100%;
-    padding: 60px 80px;
+    padding: 0 80px;
     flex-direction: column;
     align-items: flex-start;
     gap: 60px;
@@ -100,5 +170,53 @@ import CafeCard from "../components/molecules/CafeCard.astro";
     gap: 30px;
     flex-wrap: wrap;
     margin: 0px 20px;
+  }
+
+  /* shop section */
+
+  .city_container {
+    display: flex;
+    gap: 40px;
+    margin: 0px 20px;
+  }
+  .city_column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .shop_container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .shop {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .adress p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.77px;
+  }
+  .spacerLine {
+    width: 1px;
+    height: 290px;
+    background: var(--Color-Stroke-Secondary, #3d2d21);
+    align-self: center;
+  }
+  @media (max-width: 880px) {
+    .city_container {
+      flex-direction: column;
+    }
+    .spacerLine {
+      width: 260px;
+      height: 1px;
+      background: var(--Color-Stroke-Secondary, #3d2d21);
+      align-self: center;
+    }
   }
 </style>

@@ -23,7 +23,7 @@ import Form from "../components/molecules/Form.astro";
               <br />At the core of Piohní's philosophy lies a commitment to excellence. We proudly curate only the most exceptional ceremonial-grade matcha, meticulously sourced directly from the esteemed "Champagne" region of Japan. Renowned for its
               pristine quality and unparalleled flavor profile, our matcha embodies a harmonious blend of creaminess and sweetness, without a trace of bitterness.
             </p>
-            <div class="ImageContainer">
+            <div class="quoteImage">
               <Image src={Quote} alt="I sifted through 147 varieties of matcha in search of the perfect brew. Quote: founder, Johanne Cornelia" class="image" />
             </div>
           </div>
@@ -52,24 +52,6 @@ import Form from "../components/molecules/Form.astro";
         </div>
       </div>
     </section>
-    <!-- <section id="WhyPartnerSection">
-      <div class="WhyImageContainer">
-        <Image src={image1} alt="matcha powder in spoon" class="WhyImage" />
-      </div>
-      <div class="WhyColumn">
-        <p class="Typo-headline-medium-uppercase">Want to partner with Piohní?</p>
-        <p class="Typo-body-large">
-          We supply our specialty quality matcha to hotels and cafés worldwide. <br />
-          <br />By partnering with us, you gain access to premium matcha products, expert training in matcha making, and a range of matcha-ware and equipment to enhance your offerings. Plus, unlock the opportunity to host unique matcha-themed events
-          that will captivate your customers and set your establishment apart. <br />
-          <br />Join us in the pursuit of matcha excellence and elevate your business to new heights.
-        </p>
-        <div class="button_container">
-          <Button style="tertiary" label="Partner with Piohní" href="/b2b" />
-          <Button style="secondary" label="Plan your next event with Piohní" href="/events" />
-        </div>
-      </div>
-    </section> -->
     <section id="WhyPartnerSection">
       <div class="WhyImageContainer">
         <Image src={Matcha} alt="matcha powder in spoon" class="WhyImage" />
@@ -91,16 +73,17 @@ import Form from "../components/molecules/Form.astro";
 <style>
   main {
     display: flex;
-    padding: var(--Spacing-Huge4, 120px) 0px;
     flex-direction: column;
     align-items: center;
-    gap: 160px;
+    gap: 80px;
+    padding: 0px 0px 80px;
   }
   #AboutSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--Spacing-Huge2, 80px);
+    padding: 0 20px;
   }
   .AboutRow {
     display: flex;
@@ -109,6 +92,13 @@ import Form from "../components/molecules/Form.astro";
     justify-content: flex-end;
     align-items: flex-start;
     gap: 40px;
+
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+
+  .AboutRow:first-child .ImageContainer {
+    height: 200px;
   }
   .AboutColumn,
   .ImageContainer {
@@ -136,6 +126,9 @@ import Form from "../components/molecules/Form.astro";
     aspect-ratio: 500 / 607;
   }
 
+  .quoteImage .image {
+    object-fit: fill;
+  }
   /* Why Partner section */
   #WhyPartnerSection {
     display: flex;
@@ -168,12 +161,16 @@ import Form from "../components/molecules/Form.astro";
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+    max-width: 100%;
   }
 
   .WhyText {
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+  .WhyText p {
+    text-align: center;
   }
   .WhyColumn .Typo-body-large {
     max-width: 700px;
@@ -184,6 +181,28 @@ import Form from "../components/molecules/Form.astro";
     align-items: flex-start;
     gap: 12px 20px;
     flex-wrap: wrap;
+  }
+
+  @media (min-width: 700px) {
+    main {
+      padding: var(--Spacing-Huge4, 120px) 0px;
+      gap: 160px;
+    }
+    .AboutRow {
+      display: flex;
+      flex-flow: initial;
+      width: 100%;
+      max-width: 1040px;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .AboutRow:first-child .ImageContainer {
+      height: auto;
+    }
+    .WhyText p {
+      text-align: left;
+    }
   }
 </style>
 

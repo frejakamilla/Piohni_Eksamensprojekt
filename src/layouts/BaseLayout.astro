@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/reset.css";
 import Footer from "../components/global/Footer.astro";
 import Header from "../components/global/Header.astro";
+import HeaderCopy from "../components/global/HeaderCopy.astro";
 const { titleTag, pagename } = Astro.props;
 ---
 
@@ -21,7 +22,8 @@ const { titleTag, pagename } = Astro.props;
     <title>{titleTag}</title>
   </head>
   <body>
-    <Header activePage={pagename} />
+    <!-- <Header activePage={pagename} /> -->
+    <HeaderCopy activePage={pagename} />
     <slot />
     <Footer />
   </body>

@@ -244,6 +244,14 @@ li,
   letter-spacing: 0.7699999809265137px;
   line-height: 28px;
 }
+.Typo-headline-medium-classic {
+  font-family: "contralto-medium", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.77px;
+}
 .Typo-headline-medium-breaker {
   font-size: 32px;
   font-family: "contralto-medium", sans-serif;

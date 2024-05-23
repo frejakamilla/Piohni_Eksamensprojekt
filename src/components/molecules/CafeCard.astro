@@ -1,0 +1,35 @@
+---
+const { cafe, adress1, adress2, serves } = Astro.props;
+---
+
+<div class="cafeCard">
+  <h3 class="cafe Typo-headline-xstrasmall-classic">{cafe}</h3>
+  <div class="image_container"><slot /></div>
+
+  <div class="adress">
+    <p class="adressFirstLine">{adress1}</p>
+    <p class="adressSecondLine">{adress2}</p>
+  </div>
+  <p class="serves Typo-body-small">{serves}</p>
+</div>
+
+<style>
+  .cafeCard {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .image_container {
+    width: 280px;
+    height: 280px;
+  }
+  .adress p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.77px;
+  }
+</style>

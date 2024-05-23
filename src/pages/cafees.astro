@@ -1,7 +1,104 @@
 ---
+import Image from "astro/components/Image.astro";
+import lillePetra from "../assets/images/partners/lille-petra.jpg";
+import audo from "../assets/images/partners/audo.jpg";
+import bagatelle from "../assets/images/partners/bagatelle.jpg";
+import batch from "../assets/images/partners/batch.jpg";
+import bistroVerde from "../assets/images/partners/bistro-verde.jpg";
+import elwisNewton from "../assets/images/partners/elwis-newton.jpg";
+import format from "../assets/images/partners/format.jpg";
+import planetNusa from "../assets/images/partners/planet-nusa.jpg";
+import rosenhuset from "../assets/images/partners/rosenhuset.jpg";
+import soly from "../assets/images/partners/soly.jpg";
+import arev from "../assets/images/partners/arev.jpg";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/atoms/Button.astro";
+import CafeCard from "../components/molecules/CafeCard.astro";
 ---
 
 <BaseLayout titleTag="" pagename="partners">
-  <main></main>
+  <main>
+    <section id="headline_section">
+      <div id="headlines">
+        <h1 id="pageHeadline" class="Typo-headline-medium-uppercase">Find Piohní close to you</h1>
+        <p id="pageSubHeadline" class="Typo-headline-sub-headline">You can purchase our matcha products at select stores in Copenhagen or savor our matcha powder prepared in various ways at hotels and cafés worldwide.</p>
+      </div>
+      <div class="button_container">
+        <Button label="Taste in cafés" style="primary" href="" />
+        <Button label="Outside of Denmark" style="primary" href="" />
+        <Button label="Buy products in stores" style="primary" href="" />
+        <!-- Find ud a det med anden størrelse, ikoner og link til sektioner -->
+      </div>
+    </section>
+    <section id="copenhagenCafees_section">
+      <h2 class="Typo-headline-medium-classic">Taste Piohní at cafées in Copenhagen</h2>
+      <div class="cafeCardGrid">
+        <CafeCard cafe="Lille Petra Café" adress1="Kronprinsessegade 4" adress2="1306 Copenhagen" serves="Serves: Matcha Tea, Matcha Latte & Iced Matcha Latte"><Image src={lillePetra} alt="" /></CafeCard>
+        <CafeCard cafe="Audo" adress1="Aarhusgade 130" adress2="2150 Copenhagen" serves="Serves: Matcha Oat Latte & Matcha Cocktail w. Gin and Blueberry Syrup"><Image src={audo} alt="" /></CafeCard>
+        <CafeCard cafe="Format - Designmuseet" adress1="Bredgade 68" adress2="1260 Copenhagen" serves="Serves: Matcha Latte & Iced Matcha Latte"><Image src={format} alt="" /></CafeCard>
+        <CafeCard cafe="Planet Nusa Café" adress1="Sankt Peders Stræde 30A" adress2="1453 Copenhagen" serves="Serves: Matcha Latte, Iced Matcha Latte & Iced Strawberry Matcha Latte"><Image src={planetNusa} alt="" /></CafeCard>
+        <CafeCard cafe="Bistro Verde" adress1="Sankt Annæ Plads 22" adress2="1250, Copenhagen" serves="Serves: Matcha Latte & Iced Matcha Latte"><Image src={bistroVerde} alt="" /></CafeCard>
+        <CafeCard cafe="Elwis & Newton" adress1="Strandvejen 189" adress2="2900 Hellerup" serves="Serves: Matcha Latte"><Image src={elwisNewton} alt="" /></CafeCard>
+        <CafeCard cafe="Café Rosenhuset" adress1="Vedbæk Strandvej 378" adress2="2950 Vedbæk" serves=""><Image src={rosenhuset} alt="" /></CafeCard>
+        <CafeCard cafe="Søly" adress1="Vedbæk Strandvej 362" adress2="2950 Vedbæk" serves=""><Image src={soly} alt="" /></CafeCard>
+      </div>
+    </section>
+    <section id="otherCafees_section">
+      <h2 class="Typo-headline-medium-classic">Taste Piohní outside of Denmark</h2>
+      <div class="cafeCardGrid">
+        <CafeCard cafe="Arev – St. Tropez " adress1="8 Chemin des Vendanges" adress2="83990 Saint-Tropez, France" serves=""><Image src={arev} alt="" /></CafeCard>
+        <CafeCard cafe="Bagatelle – London" adress1="34 Dover St" adress2="London W1S 4NG, United Kingdom" serves=""><Image src={bagatelle} alt="" /></CafeCard>
+        <CafeCard cafe="Batch – Belgium" adress1="Chau. de Waterloo 559" adress2="1050 Ixelles, Belgium" serves=""><Image src={batch} alt="" /></CafeCard>
+      </div>
+    </section>
+    <section id="stores_section"><h2 class="Typo-headline-medium-classic">Buy our products in Copenhagen</h2></section>
+  </main>
 </BaseLayout>
+
+<style>
+  /* headline section */
+  #headline_section {
+    width: 100%;
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  #headlines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #pageHeadline {
+    text-align: center;
+  }
+  #pageSubHeadline {
+    max-width: 865px;
+    text-align: center;
+  }
+  .button_container {
+    display: flex;
+    gap: 20px;
+  }
+
+  /* café sections */
+  #copenhagenCafees_section,
+  #otherCafees_section,
+  #stores_section {
+    display: flex;
+    width: 100%;
+    padding: 60px 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+  .cafeCardGrid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 0px 20px;
+  }
+</style>

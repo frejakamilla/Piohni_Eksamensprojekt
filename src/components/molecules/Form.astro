@@ -6,14 +6,14 @@ import RadioButton from "../atoms/RadioButton.astro";
 
 <form action="" id="ContactForm">
   <div id="contactInfo" class="formElement">
-    <label for="radioButtonContainer" class="Typo-form-headline">Contact information*</label>
+    <p class="Typo-form-headline">Contact information*</p>
     <div id="inputFieldOrganizer">
       <InputField inputId="ContactName" type="text" autocomplete="name" placeholder="Name" />
       <InputField inputId="ContactMail" type="email" autocomplete="email" placeholder="E-mail" />
     </div>
   </div>
   <div id="inquiry" class="formElement">
-    <label for="radioButtonContainer" class="Typo-form-headline">Inquiry type*</label>
+    <p class="Typo-form-headline">Inquiry type*</p>
     <div id="radioButtonContainer">
       <RadioButton label="General" radioGroup="InquiryType" state="checked" />
       <RadioButton label="B2B" radioGroup="InquiryType" />
@@ -21,7 +21,7 @@ import RadioButton from "../atoms/RadioButton.astro";
     </div>
   </div>
   <div id="messageContainer" class="formElement">
-    <label for="radioButtonContainer" class="Typo-form-headline">Inquiry message*</label>
+    <p class="Typo-form-headline">Inquiry message*</p>
     <textarea class="Typo-form-placeholder" rows="4" cols="50" name="message" form="ContactForm" placeholder="Message..." required></textarea>
   </div>
   <div class="formElement">

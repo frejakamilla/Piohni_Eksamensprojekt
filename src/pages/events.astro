@@ -22,7 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main>
     <HeadlineSection
       headline="Matcha events for all occasions."
-      subhedline="Discover the versatility of Piohní matcha at your next event! Whether it's a cozy gathering or a grand celebration, we offer a range of pre-made concepts. But don't let your imagination stop there! You can also create your own unique matcha-inspired event with us. Explore our previous events for inspiration and let us bring the magic of matcha to your occasion."
+      subheadline="Discover the versatility of Piohní matcha at your next event! Whether it's a cozy gathering or a grand celebration, we offer a range of pre-made concepts. But don't let your imagination stop there! You can also create your own unique matcha-inspired event with us. Explore our previous events for inspiration and let us bring the magic of matcha to your occasion."
       buttonText="Plan your next event with Piohní"
       showButton="true"
     />
@@ -186,7 +186,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     padding: 0px var(--Spacing-Huge2, 80px);
     justify-content: center;
     align-items: flex-start;
-    gap: var(--Spacing-Huge1, 60px);
+    gap: 80px 40px;
+    flex-direction: column;
   }
   .eventConcept {
     width: 100%;
@@ -207,6 +208,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     height: 100%;
     object-fit: cover;
     aspect-ratio: 386/457;
+    max-height: 400px;
   }
 
   /* Up Comming Section */
@@ -293,5 +295,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .EventImage {
     width: 100%;
     height: 100%;
+  }
+  @media (min-width: 700px) {
+    #eventConcepts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1100px) {
+    #eventConcepts {
+      display: flex;
+      gap: var(--Spacing-Huge1, 60px);
+      flex-direction: row;
+    }
   }
 </style>

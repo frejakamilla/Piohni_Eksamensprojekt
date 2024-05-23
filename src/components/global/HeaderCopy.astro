@@ -59,7 +59,7 @@ const { activePage } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 48px;
+    padding: 16px 20px;
   }
   #burger {
     display: flex;
@@ -67,6 +67,7 @@ const { activePage } = Astro.props;
     height: 16px;
     justify-content: space-between;
     cursor: pointer;
+    padding-right: 46px;
   }
   .burgerLine {
     width: 22px;
@@ -86,6 +87,7 @@ const { activePage } = Astro.props;
     transform: rotate(-45deg);
     grid-area: 1 / 2 / 1 / 2;
   }
+
   #NavMenu {
     display: none;
     flex-direction: column;
@@ -122,6 +124,9 @@ const { activePage } = Astro.props;
   @media (min-width: 1040px) {
     #burger {
       display: none;
+    }
+    #NavBar {
+      padding: 20px 48px;
     }
     #NavMenu {
       display: flex;

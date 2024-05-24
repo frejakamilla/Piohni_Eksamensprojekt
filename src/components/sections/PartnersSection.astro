@@ -12,12 +12,24 @@ import torvehallerne from "../../assets/images/partners/torvehallerne-logo.png";
 <section>
   <p class="Typo-footer-headline">SOME OF OUR LOVELY PARTNERS</p>
   <div class="image_flex">
-    <Image class="image" src={bagatelle} alt="bagatelle logo" />
-    <Image class="image" src={audo} alt="audo logo" />
-    <Image class="image" src={format} alt="format logo" />
-    <Image class="image" src={lillePetra} alt="lille Petra logo" />
-    <Image class="image" src={depaneur} alt="depaneur logo" />
-    <Image class="image" src={torvehallerne} alt="torvehallerne logo" />
+    <div class="LogoContainer">
+      <Image class="image" src={bagatelle} alt="bagatelle logo" />
+    </div>
+    <div class="LogoContainer">
+      <Image class="image" src={audo} alt="audo logo" />
+    </div>
+    <div class="LogoContainer">
+      <Image class="image" src={format} alt="format logo" />
+    </div>
+    <div class="LogoContainer">
+      <Image class="image" src={lillePetra} alt="lille Petra logo" />
+    </div>
+    <div class="LogoContainer">
+      <Image class="image" src={depaneur} alt="depaneur logo" />
+    </div>
+    <div class="LogoContainer">
+      <Image class="image" src={torvehallerne} alt="torvehallerne logo" />
+    </div>
   </div>
 </section>
 <style>
@@ -39,6 +51,12 @@ import torvehallerne from "../../assets/images/partners/torvehallerne-logo.png";
     justify-content: center;
     align-items: center;
     gap: 0 40px;
+  }
+
+  .LogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .image {
     object-fit: contain;

@@ -17,24 +17,13 @@ const { headline, subheadline, SectionId, hasBackground } = Astro.props;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .form_section {
     gap: 40px;
-    padding: 0px 80px;
+    padding: 0px 40px;
   }
   #formHeadings {
     gap: 12px;
-  }
-  #formHeadline,
-  #formSubHeadline {
-    text-align: center;
-    max-width: 657px;
-  }
-  @media (min-width: 740px) {
-    #form_section {
-      padding: var(--Spacing-Huge2, 80px) var(--Spacing-Huge2, 80px) var(--Spacing-Huge4, 120px) var(--Spacing-Huge2, 80px);
-    }
   }
 
   /* ----------- Variants ----------- */
@@ -42,6 +31,30 @@ const { headline, subheadline, SectionId, hasBackground } = Astro.props;
   /* With background */
   [color-variant="true"] {
     background-color: var(--Color-Background-Secondary);
-    padding: 40px 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 650px) {
+    .form_section,
+    #formHeadings {
+      align-items: center;
+    }
+    #formHeadline,
+    #formSubHeadline {
+      text-align: center;
+      max-width: 657px;
+    }
+  }
+  @media (min-width: 700px) {
+    .form_section {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+  @media (min-width: 740px) {
+    .form_section {
+      padding: 80px 80px 120px 80px;
+    }
   }
 </style>

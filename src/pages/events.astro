@@ -273,7 +273,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     flex-direction: column;
     gap: 20px;
     align-self: stretch;
-    width: 275px;
   }
   #EventCTA .fill {
     display: flex;
@@ -325,11 +324,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     #EventCTA {
       display: flex;
+      width: 46%;
     }
   }
 
   @media (min-width: 985px) {
-    .EventCard {
+    .EventCard,
+    #EventCTA {
       width: 275px;
       min-width: 260px;
     }

@@ -33,7 +33,6 @@ const { placeholder, type, autocomplete, inputId } = Astro.props;
   .inputField {
     padding: 10px;
     border: none;
-    min-width: 280px;
     width: 100%;
     max-width: 322px;
     color: var(--Color-Text-Body);
@@ -48,5 +47,10 @@ const { placeholder, type, autocomplete, inputId } = Astro.props;
 
   input:focus {
     outline-color: var(--Color-Stroke-Blue);
+  }
+  @media (min-width: 370px) {
+    .inputField {
+      min-width: 280px;
+    }
   }
 </style>

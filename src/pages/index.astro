@@ -3,6 +3,7 @@ import Image from "astro/components/Image.astro";
 import heroImage from "../assets/images/matcha/matcha-whisk03.webp";
 import guide from "../assets/images/recipes/guideIllu.svg";
 import cafe from "../assets/images/events/MatchaBar.jpg";
+import makeMatcha from "../assets/images/recipes/makeMatcha.svg";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -36,6 +37,7 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
     </section>
     <section id="ImageTextSection">
       <div class="StretchImageContainer2">
+        <Image src={makeMatcha} alt="how to prepare matcha" class="StretchImage2" />
         <Image src={guide} alt="how to prepare matcha" class="StretchImage2" />
       </div>
       <div class="TextColumn2">
@@ -57,6 +59,8 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
   main {
     padding-top: 0;
     padding-bottom: 0;
+
+    gap: 80px;
   }
   /* ----------  section ---------- */
 
@@ -64,12 +68,17 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
   #TextImageSection {
     display: flex;
     align-items: flex-start;
-    padding: 0px var(--Spacing-Huge2, 80px);
-    gap: 40px;
+    gap: 20px;
     width: 100%;
-    max-width: 1440px;
+    max-width: 760px;
+    flex-direction: column;
+    padding: 0px 20px;
+    align-self: flex-start;
   }
 
+  #TextImageSection {
+    flex-flow: column-reverse;
+  }
   .StretchImageContainer1,
   .StretchImageContainer2 {
     width: 100%;
@@ -78,10 +87,10 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    max-height: 250px;
   }
 
-  .StretchImage1,
-  .StretchImage2 {
+  .StretchImage1 {
     width: 100%;
     height: 100%;
   }
@@ -92,6 +101,12 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
   .StretchImage2 {
     object-fit: contain;
   }
+
+  .StretchImage2:nth-child(2) {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
   .TextColumn1,
   .TextColumn2 {
     width: 100%;
@@ -101,11 +116,57 @@ import PartnersSection from "../components/sections/PartnersSection.astro";
     gap: 20px;
   }
   .TextColumn1 {
-    padding: 64px 0;
+    padding: 0;
   }
   .TextColumn2 .Typo-body-large,
   .TextColumn1 .Typo-body-large {
     max-width: 700px;
+  }
+
+  @media (min-width: 520px) {
+    #ImageTextSection,
+    #TextImageSection {
+      padding: 0px 40px;
+    }
+    .StretchImage2:nth-child(2) {
+      display: block;
+    }
+    .StretchImage2:nth-child(1) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 900px) {
+    main {
+      gap: 120px;
+    }
+    #ImageTextSection,
+    #TextImageSection {
+      flex-direction: row;
+      max-width: 1440px;
+      align-self: center;
+      gap: 40px;
+    }
+
+    #TextImageSection {
+      flex-flow: row;
+    }
+    .StretchImageContainer,
+    .StretchImageContainer2 {
+      max-height: none;
+    }
+    .TextColumn1 {
+      padding: 64px 0;
+    }
+  }
+  @media (min-width: 1100px) {
+    main {
+      gap: 164px;
+    }
+    #ImageTextSection,
+    #TextImageSection {
+      padding: 0px var(--Spacing-Huge2, 80px);
+    }
   }
 </style>
 

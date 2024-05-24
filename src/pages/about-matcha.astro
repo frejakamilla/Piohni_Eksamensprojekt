@@ -51,7 +51,9 @@ import Button from "../components/atoms/Button.astro";
       <div class="recipeLink">
         <p class="Typo-headline-small-elegant">Learn how to prepare matcha</p>
         <Image src={makeMatcha} alt="matcha illustration" class="image" />
-        <Button style="tertiary" label="Matcha Recipes" href="/recipes" />
+        <div class="buttonContainer">
+          <Button style="tertiary" label="Matcha Recipes" href="/recipes" size="fillContainer" />
+        </div>
       </div>
     </section>
     <section class="history_section">
@@ -128,15 +130,18 @@ import Button from "../components/atoms/Button.astro";
     /* form */
 
     .spacerLine {
-      width: 1px;
-      height: 330px;
+      height: 1px;
+      width: 100%;
       background: var(--Color-Stroke-Secondary, #3d2d21);
     }
     .cta_section {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 80px;
+      gap: 20px;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 20px;
     }
     .recipeLink .image {
       height: 168px;
@@ -145,7 +150,8 @@ import Button from "../components/atoms/Button.astro";
     .questionForm,
     .recipeLink {
       display: flex;
-      width: 400px;
+      width: 100%;
+      max-width: 400px;
       padding: 40px 0px;
       flex-direction: column;
       align-items: center;
@@ -156,7 +162,8 @@ import Button from "../components/atoms/Button.astro";
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      width: 345px;
+      width: 100%;
+      max-width: 345px;
     }
     textarea {
       border: 1px solid var(--Color-Stroke-Primary);
@@ -174,6 +181,12 @@ import Button from "../components/atoms/Button.astro";
       box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
       color: var(--Color-Text-White);
     }
+    .button,
+    .buttonContainer {
+      width: 100%;
+      max-width: 345px;
+    }
+
     /* history of matcha section */
 
     .history_section {
@@ -212,6 +225,18 @@ import Button from "../components/atoms/Button.astro";
       }
       .textBox {
         padding: 0 40px;
+      }
+      .cta_section {
+        flex-direction: row;
+        gap: 80px;
+      }
+      .spacerLine {
+        width: 1px;
+        height: 330px;
+      }
+      .button,
+      .buttonContainer {
+        max-width: 185px;
       }
     }
     @media (min-width: 980px) {

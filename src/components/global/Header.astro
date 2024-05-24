@@ -115,6 +115,9 @@ const { activePage } = Astro.props;
   .NavItem:hover {
     border-bottom: 2px solid var(--Color-Fill-Icon-transparent);
   }
+  .NavItem:hover .NavLink {
+    font-weight: 600;
+  }
 
   #shopIcons {
     display: flex;
@@ -149,10 +152,16 @@ const { activePage } = Astro.props;
       border-bottom: 2px solid transparent;
       border-top: 2px solid transparent;
     }
+
     .NavLink {
       width: max-content;
       text-align: center;
     }
+
+    .NavItem:hover .NavLink {
+      font-weight: 400;
+    }
+
     .exit {
       display: none;
     }

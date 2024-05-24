@@ -3,6 +3,9 @@ import Image from "astro/components/Image.astro";
 import matcha from "../assets/images/matcha/matchaPowder.png";
 import makeMatcha from "../assets/images/recipes/makeMatcha.svg";
 import leaves from "../assets/images/matcha/leaves.jpg";
+import matchaField from "../assets/images/matcha/matcha-field.jpg";
+import matchaTable from "../assets/images/matcha/matcha-table.png";
+import matchaHands from "../assets/images/matcha/mathca-hands.webp";
 import HeadlineSection from "../components/sections/HeadlineSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FAQSection from "../components/sections/FAQSection.astro";
@@ -58,202 +61,228 @@ import Button from "../components/atoms/Button.astro";
     </section>
     <section class="history_section">
       <div class="history_container">
-        <h2 class="Typo-headline-medium-uppercase">The History of Matcha</h2>
-        <p class="Typo-body-regular">
-          Matcha has a rich history dating back to ancient China, where it was initially used for medicinal purposes. However, it was in Japan where matcha truly flourished. Zen Buddhists monks brought it to Japan in the 12th century, where it became
-          an integral part of Japanese tea ceremonies. Over time, matcha evolved from a ceremonial drink to a popular everyday beverage enjoyed by people worldwide for its unique flavor and numerous health benefits.
-        </p>
+        <div class="text_container">
+          <h2 class="Typo-headline-medium-uppercase story-headline">The History of Matcha</h2>
+          <p class="Typo-body-regular">
+            Matcha's story begins in ancient China, prized for its medicinal properties. But it truly flourished in Japan, thanks to Zen Buddhist monks who brought it over in the 12th century. Japanese monk Eisai played a key role, bringing tea seeds
+            and the method of making powdered green tea back from China in 1191. He planted these seeds in Kyoto and promoted matcha for its health benefits, including improved focus and well-being.
+          </p>
+        </div>
+        <div class="StoryImage_container"><Image src={matchaField} alt="matcha leaves" class="image" /></div>
         <div class="text_container">
           <p class="Typo-body-bold">How was matcha discovered?</p>
           <p class="Typo-body-regular">
-            Legend has it that Monk Eisai, a Japanese Buddhist monk, was the one who introduced matcha to Japan in the 12th century. <br /><br />The tale begins in 1191, where Eisai traveled to China to further his studies of buddhism. After
-            finishing his studies he brought back tea seeds and the knowledge of powdered green tea, or matcha, to Japan. He planted these seeds in the fields of Kyoto and developed the Japanese tradition of cultivating tea.<br /><br />Eisai believed
-            in the medicinal properties of matcha, promoting it for its ability to improve focus, meditation, and overall well-being. His teachings and advocacy helped popularize matcha consumption in Japan, laying the foundation for its integration
-            into Japanese culture and the development of the revered Japanese tea ceremony.
+            Legend has it that Monk Eisai, a Japanese Buddhist monk, was the one who introduced matcha to Japan in the 12th century. In 1191 he brought back tea seeds and the method of making powdered green tea from China. He planted these seeds in
+            Kyoto and promoted matcha for its health benefits, including improved focus and well-being.<br /> Eisai's 1211 book, "Kissa Yojoki" ("The Book of Tea and Health"), highlighted matcha's healing properties and preparation methods, significantly
+            influencing Japanese tea culture.
           </p>
         </div>
         <div class="text_container">
-          <p class="Typo-body-bold">The Very First Book About Matcha</p>
+          <p class="Typo-body-bold">Matcha today</p>
           <p class="Typo-body-regular">
-            In his later years, in 1211, Eisai, the now Zen priest, wrote a book about the healing powers of matcha and how to prepare the delicate beverage. "Kissa Yojoki," which translates to "The Book of Tea and Health," is the oldest tea book in
-            Japan and it played a significant role in popularizing the consumption of tea in Japan and contributed to the development of the Japanese tea culture.<br /><br /> It remains an important historical text, offering valuable insights into the
-            cultural and medicinal significance of tea in Japanese society.
+            Today, matcha is a global sensation, celebrated for its unique flavour and calming effects. Like fine wine, it comes in various qualities. At Piohní, we've scoured the globe for the best ceremonial grade matcha. This once-exclusive drink
+            is now a delightful, comforting treat for everyone.
           </p>
         </div>
-        <p class="Typo-body-regular">
-          In recent years matcha has become popular in the rest of the world mainly due to its calming powers and benefits. Like wine, it comes in different, taste and qualities. We at Piohní have scorched the globe for the best ceremonial grade
-          latte.
-          <br />Luckily, this wellness-gem is no longer exclusive to Japanese monks, but a drink that we can all enjoy whenever we need a little liquid hug.
-        </p>
       </div>
-      <div class="historyImage_container"><Image src={leaves} alt="matcha leaves" class="image" /></div>
+      <div class="HistoryImage_container"><Image src={matchaTable} alt="matcha leaves" class="image" /></div>
     </section>
-  </main>
 
-  <style>
-    /* what is matcha section */
-    .what-is-matcha {
-      display: flex;
-      padding: 0 20px;
-      flex-direction: column;
-      align-items: center;
-    }
-    .textBox {
-      display: flex;
-
-      padding: 0px 20px;
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
-    }
-    .benefits {
-      display: grid;
-      grid-template-columns: 1fr;
-
-      gap: 40px 20px;
-    }
-    .benefit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      flex: 1 0 0;
-      min-width: 190px;
-    }
-    .benefit h2 {
-      text-align: center;
-    }
-    .benefit p {
-      max-width: 260px;
-      text-align: center;
-    }
-    /* form */
-
-    .spacerLine {
-      height: 1px;
-      width: 100%;
-      background: var(--Color-Stroke-Secondary, #3d2d21);
-    }
-    .cta_section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-direction: column;
-      width: 100%;
-      padding: 0 20px;
-    }
-    .recipeLink .image {
-      height: 168px;
-      object-fit: contain;
-    }
-    .questionForm,
-    .recipeLink {
-      display: flex;
-      width: 100%;
-      max-width: 400px;
-      padding: 40px 0px;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-      max-width: 345px;
-    }
-    textarea {
-      border: 1px solid var(--Color-Stroke-Primary);
-      color: var(--Color-Text-Body);
-      padding: 10px;
-      width: 100%;
-      height: 108px;
-    }
-    textarea:focus {
-      outline-color: var(--Color-Stroke-Blue);
-    }
-    #formButton {
-      background-color: var(--Color-Fill-Button-Tertiary);
-      border: none;
-      box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
-      color: var(--Color-Text-White);
-    }
-    .button,
-    .buttonContainer {
-      width: 100%;
-      max-width: 345px;
-    }
-
-    /* history of matcha section */
-
-    .history_section {
-      display: flex;
-      width: 100%;
-      padding: 0px 80px;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .history_container {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      width: 100%;
-    }
-    .historyImage_container {
-      width: 100%;
-      height: 100%;
-    }
-
-    .image {
-      width: 100%;
-      height: 100%;
-    }
-
-    @media (min-width: 500px) {
-      .benefits {
-        gap: 40px;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 700px) {
+    <style>
+      /* what is matcha section */
       .what-is-matcha {
-        padding: 60px 20px 0;
+        display: flex;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
       }
       .textBox {
-        padding: 0 40px;
+        display: flex;
+
+        padding: 0px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+      }
+      .benefits {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 40px 20px;
+      }
+      .benefit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        flex: 1 0 0;
+        min-width: 190px;
+      }
+      .benefit h2 {
+        text-align: center;
+      }
+      .benefit p {
+        max-width: 260px;
+        text-align: center;
+      }
+      /* form */
+
+      .spacerLine {
+        height: 1px;
+        width: 100%;
+        background: var(--Color-Stroke-Secondary, #3d2d21);
       }
       .cta_section {
-        flex-direction: row;
-        gap: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
       }
-      .spacerLine {
-        width: 1px;
-        height: 330px;
+      .recipeLink .image {
+        height: 168px;
+        object-fit: contain;
+      }
+      .questionForm,
+      .recipeLink {
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 345px;
+      }
+      textarea {
+        border: 1px solid var(--Color-Stroke-Primary);
+        color: var(--Color-Text-Body);
+        padding: 10px;
+        width: 100%;
+        height: 108px;
+      }
+      textarea:focus {
+        outline-color: var(--Color-Stroke-Blue);
+      }
+      #formButton {
+        background-color: var(--Color-Fill-Button-Tertiary);
+        border: none;
+        box-shadow: 0px 1px 4px 0px var(--Color-Effect-Dropshadow-Button-Default);
+        color: var(--Color-Text-White);
       }
       .button,
       .buttonContainer {
-        max-width: 185px;
+        width: 100%;
+        max-width: 345px;
       }
-    }
-    @media (min-width: 980px) {
-      .benefits {
+
+      /* history of matcha section */
+
+      .history_section {
         display: flex;
-        gap: 20px;
+        width: 100%;
+        padding: 0px 40px;
         align-items: flex-start;
-        align-self: stretch;
+        gap: 40px;
+        flex-direction: column;
       }
-    }
-    @media (min-width: 1100px) {
-      .what-is-matcha {
-        padding: 100px 20px 0;
+
+      .history_container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
       }
-      .textBox {
-        padding: 0 80px;
+
+      .story-headline {
+        margin-bottom: 32px;
       }
-    }
-  </style>
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+      p {
+        max-width: 600px;
+      }
+
+      .StoryImage_container,
+      .HistoryImage_container {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        aspect-ratio: 480 / 251;
+        overflow: hidden;
+      }
+
+      @media (min-width: 500px) {
+        .benefits {
+          gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 700px) {
+        .what-is-matcha {
+          padding: 60px 20px 0;
+        }
+        .textBox {
+          padding: 0 40px;
+        }
+        .cta_section {
+          flex-direction: row;
+          gap: 80px;
+        }
+        .spacerLine {
+          width: 1px;
+          height: 330px;
+        }
+        .button,
+        .buttonContainer {
+          max-width: 185px;
+        }
+        .history_section {
+          padding: 0px 80px;
+        }
+      }
+      @media (min-width: 980px) {
+        .benefits {
+          display: flex;
+          gap: 20px;
+          align-items: flex-start;
+          align-self: stretch;
+        }
+        .history_section {
+          flex-direction: row;
+        }
+        .StoryImage_container {
+          display: none;
+        }
+        .HistoryImage_container {
+          height: 100%;
+          min-height: 612px;
+          max-height: 828px;
+        }
+        .HistoryImage_container .image {
+          object-position: center;
+        }
+      }
+      @media (min-width: 1100px) {
+        .what-is-matcha {
+          padding: 100px 20px 0;
+        }
+        .textBox {
+          padding: 0 80px;
+        }
+      }
+    </style>
+  </main>
 </BaseLayout>

@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 80px;
   padding: 0 40px;
+  width: 100%;
 }
 
 .ImageContainer {
@@ -35,10 +36,18 @@
 }
 #direction_section {
   flex-direction: column;
+  flex-flow: column-reverse;
 }
 .IlluContainer {
   aspect-ratio: 1 / 1;
   max-width: 320px;
+  display: flex;
+  align-items: flex-start;
+  align-self: center;
+}
+.IlluContainer .RecipeImage {
+  height: auto;
+  min-width: 220px;
 }
 
 @media (min-width: 700px) {
@@ -46,5 +55,8 @@
   #direction_section {
     flex-direction: row;
     gap: 40px;
+  }
+  .IlluContainer {
+    align-self: start;
   }
 }

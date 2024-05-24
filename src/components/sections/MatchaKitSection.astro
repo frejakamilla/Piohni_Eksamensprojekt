@@ -14,7 +14,7 @@ import Button from "../atoms/Button.astro";
   <h3 class="Typo-headline-medium-breaker">Missing something for your matcha kit?</h3>
   <div id="card_container">
     <a class="card">
-      <div class="ImageContainer">
+      <div class="ProductImage_container">
         <Image src={matchaPowder} alt="" class="Image" />
         <Image src={matchaPowderHover} alt="" class="HoverImage" />
       </div>
@@ -44,7 +44,7 @@ import Button from "../atoms/Button.astro";
       </div>
     </a>
     <a class="card">
-      <div class="ImageContainer">
+      <div class="ProductImage_container">
         <Image src={matchaWhisk} alt="" class="Image" />
         <Image src={matchaWhiskHover} alt="" class="HoverImage" />
       </div>
@@ -54,7 +54,7 @@ import Button from "../atoms/Button.astro";
       </div>
     </a>
     <a class="card">
-      <div class="ImageContainer">
+      <div class="ProductImage_container">
         <Image src={matchaSpoon} alt="" class="Image" />
         <Image src={matchaSpoonHover} alt="" class="HoverImage" />
       </div>
@@ -97,7 +97,7 @@ import Button from "../atoms/Button.astro";
     gap: 20px;
     width: 300px;
   }
-  .ImageContainer {
+  .ProductImage_container {
     width: 300px;
     height: 300px;
     overflow: hidden;
@@ -116,7 +116,7 @@ import Button from "../atoms/Button.astro";
     z-index: 1;
   }
 
-  .card:hover .ImageContainer .Image {
+  .card:hover .ProductImage_container .Image {
     animation: fade-out 0.4s ease-in both;
   }
 
@@ -165,7 +165,7 @@ import Button from "../atoms/Button.astro";
     .card {
       width: 28vw;
     }
-    .ImageContainer {
+    .ProductImage_container {
       width: 28vw;
       height: 28vw;
     }
@@ -185,7 +185,7 @@ import Button from "../atoms/Button.astro";
     .card {
       width: 280px;
     }
-    .ImageContainer {
+    .ProductImage_container {
       width: 280px;
       height: 280px;
     }

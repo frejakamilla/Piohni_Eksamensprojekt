@@ -34,7 +34,7 @@ import Button from "../components/atoms/Button.astro";
           </div>
         </div>
       </div>
-      <div class="matchaImage"><Image src={matcha} alt="matcha powder" /></div>
+      <div class="matchaImage"><Image src={matcha} alt="matcha powder" class="image" /></div>
     </section>
     <FAQSection />
     <section class="cta_section">
@@ -92,23 +92,23 @@ import Button from "../components/atoms/Button.astro";
     /* what is matcha section */
     .what-is-matcha {
       display: flex;
-      padding: 0px 20px;
+      padding: 0 20px;
       flex-direction: column;
       align-items: center;
     }
     .textBox {
       display: flex;
 
-      padding: 0px 80px;
+      padding: 0px 20px;
       flex-direction: column;
       align-items: center;
       gap: 60px;
     }
     .benefits {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      align-self: stretch;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      gap: 40px 20px;
     }
     .benefit {
       display: flex;
@@ -116,6 +116,10 @@ import Button from "../components/atoms/Button.astro";
       align-items: center;
       gap: 20px;
       flex: 1 0 0;
+      min-width: 190px;
+    }
+    .benefit h2 {
+      text-align: center;
     }
     .benefit p {
       max-width: 260px;
@@ -194,6 +198,37 @@ import Button from "../components/atoms/Button.astro";
     .image {
       width: 100%;
       height: 100%;
+    }
+
+    @media (min-width: 500px) {
+      .benefits {
+        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 700px) {
+      .what-is-matcha {
+        padding: 60px 20px 0;
+      }
+      .textBox {
+        padding: 0 40px;
+      }
+    }
+    @media (min-width: 980px) {
+      .benefits {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        align-self: stretch;
+      }
+    }
+    @media (min-width: 1100px) {
+      .what-is-matcha {
+        padding: 100px 20px 0;
+      }
+      .textBox {
+        padding: 0 80px;
+      }
     }
   </style>
 </BaseLayout>

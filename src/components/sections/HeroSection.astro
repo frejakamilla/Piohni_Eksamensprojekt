@@ -1,6 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import heroImage from "../../assets/images/matcha/matcha-whisk03.webp";
+import heroImageMobile from "../../assets/images/matcha/matcha-hands-wide.webp";
 import Button from "../../components/atoms/Button.astro";
 ---
 
@@ -8,12 +9,14 @@ import Button from "../../components/atoms/Button.astro";
   <div class="scrollIndicator">
     <a href="#product_section">
       <svg xmlns="http://www.w3.org/2000/svg" width="31" height="16" viewBox="0 0 31 16" fill="none">
-        <path d="M2 2L15.5 13.5L29 2" stroke="#FFFFFE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M2 2L15.5 13.5L29 2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="scrollIndicatorArrow"></path>
       </svg></a
     >
   </div>
   <div class="heroImage_container"><Image src={heroImage} alt="Piohni's premium matcha" class="heroImage" /></div>
   <div class="hero_textbox_container">
+    <Image src={heroImageMobile} alt="Piohni's premium matcha" class="heroImageMobile" />
+    <!-- <div class="heroImageMobile_container"></div> -->
     <div class="hero_textbox">
       <div class="headlines">
         <h1 class="heroHeadline Typo-headline-large">Creamy Calming Matcha</h1>
@@ -21,10 +24,10 @@ import Button from "../../components/atoms/Button.astro";
       </div>
       <div class="button_container">
         <div class="button_wrapper">
-          <Button style="tertiary" label="Buy Piohní matcha" href="/shop" hasIcon="true" />
+          <Button style="tertiary" label="Buy Piohní matcha" href="/shop" hasIcon="true" size="responsive" />
         </div>
         <div class="button_wrapper">
-          <Button style="secondary" label="Partner with Piohní" href="/b2b" hasIcon="true" />
+          <Button style="secondary" label="Partner with Piohní" href="/b2b" hasIcon="true" size="responsive" />
           <p class="Typo-button-explainer">Sell or serve Piohní matcha</p>
         </div>
       </div>
@@ -35,8 +38,9 @@ import Button from "../../components/atoms/Button.astro";
 <style>
   .hero_section {
     width: 100vw;
-    height: calc(100vh - 125px);
+    height: calc(100vh - 117px);
     position: relative;
+    overflow: hidden;
   }
   .scrollIndicator {
     position: absolute;
@@ -46,39 +50,40 @@ import Button from "../../components/atoms/Button.astro";
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding: 12px;
+    padding: 10px;
   }
-
+  .scrollIndicatorArrow {
+    stroke: var(--Color-Text-Body-Transparent, rgba(61, 45, 33, 0.65));
+  }
   .heroImage_container {
-    position: absolute;
-    height: 100%;
-    width: 66%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    display: none;
   }
 
   .heroImage {
     object-fit: cover;
+    width: 100%;
+  }
+  .heroImageMobile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 300px;
   }
   .hero_textbox_container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    background-color: var(--Color-Background-Secondary);
   }
   .hero_textbox {
-    position: absolute;
     background-color: var(--Color-Background-Secondary);
-    right: 0px;
-    max-width: 610px;
-
     display: flex;
-    padding: 40px;
-    margin-right: 6%;
+    padding: 20px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    z-index: 2;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
   }
   .headlines {
     display: flex;
@@ -88,7 +93,10 @@ import Button from "../../components/atoms/Button.astro";
   }
   .button_container {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
   }
   .button_wrapper {
     display: flex;
@@ -96,5 +104,74 @@ import Button from "../../components/atoms/Button.astro";
     align-items: center;
     gap: 2px;
     cursor: pointer;
+  }
+  @media (max-width: 699px) {
+    .heroHeadline {
+      text-align: center;
+      font-size: 24px;
+      line-height: normal;
+      text-transform: capitalize;
+      width: 100%;
+    }
+    .heroSubHeadline {
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 500px;
+    }
+  }
+  @media (min-width: 700px) {
+    .heroImageMobile {
+      display: none;
+    }
+    .hero_section {
+      height: calc(100vh - 125px);
+    }
+    .scrollIndicator {
+      padding: 12px;
+    }
+    .scrollIndicatorArrow {
+      stroke: #fffffe;
+    }
+    .heroImage_container {
+      position: absolute;
+      height: 100%;
+      width: 75%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero_textbox_container {
+      flex-direction: row;
+      background-color: var(--Color-Background-Primary);
+    }
+    .hero_textbox {
+      position: absolute;
+      align-items: flex-start;
+      right: 0px;
+      max-width: 610px;
+      padding: 40px;
+      margin-right: 6%;
+      gap: 40px;
+      z-index: 2;
+    }
+
+    .button_container {
+      margin-bottom: 0;
+      width: fit-content;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+  @media (min-width: 1100px) {
+    .heroImage_container {
+      width: 66%;
+    }
+  }
+  @media (min-width: 1500px) {
+    .heroImage_container {
+      width: 80%;
+    }
   }
 </style>

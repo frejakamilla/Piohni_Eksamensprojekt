@@ -79,6 +79,20 @@ const { style, label, href, size, hasIcon } = Astro.props;
     width: 100%;
   }
 
+  @media (max-width: 699px) {
+    [size-variant="responsive"] {
+      display: flex;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 99px;
+    }
+    [size-variant="responsive"] a {
+      font-size: 16px;
+    }
+  }
+
   /* with or without icon variant */
   [icon-variant="true"] {
     display: block;

@@ -53,6 +53,8 @@ const { activePage } = Astro.props;
 <style>
   header {
     width: 100vw;
+    position: relative;
+    z-index: 3;
   }
   #NavBar {
     width: 100%;
@@ -60,6 +62,7 @@ const { activePage } = Astro.props;
     justify-content: space-between;
     align-items: center;
     padding: 16px 20px;
+    background-color: var(--Color-Background-Primary);
   }
   #burger {
     display: flex;
@@ -141,7 +144,7 @@ const { activePage } = Astro.props;
       width: fit-content;
       padding: 0;
       background-color: transparent;
-      border: none;
+      border: none:
     }
 
     .NavItem {

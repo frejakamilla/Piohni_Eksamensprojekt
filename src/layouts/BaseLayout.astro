@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "../styles/reset.css";
 import Footer from "../components/global/Footer.astro";
 import Header from "../components/global/Header.astro";
-const { titleTag, pagename } = Astro.props;
+const { titleTag, pagename, metaDescription } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,6 +17,8 @@ const { titleTag, pagename } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
+    <meta name="description" content={metaDescription} />
+    <meta name="theme-color" content="#BAD6EB" />
 
     <title>{titleTag}</title>
   </head>
